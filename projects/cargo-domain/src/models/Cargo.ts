@@ -1,4 +1,6 @@
+import { Tag } from '../common/TagGenerator';
+
 export abstract class Cargo {
-    tag: string;
+    tag: Tag;
     description: string;
 }
