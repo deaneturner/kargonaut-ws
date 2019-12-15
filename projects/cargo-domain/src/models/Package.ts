@@ -3,6 +3,6 @@ import { Cargo } from './Cargo';
 import { Container } from './Container';
 
 export interface Package extends Cargo {
-    contains: Item[];
-    isContainedIn: Container;
+    contains?: Item[];
+    isContainedIn?: Container;
 }
