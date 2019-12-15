@@ -1,24 +1,17 @@
 import { Injectable } from '@angular/core';
-
-export enum GenerationType {
-    ITEM,
-    PACKAGE,
-    CONTAINER,
-}
+import { CargoFactory, Type } from '../common/CargoFactory';
 
 @Injectable({
     providedIn: 'root'
 })
 export class CargoDomainService {
-    static UNIQUE_TAG_ID_SEED = 'http://deaneturner.com/pkg-item';
-
     constructor() {
     }
 
     /**
      * Generator
      */
-    public generate(generationType: GenerationType) {
-        return {};
+    public generatePackage() {
+        return CargoFactory.generate(Type.PACKAGE);
     }
 }
