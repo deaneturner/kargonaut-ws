@@ -1,19 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CargoDomainService} from './cargo-domain.service';
+import { CargoService} from './cargo.service';
 import { Type  } from '../common/CargoFactory';
 
 describe('CargoDomainService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('service should be created', () => {
-    const service: CargoDomainService = TestBed.get(CargoDomainService);
+    const service: CargoService = TestBed.get(CargoService);
     expect(service).toBeTruthy();
   });
 
   describe('Cargo, Package, and Item Generation', () => {
     it('package should be generated', () => {
-      const service: CargoDomainService = TestBed.get(CargoDomainService);
+      const service: CargoService = TestBed.get(CargoService);
       expect(service.generatePackage()).toBeTruthy();
     });
   });

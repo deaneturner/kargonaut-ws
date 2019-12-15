@@ -2,6 +2,6 @@
  * Public API Surface of cargo-domain
  */
 
-export * from './lib/cargo-domain.service';
-export * from './lib/cargo-domain.component';
-export * from './lib/cargo-domain.module';
+export * from './lib/cargo.service';
+export * from './lib/cargo.component';
+export * from './lib/cargo.module';

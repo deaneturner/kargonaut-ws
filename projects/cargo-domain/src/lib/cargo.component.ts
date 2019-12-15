@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-cargo-domain',
+  selector: 'lib-cargo',
   template: `
     <p>
-      cargo-domain works!
+      cargo works!
     </p>
   `,
   styles: []
 })
-export class CargoDomainComponent implements OnInit {
+export class CargoComponent implements OnInit {
 
   constructor() { }
 

@@ -4,7 +4,7 @@ import { CargoFactory, Type } from '../common/CargoFactory';
 @Injectable({
     providedIn: 'root'
 })
-export class CargoDomainService {
+export class CargoService {
     constructor() {
     }
 
