@@ -5,15 +5,15 @@ import { CargoDomainService } from './cargo-domain.service';
 describe('CargoDomainService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
-  it('should be created', () => {
+  it('service should be created', () => {
     const service: CargoDomainService = TestBed.get(CargoDomainService);
     expect(service).toBeTruthy();
   });
 
   describe('Unique Tag ID Generation', () => {
-    it('should be created', () => {
+    it('tag should be generated', () => {
       const service: CargoDomainService = TestBed.get(CargoDomainService);
-      expect(service).toBeTruthy();
+      expect(service.generateUniqueTagId()).toBeTruthy();
     });
   });
 });
