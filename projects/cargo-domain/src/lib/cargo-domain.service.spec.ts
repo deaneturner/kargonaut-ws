@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CargoDomainService } from './cargo-domain.service';
+import { CargoDomainService, GenerationType } from './cargo-domain.service';
 
 describe('CargoDomainService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
@@ -10,10 +10,10 @@ describe('CargoDomainService', () => {
     expect(service).toBeTruthy();
   });
 
-  describe('Unique Tag ID Generation', () => {
-    it('tag should be generated', () => {
+  describe('Cargo, Package, and Item Generation', () => {
+    it('package should be generated', () => {
       const service: CargoDomainService = TestBed.get(CargoDomainService);
-      expect(service.generateUniqueTagId()).toBeTruthy();
+      expect(service.generate(GenerationType.PACKAGE)).toBeTruthy();
     });
   });
 });
