@@ -9,4 +9,13 @@ describe('CargoDomainService', () => {
     const service: CargoDomainService = TestBed.get(CargoDomainService);
     expect(service).toBeTruthy();
   });
+
+  describe('Unique Tag ID Generation', () => {
+    it('should be created', () => {
+      const service: CargoDomainService = TestBed.get(CargoDomainService);
+      expect(service).toBeTruthy();
+    });
+  });
 });
+
+

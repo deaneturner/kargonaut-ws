@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { v5 as uuidv5 } from 'uuid';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +14,7 @@ export class CargoDomainService {
    * Generate a unique ID (tag).
    */
   generateUniqueTagId(): string {
-    return '1';
+    return uuidv5('http://deaneturner.com/pkg-item', uuidv5.URL);
   }
 
   /**
