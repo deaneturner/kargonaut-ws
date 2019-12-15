@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CargoFactory, Type } from '../common/CargoFactory';
+import { Cargo } from '../models/Cargo';
 
 @Injectable({
     providedIn: 'root'
@@ -11,7 +12,7 @@ export class CargoService {
     /**
      * Generator
      */
-    public generatePackage() {
+    public generatePackage(): Cargo {
         return CargoFactory.generate(Type.PACKAGE);
     }
 }

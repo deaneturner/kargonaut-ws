@@ -8,7 +8,7 @@ export class TagGenerator {
      * Unique Tag Generator
      * Generate a unique ID (tag).
      */
-    static generateId = (): Tag => {
+    static generateId(): Tag {
         return uuid(TagGenerator.UNIQUE_TAG_ID_SEED);
     }
 }
