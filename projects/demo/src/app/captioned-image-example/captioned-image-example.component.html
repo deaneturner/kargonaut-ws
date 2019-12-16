@@ -1,0 +1,7 @@
+
+<app-captioned-image
+  *ngFor="let filename of imageFilenames"
+  [src]=" '/assets/space-images/' + filename "
+  [caption]="filename"
+></app-captioned-image>
+
