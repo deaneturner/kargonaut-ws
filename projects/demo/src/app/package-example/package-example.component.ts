@@ -3,13 +3,13 @@ import { Component } from '@angular/core';
 const imageDir = '/assets/space-images';
 
 @Component({
-  selector: 'app-captioned-image-example',
-  templateUrl: './captioned-image-example.component.html',
-  styleUrls: ['./captioned-image-example.component.less']
+  selector: 'demo-package-example',
+  templateUrl: './package-example.component.html',
+  styleUrls: ['./package-example.component.less']
 })
-export class CaptionedImageExampleComponent {
+export class PackageExampleComponent {
 
-  static label = 'Captioned Images';
+  static label = 'Package Demo';
 
   imageFilenames: string[] = [
     'black-eye-galaxy.jpg',
