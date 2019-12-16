@@ -1,4 +1,4 @@
-import { Tag, TagGenerator } from './TagGenerator';
+import { TagGenerator } from './TagGenerator';
 import { Package } from '../models/Package';
 import { Item } from '../models/Item';
 import { Container } from '../models/Container';
@@ -17,7 +17,7 @@ export class CargoFactory {
      * Generate Cargo
      *
      * @param type - Type of Cargo to Generate
-     * @param config - Configuration consisting of initial properties
+     * @param config (Config)- Configuration consisting of initial properties
      */
     static generate(type: Type, config?: Config): Cargo {
         let result = Object.assign({
