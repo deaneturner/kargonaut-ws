@@ -20,10 +20,12 @@ export class CargoFactory {
      * @param config (Config)- Configuration consisting of initial properties
      */
     static generate(type: Type, config?: Config): Cargo {
-        let result = Object.assign({
+        let result = {
             tag: TagGenerator.generateId(),
-            description: 'Description for cargo.'
-        }, (config || {})) as Cargo;
+            description: 'Description for cargo.',
+            ... config
+        } as Cargo;
+
         switch (type) {
             case Type.CONTAINER:
                 result = result as Container;
