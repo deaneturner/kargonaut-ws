@@ -18,7 +18,8 @@ import { PackageComponent } from './package/package.component';
         BrowserModule,
         AppRoutingModule
     ],
-    providers: [],
+    providers: [
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
