@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { examples } from './examples';
-import { AppConfig, CONFIG_TOKEN } from './app.config';
+import { AppConfigService } from '../../services/app-config-service.service';
 
 @Component({
     selector: 'demo-root',
@@ -10,12 +10,11 @@ import { AppConfig, CONFIG_TOKEN } from './app.config';
 export class AppComponent {
     title: string;
 
-    constructor(
-        @Inject(CONFIG_TOKEN) private aooConfig: AppConfig,
-    ) {
-        this.title = aooConfig.title;
+    constructor() {
+        this.title = AppConfigService.settings.title;
     }
 
     showNav: boolean;
     examples = examples;
 }
+
