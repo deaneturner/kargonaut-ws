@@ -5,4 +5,3 @@ export function initializeApp(appConfigService: AppConfigService) {
         return appConfigService.init();
     };
 }
-
