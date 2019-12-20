@@ -1,5 +1,5 @@
 export interface AppConfig {
-    env: {
+    env?: {
         name: string
     };
 
