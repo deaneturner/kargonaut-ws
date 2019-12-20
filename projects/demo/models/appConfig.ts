@@ -4,9 +4,4 @@ export interface AppConfig {
     };
 
     title: string;
-
-    apiServer: {
-        link1: string,
-        link2: string,
-    };
 }

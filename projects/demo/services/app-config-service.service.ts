@@ -30,3 +30,9 @@ export class AppConfigService {
         });
     }
 }
+
+export function initializeApp(appConfigService: AppConfigService) {
+    return (): Promise<any> => {
+        return appConfigService.init();
+    };
+}

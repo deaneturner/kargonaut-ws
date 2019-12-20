@@ -1,12 +1,7 @@
 {
   "env": {
-    "name":"Dev"
+    "name":"dev"
   },
 
-  "title": "Cargonaut",
-
-  "apiServer" : {
-    "link1" :"http://amazon.com",
-    "link2" :"http://ebay.com"
-  }
+  "title": "Cargonaut"
 }
