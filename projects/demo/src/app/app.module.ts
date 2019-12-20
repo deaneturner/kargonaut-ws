@@ -5,8 +5,9 @@ import { AppComponent } from './app.component';
 import { PackageExampleComponent } from './package-example/package-example.component';
 import { AboutComponent } from './about/about.component';
 import { PackageComponent } from './package/package.component';
-import { AppConfigService, initializeApp } from '../../services/app-config-service.service';
+import { AppConfigService } from '../../services/app-config-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { initializeApp } from './app.initializer';
 
 @NgModule({
     declarations: [
