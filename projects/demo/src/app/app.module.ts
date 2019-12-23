@@ -11,6 +11,7 @@ import { initializeApp } from './app.initializer';
 import { ContainerComponent } from './container/container.component';
 import { ContainerExampleComponent } from './container-example/container-example.component';
 import { SimpleMarkupExampleComponent } from './markup/simple-markup-example/simple-markup-example.component';
+import { EmulationExampleComponent } from './markup/emulation-example/emulation-example.component';
 
 @NgModule({
     declarations: [
@@ -21,6 +22,7 @@ import { SimpleMarkupExampleComponent } from './markup/simple-markup-example/sim
         ContainerComponent,
         ContainerExampleComponent,
         SimpleMarkupExampleComponent,
+        EmulationExampleComponent,
     ],
     imports: [
         BrowserModule,
