@@ -13,22 +13,28 @@
 
 .example-package {
   margin-bottom: 20px;
-  border: 1px;
-  border-style: solid;
+  border: 1px solid;
 }
 
-.example-package > div {
-  border: 1px;
-  border-style: dashed;
+.example-header > div {
+  border-right: 1px dashed;
+  border-bottom: 1px dashed;
 }
 
-.example-header > div:first-child {
+.example-header > div:last-child {
+  border-right: none;
+}
+
+.example-item {
+  border: 1px dashed;
+}
+
+.example-item > div {
   border-right: 1px dashed;
 }
 
-.example-item > div{
-  border: 1px;
-  border-style: dashed;
+.example-item > div:last-child {
+  border-right: none;
 }
 
 
