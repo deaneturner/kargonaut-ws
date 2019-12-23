@@ -1,23 +1,35 @@
-div#demo-layout {               /* This is our CSS grid parent container */
+.item-demo-layout {               /* This is our CSS grid parent container */
   display: grid;
   grid-template-columns: 400px 400px; /* 2 cols */
-  grid-template-rows:    200px;       /* 2 rows */
+  grid-template-rows:    100px;       /* 2 rows */
 }
 
-div#demo {               /* This is our CSS grid parent container */
-  display: grid;
-  grid-template-columns: 40px 400px; /* 2 cols */
-  /* grid-template-rows:    40px;       n rows */
-}
+/* item */
 
-div#items {               /* This is our CSS grid parent container */
+.items {               /* This is the CSS grid parent container */
   display: grid;
   grid-template-columns: 440px; /* 2 cols */
   /* grid-template-rows:    40px;       n rows */
 }
 
-div#items > div {               /* This is our CSS grid parent container */
+.items > div {               /* This is the CSS grid parent container */
   display: grid;
   grid-template-columns: 40px 400px; /* 2 cols */
   /* grid-template-rows:    40px;       n rows */
 }
+
+/* package */
+
+.package-demo-layout {               /* This is our CSS grid parent container */
+  display: grid;
+  grid-template-columns: 400px 400px; /* 2 cols */
+  grid-template-rows:    400px;       /* 2 rows */
+}
+
+.package {               /* This is the CSS grid parent container */
+  display: grid;
+  grid-template-columns: 40px 400px; /* 2 cols */
+  /* grid-template-rows:    40px;       n rows */
+}
+
+
