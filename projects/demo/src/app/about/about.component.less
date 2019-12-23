@@ -12,6 +12,12 @@ div#demo {               /* This is our CSS grid parent container */
 
 div#items {               /* This is our CSS grid parent container */
   display: grid;
+  grid-template-columns: 440px; /* 2 cols */
+  /* grid-template-rows:    40px;       n rows */
+}
+
+div#items > div {               /* This is our CSS grid parent container */
+  display: grid;
   grid-template-columns: 40px 400px; /* 2 cols */
   /* grid-template-rows:    40px;       n rows */
 }
