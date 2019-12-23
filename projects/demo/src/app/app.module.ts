@@ -8,6 +8,8 @@ import { PackageComponent } from './package/package.component';
 import { AppConfigService } from '../../services/app-config-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { initializeApp } from './app.initializer';
+import { ContainerComponent } from './container/container.component';
+import { ContainerExampleComponent } from './container-example/container-example.component';
 
 @NgModule({
     declarations: [
@@ -15,6 +17,8 @@ import { initializeApp } from './app.initializer';
         AppComponent,
         PackageComponent,
         PackageExampleComponent,
+        ContainerComponent,
+        ContainerExampleComponent,
     ],
     imports: [
         BrowserModule,
