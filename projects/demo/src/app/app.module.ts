@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { initializeApp } from './app.initializer';
 import { ContainerComponent } from './container/container.component';
 import { ContainerExampleComponent } from './container-example/container-example.component';
+import { SimpleMarkupExampleComponent } from './markup/simple-markup-example/simple-markup-example.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { ContainerExampleComponent } from './container-example/container-example
         PackageExampleComponent,
         ContainerComponent,
         ContainerExampleComponent,
+        SimpleMarkupExampleComponent,
     ],
     imports: [
         BrowserModule,
