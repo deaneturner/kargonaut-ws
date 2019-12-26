@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PackageExampleComponent implements OnInit {
 
-  static label = 'Package Example';
+  static label = 'Package Component';
 
   constructor() { }
 
