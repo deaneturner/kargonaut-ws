@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasicStylingExampleComponent implements OnInit {
 
-  static label = 'Basic Styling Markup';
+  static label = 'Basic Styling';
 
   constructor() { }
 
