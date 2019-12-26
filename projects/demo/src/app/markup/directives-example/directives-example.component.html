@@ -25,7 +25,7 @@
       <div>
         <h3>Package</h3>
         <div class="cn-package example-package" style="padding:0">
-          <div class="cn-header example-header">
+          <div class="example-header" cnCLine [columns]="packageColumns">
             <div></div>
             <div>Package Header</div>
             <div></div>
@@ -77,7 +77,7 @@
         <h3>Bundle</h3>
         <div class="cn-bundle example-bundle">
           <div class="cn-package example-package">
-            <div class="cn-header">
+            <div cnCLine [columns]="packageColumns">
               <div></div>
               <div>Package1</div>
               <div></div>
@@ -121,7 +121,7 @@
             </div>
           </div>
           <div class="cn-package example-package">
-            <div class="cn-header example-header ">
+            <div class="example-header" cnCLine [columns]="packageColumns">
               <div class="material-icons">all_out</div>
               <div>Package 2</div>
               <div class="cn-count">x4</div>
