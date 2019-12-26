@@ -1,9 +1,9 @@
 import { Directive, HostBinding, Input } from '@angular/core';
 
 @Directive({
-  selector: '[cnItem]'
+  selector: '[cnCLine]'
 })
-export class ItemDirective {
+export class CompositeLineDirective {
 
   @Input() columns: string[] | null = null;
 
@@ -17,9 +17,6 @@ export class ItemDirective {
     return this.columns ? this.columns.join(' ') : null;
   }
 
-
   constructor() {
-    console.log('Item Directive');
   }
-
 }
