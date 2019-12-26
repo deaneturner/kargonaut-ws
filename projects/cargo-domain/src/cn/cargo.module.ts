@@ -8,6 +8,6 @@ import { ItemLayoutDirective } from './directives/item-layout.directive';
   declarations: [CargoComponent, ItemLayoutDirective],
   imports: [
   ],
-  exports: [CargoComponent]
+  exports: [CargoComponent, ItemLayoutDirective]
 })
 export class CargoModule { }

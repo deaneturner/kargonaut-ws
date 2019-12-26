@@ -12,12 +12,10 @@ describe('CargoDomainService', () => {
 
   describe('Cargo, Package, and Item Generation', () => {
     it('package should be generated, without a config', () => {
-      const service: CargoService = TestBed.get(CargoService);
-      expect(service.generatePackage()).toBeTruthy();
+      expect(CargoService.generatePackage()).toBeTruthy();
     });
     it('package should be generated, with a config', () => {
-      const service: CargoService = TestBed.get(CargoService);
-      expect(service.generatePackage({ description: 'test'})).toBeTruthy();
+      expect(CargoService.generatePackage({ description: 'test'})).toBeTruthy();
     });
   });
 });

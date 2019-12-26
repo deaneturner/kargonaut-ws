@@ -11,6 +11,7 @@ import { BundleExampleComponent } from './bundle-example/bundle-example.componen
 import { SimpleMarkupExampleComponent } from './markup/simple-markup-example/simple-markup-example.component';
 import { BasicStylingExampleComponent } from './markup/basic-styling-example/basic-styling-example.component';
 import { DirectivesExampleComponent } from './markup/directives-example/directives-example.component';
+import { CargoModule } from '../../../cargo-domain/src/cn/cargo.module';
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ import { DirectivesExampleComponent } from './markup/directives-example/directiv
     imports: [
         BrowserModule,
         AppRoutingModule,
-        HttpClientModule
+        HttpClientModule,
+        CargoModule
     ],
     providers: [
         AppConfigService,
