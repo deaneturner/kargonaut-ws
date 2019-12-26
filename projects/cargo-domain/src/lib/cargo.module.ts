@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CargoComponent } from './cargo.component';
+import { CargoComponent } from './components/cargo.component';
 
 
 

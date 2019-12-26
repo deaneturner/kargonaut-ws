@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { CargoService} from './cargo.service';
-import { Type  } from '../common/CargoFactory';
+import { Type  } from '../../common/CargoFactory';
 
 describe('CargoDomainService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
