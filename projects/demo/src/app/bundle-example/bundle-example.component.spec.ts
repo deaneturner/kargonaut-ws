@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EmulationExampleComponent } from './emulation-example.component';
+import { BundleExampleComponent } from './bundle-example.component';
 
-describe('EmulationExampleComponent', () => {
-  let component: EmulationExampleComponent;
-  let fixture: ComponentFixture<EmulationExampleComponent>;
+describe('BundleExampleComponent', () => {
+  let component: BundleExampleComponent;
+  let fixture: ComponentFixture<BundleExampleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EmulationExampleComponent ]
+      declarations: [ BundleExampleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EmulationExampleComponent);
+    fixture = TestBed.createComponent(BundleExampleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

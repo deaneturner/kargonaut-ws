@@ -8,10 +8,10 @@ import { PackageComponent } from './package/package.component';
 import { AppConfigService } from '../../services/app-config-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { initializeApp } from './app.initializer';
-import { ContainerComponent } from './container/container.component';
-import { ContainerExampleComponent } from './container-example/container-example.component';
+import { BundleComponent } from './bundle/bundle.component';
+import { BundleExampleComponent } from './bundle-example/bundle-example.component';
 import { SimpleMarkupExampleComponent } from './markup/simple-markup-example/simple-markup-example.component';
-import { EmulationExampleComponent } from './markup/emulation-example/emulation-example.component';
+import { BasicStylingExampleComponent } from './markup/basic-styling-example/basic-styling-example.component';
 
 @NgModule({
     declarations: [
@@ -19,10 +19,10 @@ import { EmulationExampleComponent } from './markup/emulation-example/emulation-
         AppComponent,
         PackageComponent,
         PackageExampleComponent,
-        ContainerComponent,
-        ContainerExampleComponent,
+        BundleComponent,
+        BundleExampleComponent,
         SimpleMarkupExampleComponent,
-        EmulationExampleComponent,
+        BasicStylingExampleComponent,
     ],
     imports: [
         BrowserModule,
