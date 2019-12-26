@@ -9,9 +9,12 @@ export class DirectivesExampleComponent implements OnInit {
 
   static label = 'Directives';
 
+  itemColumns: string[] = [];
+
   constructor() { }
 
   ngOnInit() {
+    this.itemColumns = ['30px', '30px', 'auto', '60px', '30px', '30px', '60px'];
   }
 
 }

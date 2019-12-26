@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CargoComponent } from './components/cargo.component';
-import { ItemLayoutDirective } from './directives/item-layout.directive';
-
-
+import { ItemDirective } from './directives/item.directive';
 
 @NgModule({
-  declarations: [CargoComponent, ItemLayoutDirective],
+  declarations: [CargoComponent, ItemDirective],
   imports: [
   ],
-  exports: [CargoComponent, ItemLayoutDirective]
+  exports: [CargoComponent, ItemDirective]
 })
 export class CargoModule { }
