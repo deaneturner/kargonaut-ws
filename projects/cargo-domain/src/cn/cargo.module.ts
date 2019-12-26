@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CargoComponent } from './components/cargo.component';
 import { InlineGridDirective } from './directives/inline-grid.directive';
-import { PackageComponentComponent } from './components/package-component/package-component.component';
+import { PackageComponent } from './components/package/package.component';
 
 @NgModule({
-  declarations: [CargoComponent, InlineGridDirective, PackageComponentComponent],
+  declarations: [CargoComponent, InlineGridDirective, PackageComponent],
   imports: [
   ],
   exports: [CargoComponent, InlineGridDirective]
