@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/cargo-domain",
       "sourceRoot": "projects/cargo-domain/src",
-      "prefix": "lib",
+      "prefix": "cn",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",

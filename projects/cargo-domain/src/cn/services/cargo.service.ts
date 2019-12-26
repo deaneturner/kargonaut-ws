@@ -13,7 +13,7 @@ export class CargoService {
     /**
      * Generator
      */
-    public generatePackage(config?: Package): Cargo {
+    static generatePackage(config?: Package): Cargo {
         return CargoFactory.generate(Type.PACKAGE, config);
     }
 }
