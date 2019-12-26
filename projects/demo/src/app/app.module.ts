@@ -12,6 +12,7 @@ import { SimpleMarkupExampleComponent } from './markup/simple-markup-example/sim
 import { BasicStylingExampleComponent } from './markup/basic-styling-example/basic-styling-example.component';
 import { DirectivesExampleComponent } from './markup/directives-example/directives-example.component';
 import { CargoModule } from '../../../cargo-domain/src/cn/cargo.module';
+import { PackageExampleComponent } from './package-example/package-example.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { CargoModule } from '../../../cargo-domain/src/cn/cargo.module';
         BundleExampleComponent,
         SimpleMarkupExampleComponent,
         BasicStylingExampleComponent,
-        DirectivesExampleComponent
+        DirectivesExampleComponent,
+        PackageExampleComponent
     ],
     imports: [
         BrowserModule,
