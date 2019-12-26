@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BasicStylingExampleComponent } from './basic-styling-example.component';
+import { DirectivesExampleComponent } from './directives-example.component';
 
 describe('DirectivesExampleComponent', () => {
-  let component: BasicStylingExampleComponent;
-  let fixture: ComponentFixture<BasicStylingExampleComponent>;
+  let component: DirectivesExampleComponent;
+  let fixture: ComponentFixture<DirectivesExampleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BasicStylingExampleComponent ]
+      declarations: [ DirectivesExampleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BasicStylingExampleComponent);
+    fixture = TestBed.createComponent(DirectivesExampleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

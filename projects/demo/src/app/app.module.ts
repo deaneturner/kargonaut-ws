@@ -2,9 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PackageExampleComponent } from './package-example/package-example.component';
 import { AboutComponent } from './about/about.component';
-import { PackageComponent } from './package/package.component';
 import { AppConfigService } from '../../services/app-config-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { initializeApp } from './app.initializer';
@@ -12,17 +10,17 @@ import { BundleComponent } from './bundle/bundle.component';
 import { BundleExampleComponent } from './bundle-example/bundle-example.component';
 import { SimpleMarkupExampleComponent } from './markup/simple-markup-example/simple-markup-example.component';
 import { BasicStylingExampleComponent } from './markup/basic-styling-example/basic-styling-example.component';
+import { DirectivesExampleComponent } from './markup/directives-example/directives-example.component';
 
 @NgModule({
     declarations: [
         AboutComponent,
         AppComponent,
-        PackageComponent,
-        PackageExampleComponent,
         BundleComponent,
         BundleExampleComponent,
         SimpleMarkupExampleComponent,
         BasicStylingExampleComponent,
+        DirectivesExampleComponent
     ],
     imports: [
         BrowserModule,

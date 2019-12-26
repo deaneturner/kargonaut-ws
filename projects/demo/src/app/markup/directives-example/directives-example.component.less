@@ -1,12 +1,16 @@
 /* demo */
 
-.simple-markup-example {
+.basic-styling-example {
   display: grid;
   grid-template-columns: auto 400px auto;
 }
 
+.basic-styling-example img {
+  width: 400px;
+}
+
 .example-bundle {
-  height: 300px;
+  height: 340px;
   border: 1px solid;
   padding: 15px;
 }
@@ -14,6 +18,11 @@
 .example-package {
   margin-bottom: 20px;
   border: 1px solid;
+  padding: 10px;
+}
+
+.example-package .cn-checkbox {
+  text-align: right;
 }
 
 .example-header > div {
@@ -23,6 +32,10 @@
 
 .example-header > div:last-child {
   border-right: none;
+}
+
+.example-items {
+  padding-top: 5px;
 }
 
 .example-item {
@@ -37,7 +50,6 @@
   border-right: none;
 }
 
-
 /* global */
 
 .cn-items {
@@ -47,14 +59,29 @@
 
 .cn-items > div {
   display: grid;
-  grid-template-columns: 40px auto;
+  grid-template-columns: 30px 30px auto 60px 30px 30px 60px;
 }
 
 .cn-header {
   display: grid;
-  grid-template-columns: 40px auto;
+  grid-template-columns: 30px auto 60px;
 }
 
 .cn-bundle {
   overflow: scroll;
+}
+
+/* item */
+.cn-weight-amount {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.cn-count {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.cn-symbol {
+  text-align: center;
 }
