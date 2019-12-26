@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DirectivesExampleComponent } from './directives-example.component';
-import { CompositeLineDirective } from '../../../../../cargo-domain/src/cn/directives/composite-line.directive';
+import { InlineGridDirective } from '../../../../../cargo-domain/src/cn/directives/inline-grid.directive';
 
 describe('DirectivesExampleComponent', () => {
   let component: DirectivesExampleComponent;
@@ -11,7 +11,7 @@ describe('DirectivesExampleComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
           DirectivesExampleComponent,
-          CompositeLineDirective
+          InlineGridDirective
       ]
     })
     .compileComponents();
