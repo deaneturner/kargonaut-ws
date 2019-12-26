@@ -7,6 +7,6 @@ import { PackageComponent } from './components/package/package.component';
   declarations: [CargoComponent, InlineGridDirective, PackageComponent],
   imports: [
   ],
-  exports: [CargoComponent, InlineGridDirective]
+  exports: [CargoComponent, InlineGridDirective, PackageComponent]
 })
 export class CargoModule { }
