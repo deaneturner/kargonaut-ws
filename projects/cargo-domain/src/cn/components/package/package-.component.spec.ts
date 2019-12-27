@@ -10,7 +10,9 @@ describe('PackageComponent', () => {
         cnData: {
             cnLabel: 'test-label'
         },
-        cnColumns: []
+        cnLayout: {
+            cnColumns: []
+        }
     };
 
     beforeEach(async(() => {
