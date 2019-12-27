@@ -5,8 +5,8 @@
       <h2>Package Component</h2>
     </div>
     <h3>Simple Markup</h3>
-    <cn-package-component [config]="config">
-      <div class="example-item" cnGrid [columns]="itemColumns">
+    <cn-package-component [config]="packageConfig">
+      <div class="example-item" cnGrid [columns]="itemConfig.columns">
         <div class="cn-checkbox material-icons">check_box_outline_blank</div>
         <div class="cn-symbol material-icons">adjust</div>
         <div class="cn-label">Item row</div>
@@ -15,7 +15,7 @@
         <div class="cn-symbol cn-weight-symbol material-icons">device_unknown</div>
         <div class="cn-weight-amount">5.0</div>
       </div>
-      <div cnGrid [columns]="itemColumns">
+      <div cnGrid [columns]="itemConfig.columns">
         <div class="cn-checkbox material-icons">check_box_outline_blank</div>
         <div class="cn-symbol material-icons">wb_sunny</div>
         <div class="cn-label">Item row</div>
@@ -24,7 +24,7 @@
         <div class="cn-symbol cn-weight-symbol material-icons">device_unknown</div>
         <div class="cn-weight-amount">5.0</div>
       </div>
-      <div cnGrid [columns]="itemColumns">
+      <div cnGrid [columns]="itemConfig.columns">
         <div class="cn-checkbox material-icons">check_box_outline_blank</div>
         <div class="cn-symbol material-icons">adjust</div>
         <div class="cn-label">Item row</div>
@@ -33,7 +33,7 @@
         <div class="cn-symbol cn-weight-symbol material-icons">device_unknown</div>
         <div class="cn-weight-amount">1.0</div>
       </div>
-      <div cnGrid [columns]="itemColumns">
+      <div cnGrid [columns]="itemConfig.columns">
         <div class="cn-checkbox material-icons">check_box_outline_blank</div>
         <div class="cn-symbol material-icons">adjust</div>
         <div class="cn-label">Item row</div>
@@ -55,8 +55,8 @@
       <div class="cn-symbol cn-weight-symbol material-icons">{{item.weightSymbol}}</div>
       <div class="cn-weight-amount">{{item.weightAmount}}</div>
     </ng-template>
-    <cn-package-component [config]="config">
-      <div cnGrid [columns]="itemColumns">
+    <cn-package-component [config]="packageConfig">
+      <div cnGrid [columns]="itemConfig.columns">
         <ng-container *ngTemplateOutlet="itemTpl; context: itemContext"></ng-container>
       </div>
     </cn-package-component>

@@ -9,35 +9,36 @@ import { ItemExample } from '../../../models/item-example';
 })
 export class PackageExampleComponent implements OnInit {
 
-  config: PackageConfig;
-
-  itemColumns: string[] = [];
-
-  itemExample: ItemExample = {
-    cnTag: '',
-    cnLabel: 'Item row',
-    cnDescription: '',
-    isSelected: false,
-    checkbox: 'check_box_outline_blank',
-    symbol: 'adjust',
-    maxLikes: '',
-    weightCode: 'filter_1',
-    weightSymbol: 'device_unknown',
-    weightAmount: '5.0'
+  packageConfig: PackageConfig;
+  itemConfig: {
+    columns: string[]
   };
 
   itemContext = {
-    item: this.itemExample
+    item: {
+      cnTag: '',
+      cnLabel: 'Item row',
+      cnDescription: '',
+      isSelected: false,
+      checkbox: 'check_box_outline_blank',
+      symbol: 'adjust',
+      maxLikes: '',
+      weightCode: 'filter_1',
+      weightSymbol: 'device_unknown',
+      weightAmount: '5.0'
+    } as ItemExample
   };
 
   constructor() { }
 
   ngOnInit() {
-    this.config = {
+    this.packageConfig = {
       cnLabel: 'Package Component',
       cnColumns: ['30px', 'auto', '60px']
     };
-    this.itemColumns = ['30px', '30px', 'auto', '60px', '30px', '30px', '60px'];
+    this.itemConfig = {
+      columns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
+    };
   }
 
 }
