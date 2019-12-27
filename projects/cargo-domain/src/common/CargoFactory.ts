@@ -1,16 +1,16 @@
 import { TagGenerator } from './TagGenerator';
 import { Package } from '../models/Package';
 import { Item } from '../models/Item';
-import { Container } from '../models/Container';
+import { Bundle } from '../models/Bundle';
 import { Cargo } from '../models/Cargo';
 
 export enum Type {
     ITEM,
     PACKAGE,
-    CONTAINER,
+    BUNDLE,
 }
 
-export type Config = Container | Package | Item;
+export type Config = Bundle | Package | Item;
 
 export class CargoFactory {
     /**
@@ -21,14 +21,14 @@ export class CargoFactory {
      */
     static generate(type: Type, config?: Config): Cargo {
         let result = {
-            tag: TagGenerator.generateId(),
-            description: 'Description for cargo.',
+            cnTag: TagGenerator.generateId(),
+            cnDescription: 'Description for cargo.',
             ... config
         } as Cargo;
 
         switch (type) {
-            case Type.CONTAINER:
-                result = result as Container;
+            case Type.BUNDLE:
+                result = result as Bundle;
                 break;
             case Type.PACKAGE:
                 result = result as Package;

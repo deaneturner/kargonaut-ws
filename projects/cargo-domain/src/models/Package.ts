@@ -1,8 +1,8 @@
 import { Item } from './Item';
 import { Cargo } from './Cargo';
-import { Container } from './Container';
+import { Bundle } from './Bundle';
 
 export interface Package extends Cargo {
-    contains?: Item[];
-    isContainedIn?: Container;
+    cnContains?: Item[];
+    cnIsContainedIn?: Bundle;
 }

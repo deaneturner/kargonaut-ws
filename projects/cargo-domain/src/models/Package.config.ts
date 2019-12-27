@@ -1,4 +1,4 @@
 export interface PackageConfig {
-    label: string;
-    columns: string[];
+    cnLabel: string;
+    cnColumns: string[];
 }
