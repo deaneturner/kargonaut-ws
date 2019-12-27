@@ -1,8 +1,4 @@
 <div class="cn-package example-package">
-  <div class="example-header" cnGrid [columns]="config.cnColumns">
-    <div class="material-icons">all_out</div>
-    <div>{{ config.cnData.cnLabel }}</div>
-    <div class="cn-count">x4</div>
-  </div>
-  <ng-content></ng-content>
+  <ng-content select=".cn-package"></ng-content>
+  <ng-content select=".cn-items"></ng-content>
 </div>

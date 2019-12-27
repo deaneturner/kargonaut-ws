@@ -6,45 +6,60 @@
     </div>
     <h3>Simple Markup</h3>
     <cn-package-component [config]="packageConfig">
-      <div class="example-item" cnGrid [columns]="itemConfig.cnColumns">
-        <div class="cn-checkbox material-icons">check_box_outline_blank</div>
-        <div class="cn-symbol material-icons">adjust</div>
-        <div class="cn-label">Item row</div>
-        <div class="cn-max-likes"></div>
-        <div class="cn-symbol cn-weight-code material-icons">filter_1</div>
-        <div class="cn-symbol cn-weight-symbol material-icons">device_unknown</div>
-        <div class="cn-weight-amount">5.0</div>
+      <div class="cn-package example-header" cnGrid [columns]="packageConfig.cnLayout.cnColumns">
+        <div class="material-icons">all_out</div>
+        <div>{{ packageConfig.cnData.cnLabel }}</div>
+        <div class="cn-count">x4</div>
       </div>
-      <div cnGrid [columns]="itemConfig.cnColumns">
-        <div class="cn-checkbox material-icons">check_box_outline_blank</div>
-        <div class="cn-symbol material-icons">wb_sunny</div>
-        <div class="cn-label">Item row</div>
-        <div class="cn-max-likes"></div>
-        <div class="cn-symbol cn-weight-code material-icons">filter_1</div>
-        <div class="cn-symbol cn-weight-symbol material-icons">device_unknown</div>
-        <div class="cn-weight-amount">5.0</div>
-      </div>
-      <div cnGrid [columns]="itemConfig.cnColumns">
-        <div class="cn-checkbox material-icons">check_box_outline_blank</div>
-        <div class="cn-symbol material-icons">adjust</div>
-        <div class="cn-label">Item row</div>
-        <div class="cn-max-likes"></div>
-        <div class="cn-symbol cn-weight-code material-icons">filter_1</div>
-        <div class="cn-symbol cn-weight-symbol material-icons">device_unknown</div>
-        <div class="cn-weight-amount">1.0</div>
-      </div>
-      <div cnGrid [columns]="itemConfig.cnColumns">
-        <div class="cn-checkbox material-icons">check_box_outline_blank</div>
-        <div class="cn-symbol material-icons">adjust</div>
-        <div class="cn-label">Item row</div>
-        <div class="cn-max-likes"></div>
-        <div class="cn-symbol cn-weight-code material-icons">filter_1</div>
-        <div class="cn-symbol cn-weight-symbol material-icons">dock</div>
-        <div class="cn-weight-amount">5.0</div>
+      <div class="cn-items">
+        <div class="example-item" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
+          <div class="cn-checkbox material-icons">check_box_outline_blank</div>
+          <div class="cn-symbol material-icons">adjust</div>
+          <div class="cn-label">Item row</div>
+          <div class="cn-max-likes"></div>
+          <div class="cn-symbol cn-weight-code material-icons">filter_1</div>
+          <div class="cn-symbol cn-weight-symbol material-icons">device_unknown</div>
+          <div class="cn-weight-amount">5.0</div>
+        </div>
+        <div cnGrid [columns]="itemConfig.cnLayout.cnColumns">
+          <div class="cn-checkbox material-icons">check_box_outline_blank</div>
+          <div class="cn-symbol material-icons">wb_sunny</div>
+          <div class="cn-label">Item row</div>
+          <div class="cn-max-likes"></div>
+          <div class="cn-symbol cn-weight-code material-icons">filter_1</div>
+          <div class="cn-symbol cn-weight-symbol material-icons">device_unknown</div>
+          <div class="cn-weight-amount">5.0</div>
+        </div>
+        <div cnGrid [columns]="itemConfig.cnLayout.cnColumns">
+          <div class="cn-checkbox material-icons">check_box_outline_blank</div>
+          <div class="cn-symbol material-icons">adjust</div>
+          <div class="cn-label">Item row</div>
+          <div class="cn-max-likes"></div>
+          <div class="cn-symbol cn-weight-code material-icons">filter_1</div>
+          <div class="cn-symbol cn-weight-symbol material-icons">device_unknown</div>
+          <div class="cn-weight-amount">1.0</div>
+        </div>
+        <div cnGrid [columns]="itemConfig.cnLayout.cnColumns">
+          <div class="cn-checkbox material-icons">check_box_outline_blank</div>
+          <div class="cn-symbol material-icons">adjust</div>
+          <div class="cn-label">Item row</div>
+          <div class="cn-max-likes"></div>
+          <div class="cn-symbol cn-weight-code material-icons">filter_1</div>
+          <div class="cn-symbol cn-weight-symbol material-icons">dock</div>
+          <div class="cn-weight-amount">5.0</div>
+        </div>
       </div>
     </cn-package-component>
 
     <h3>Templates</h3>
+
+    <ng-template #packageTpl let-package="cnData" let-layout="cnLayout">
+      <div class="example-header" cnGrid [columns]="layout.cnColumns">
+        <div class="material-icons">all_out</div>
+        <div>{{ package.cnLabel }}</div>
+        <div class="cn-count">x4</div>
+      </div>
+    </ng-template>
 
     <ng-template #itemTpl let-item="cnData">
       <div class="cn-checkbox material-icons">{{item.checkbox}}</div>
@@ -56,14 +71,16 @@
       <div class="cn-weight-amount">{{item.weightAmount}}</div>
     </ng-template>
 
-    <cn-package-component [config]="packageConfig">
-      <div cnGrid [columns]="itemConfig.cnColumns">
+    <cn-package-component>
+      <ng-container class="cn-package" *ngTemplateOutlet="packageTpl; context: packageConfig"></ng-container>
+      <div class="cn-items" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
         <ng-container *ngTemplateOutlet="itemTpl; context: itemConfig"></ng-container>
       </div>
     </cn-package-component>
     <hr>
-    <cn-package-component [config]="packageConfig">
-      <div *ngFor="let item of items" cnGrid [columns]="itemConfig.cnColumns">
+    <cn-package-component>
+      <ng-container  class="cn-package" *ngTemplateOutlet="packageTpl; context: packageConfig"></ng-container>
+      <div class="cn-items" *ngFor="let item of items" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
         <ng-container *ngTemplateOutlet="itemTpl; context: {cnData: item}"></ng-container>
       </div>
     </cn-package-component>

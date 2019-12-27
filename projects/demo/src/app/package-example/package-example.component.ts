@@ -26,11 +26,15 @@ export class PackageExampleComponent implements OnInit {
       cnData: {
         cnLabel: 'Package Component',
       },
-      cnColumns: ['30px', 'auto', '60px']
+      cnLayout: {
+        cnColumns: ['30px', 'auto', '60px']
+      }
     };
     this.itemConfig = {
       cnData: items[0],
-      cnColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
+      cnLayout: {
+        cnColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
+      }
     };
   }
 
