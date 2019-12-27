@@ -7,7 +7,9 @@ describe('PackageComponent', () => {
     let component: PackageComponent;
     let fixture: ComponentFixture<PackageComponent>;
     const mockConfig: PackageConfig = {
-        cnLabel: 'test-label',
+        cnData: {
+            cnLabel: 'test-label'
+        },
         cnColumns: []
     };
 

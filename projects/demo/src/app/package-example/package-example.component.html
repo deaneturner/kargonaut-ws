@@ -6,7 +6,7 @@
     </div>
     <h3>Simple Markup</h3>
     <cn-package-component [config]="packageConfig">
-      <div class="example-item" cnGrid [columns]="itemConfig.columns">
+      <div class="example-item" cnGrid [columns]="itemConfig.cnColumns">
         <div class="cn-checkbox material-icons">check_box_outline_blank</div>
         <div class="cn-symbol material-icons">adjust</div>
         <div class="cn-label">Item row</div>
@@ -15,7 +15,7 @@
         <div class="cn-symbol cn-weight-symbol material-icons">device_unknown</div>
         <div class="cn-weight-amount">5.0</div>
       </div>
-      <div cnGrid [columns]="itemConfig.columns">
+      <div cnGrid [columns]="itemConfig.cnColumns">
         <div class="cn-checkbox material-icons">check_box_outline_blank</div>
         <div class="cn-symbol material-icons">wb_sunny</div>
         <div class="cn-label">Item row</div>
@@ -24,7 +24,7 @@
         <div class="cn-symbol cn-weight-symbol material-icons">device_unknown</div>
         <div class="cn-weight-amount">5.0</div>
       </div>
-      <div cnGrid [columns]="itemConfig.columns">
+      <div cnGrid [columns]="itemConfig.cnColumns">
         <div class="cn-checkbox material-icons">check_box_outline_blank</div>
         <div class="cn-symbol material-icons">adjust</div>
         <div class="cn-label">Item row</div>
@@ -33,7 +33,7 @@
         <div class="cn-symbol cn-weight-symbol material-icons">device_unknown</div>
         <div class="cn-weight-amount">1.0</div>
       </div>
-      <div cnGrid [columns]="itemConfig.columns">
+      <div cnGrid [columns]="itemConfig.cnColumns">
         <div class="cn-checkbox material-icons">check_box_outline_blank</div>
         <div class="cn-symbol material-icons">adjust</div>
         <div class="cn-label">Item row</div>
@@ -46,7 +46,7 @@
 
     <h3>Templates</h3>
 
-    <ng-template #itemTpl let-item="item">
+    <ng-template #itemTpl let-item="cnData">
       <div class="cn-checkbox material-icons">{{item.checkbox}}</div>
       <div class="cn-symbol material-icons">{{item.symbol}}</div>
       <div class="cn-label">{{item.cnLabel}}</div>
@@ -56,8 +56,8 @@
       <div class="cn-weight-amount">{{item.weightAmount}}</div>
     </ng-template>
     <cn-package-component [config]="packageConfig">
-      <div cnGrid [columns]="itemConfig.columns">
-        <ng-container *ngTemplateOutlet="itemTpl; context: itemContext"></ng-container>
+      <div cnGrid [columns]="itemConfig.cnColumns">
+        <ng-container *ngTemplateOutlet="itemTpl; context: itemConfig"></ng-container>
       </div>
     </cn-package-component>
   </div>
