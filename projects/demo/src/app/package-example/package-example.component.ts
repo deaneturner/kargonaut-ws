@@ -11,6 +11,8 @@ import { Item } from '../../../../cargo-domain/src/models/Item';
 })
 export class PackageExampleComponent implements OnInit {
 
+  static label = 'Package: Template and Directive';
+
   packageConfig: PackageConfig;
   itemConfig: ItemConfig;
 
@@ -32,4 +34,7 @@ export class PackageExampleComponent implements OnInit {
     };
   }
 
+  get label() {
+    return PackageExampleComponent.label;
+  }
 }

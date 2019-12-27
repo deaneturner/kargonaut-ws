@@ -14,4 +14,7 @@ export class SimpleMarkupExampleComponent implements OnInit {
   ngOnInit() {
   }
 
+  get label() {
+    return SimpleMarkupExampleComponent.label;
+  }
 }

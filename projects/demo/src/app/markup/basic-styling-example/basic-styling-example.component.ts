@@ -7,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasicStylingExampleComponent implements OnInit {
 
-  static label = 'Basic Styling';
+  static label = 'Styling & CSS-Grid';
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  get label() {
+    return BasicStylingExampleComponent.label;
   }
 
 }

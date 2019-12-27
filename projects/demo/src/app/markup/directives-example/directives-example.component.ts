@@ -19,4 +19,7 @@ export class DirectivesExampleComponent implements OnInit {
     this.itemColumns = ['30px', '30px', 'auto', '60px', '30px', '30px', '60px'];
   }
 
+  get label() {
+    return DirectivesExampleComponent.label;
+  }
 }
