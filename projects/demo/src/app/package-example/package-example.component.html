@@ -55,9 +55,16 @@
       <div class="cn-symbol cn-weight-symbol material-icons">{{item.weightSymbol}}</div>
       <div class="cn-weight-amount">{{item.weightAmount}}</div>
     </ng-template>
+
     <cn-package-component [config]="packageConfig">
       <div cnGrid [columns]="itemConfig.cnColumns">
         <ng-container *ngTemplateOutlet="itemTpl; context: itemConfig"></ng-container>
+      </div>
+    </cn-package-component>
+    <hr>
+    <cn-package-component [config]="packageConfig">
+      <div *ngFor="let item of items" cnGrid [columns]="itemConfig.cnColumns">
+        <ng-container *ngTemplateOutlet="itemTpl; context: {cnData: item}"></ng-container>
       </div>
     </cn-package-component>
   </div>
