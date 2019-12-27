@@ -18,7 +18,7 @@ export class PackageExampleComponent implements OnInit {
     cnLabel: 'Item row',
     cnDescription: '',
     isSelected: false,
-    checkbox: 'checkbox_outline_blank',
+    checkbox: 'check_box_outline_blank',
     symbol: 'adjust',
     maxLikes: '',
     weightCode: 'filter_1',
