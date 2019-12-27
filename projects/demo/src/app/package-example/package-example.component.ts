@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PackageConfig } from '../../../../cargo-domain/src/models/Package.config';
+import { ItemExample } from '../../../models/item-example';
 
 @Component({
   selector: 'demo-package-example',
@@ -11,6 +12,23 @@ export class PackageExampleComponent implements OnInit {
   config: PackageConfig;
 
   itemColumns: string[] = [];
+
+  itemExample: ItemExample = {
+    cnTag: '',
+    cnLabel: 'Item row',
+    cnDescription: '',
+    isSelected: false,
+    checkbox: 'checkbox_outline_blank',
+    symbol: 'adjust',
+    maxLikes: '',
+    weightCode: 'filter_1',
+    weightSymbol: 'device_unknown',
+    weightAmount: '5.0'
+  };
+
+  itemContext = {
+    item: this.itemExample
+  };
 
   constructor() { }
 
