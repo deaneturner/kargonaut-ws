@@ -31,7 +31,7 @@ export class PackageExampleComponent implements OnInit {
       }
     };
     this.itemConfig = {
-      cnData: items[0],
+      cnData: this.items,
       cnLayout: {
         cnColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
       }

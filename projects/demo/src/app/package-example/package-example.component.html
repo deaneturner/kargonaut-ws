@@ -74,13 +74,13 @@
     <cn-package-component>
       <ng-container class="cn-package" *ngTemplateOutlet="packageTpl; context: packageConfig"></ng-container>
       <div class="cn-items" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
-        <ng-container *ngTemplateOutlet="itemTpl; context: itemConfig"></ng-container>
+        <ng-container *ngTemplateOutlet="itemTpl; context:{cnData: itemConfig.cnData[0]}"></ng-container>
       </div>
     </cn-package-component>
     <hr>
     <cn-package-component>
       <ng-container  class="cn-package" *ngTemplateOutlet="packageTpl; context: packageConfig"></ng-container>
-      <div class="cn-items" *ngFor="let item of items" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
+      <div class="cn-items" *ngFor="let item of itemConfig.cnData" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
         <ng-container *ngTemplateOutlet="itemTpl; context: {cnData: item}"></ng-container>
       </div>
     </cn-package-component>
