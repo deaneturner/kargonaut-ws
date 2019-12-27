@@ -2,28 +2,30 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PackageExampleComponent } from './package-example.component';
 import { PackageComponent } from '../../../../cargo-domain/src/cn/components/package/package.component';
+import { InlineGridDirective } from '../../../../cargo-domain/src/cn/directives/inline-grid.directive';
 
 describe('PackageExampleComponent', () => {
-  let component: PackageExampleComponent;
-  let fixture: ComponentFixture<PackageExampleComponent>;
+    let component: PackageExampleComponent;
+    let fixture: ComponentFixture<PackageExampleComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-          PackageExampleComponent,
-          PackageComponent
-      ]
-    })
-    .compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [
+                PackageExampleComponent,
+                PackageComponent,
+                InlineGridDirective
+            ]
+        })
+            .compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(PackageExampleComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(PackageExampleComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

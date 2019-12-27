@@ -1,25 +1,34 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PackageComponent } from './package.component';
+import { InlineGridDirective } from '../../directives/inline-grid.directive';
+import { PackageConfig } from '../../../models/Package.config';
 
 describe('PackageComponent', () => {
-  let component: PackageComponent;
-  let fixture: ComponentFixture<PackageComponent>;
+    let component: PackageComponent;
+    let fixture: ComponentFixture<PackageComponent>;
+    const mockConfig: PackageConfig = {
+        label: 'test-label',
+        columns: []
+    };
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ PackageComponent ]
-    })
-    .compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [
+                PackageComponent,
+                InlineGridDirective
+            ]
+        })
+            .compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(PackageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(PackageComponent);
+        component = fixture.componentInstance;
+        component.config = mockConfig;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

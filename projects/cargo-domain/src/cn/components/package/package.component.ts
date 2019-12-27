@@ -1,20 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PackageConfig } from '../../../models/Package.config';
 
 @Component({
-  selector: 'cn-package-component',
-  templateUrl: './package.component.html',
-  styleUrls: ['./package.component.less']
+    selector: 'cn-package-component',
+    templateUrl: './package.component.html',
+    styleUrls: ['./package.component.less']
 })
 export class PackageComponent implements OnInit {
 
-  packageColumns: string[] = [];
-  itemColumns: string[] = [];
+    @Input()
+    config: PackageConfig | any;
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit() {
-    this.packageColumns = ['30px', 'auto', '60px'];
-    this.itemColumns = ['30px', '30px', 'auto', '60px', '30px', '30px', '60px'];
-  }
+    ngOnInit() {
+    }
 
 }

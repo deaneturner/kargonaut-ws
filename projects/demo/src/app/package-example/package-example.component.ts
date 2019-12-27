@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PackageConfig } from '../../../../cargo-domain/src/models/Package.config';
 
 @Component({
   selector: 'demo-package-example',
@@ -7,11 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PackageExampleComponent implements OnInit {
 
-  static label = 'Package Component';
+  config: PackageConfig;
+
+  itemColumns: string[] = [];
 
   constructor() { }
 
   ngOnInit() {
+    this.config = {
+      label: 'Package Component',
+      columns: ['30px', 'auto', '60px']
+    };
+    this.itemColumns = ['30px', '30px', 'auto', '60px', '30px', '30px', '60px'];
   }
 
 }
