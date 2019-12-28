@@ -12,13 +12,16 @@
     "verify": "yarn cache clean -y && yarn && yarn build && yarn test-headless && yarn lint",
     "verify-dep": "yarn cache clean -y && yarn && yarn verify",
     "compodoc-generate": "npx compodoc -p projects/cargo-domain/tsconfig.lib.json",
-    "compodoc-start": "compodoc -p projects/cargo-domain/tsconfig.lib.json -s"
+    "compodoc-start": "compodoc -p projects/cargo-domain/tsconfig.lib.json -s",
+    "postinstall": "ng build demo --aot --prod"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.14",
+    "@angular/cli": "~8.3.20",
     "@angular/common": "~8.2.14",
     "@angular/compiler": "~8.2.14",
+    "@angular/compiler-cli": "~8.2.14",
     "@angular/core": "~8.2.14",
     "@angular/forms": "~8.2.14",
     "@angular/platform-browser": "~8.2.14",
@@ -32,8 +35,6 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.20",
     "@angular-devkit/build-ng-packagr": "~0.803.20",
-    "@angular/cli": "~8.3.20",
-    "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
     "@compodoc/compodoc": "^1.1.11",
     "@types/jasmine": "~3.3.8",
