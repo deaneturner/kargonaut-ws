@@ -13,6 +13,7 @@ import { BasicStylingExampleComponent } from './markup/basic-styling-example/bas
 import { DirectivesExampleComponent } from './markup/directives-example/directives-example.component';
 import { CargoModule } from '../../../cargo-domain/src/cn/cargo.module';
 import { PackageExampleComponent } from './package-example/package-example.component';
+import { NgGistModule } from 'ng-gist';
 
 @NgModule({
     declarations: [
@@ -29,7 +30,8 @@ import { PackageExampleComponent } from './package-example/package-example.compo
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        CargoModule
+        CargoModule,
+        NgGistModule
     ],
     providers: [
         AppConfigService,

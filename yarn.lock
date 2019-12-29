@@ -6308,6 +6308,11 @@ next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
+ng-gist@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/ng-gist/-/ng-gist-1.0.2.tgz#c877eed9b185f780cfcdb09e0cfa314f6d049983"
+  integrity sha512-7FqGFYzjwC4GWTRJ+XE0VZ0rVcgLtVVzUnsmgZELxxM0BlquQy5N+p3VLbdIZrnPNhx1Ocokn7q/fH1iJA0bzQ==
+
 ng-packagr@^5.4.0:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/ng-packagr/-/ng-packagr-5.7.1.tgz#8e082e38e7b6089296bf0491f2e5b29122f8e08d"
