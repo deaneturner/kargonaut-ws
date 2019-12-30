@@ -6,8 +6,7 @@ import { AboutComponent } from './components/about/about.component';
 import { AppConfigService } from './services/app-config-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { initializeApp } from './app.initializer';
-import { BundleComponent } from './bundle/bundle.component';
-import { BundleExampleComponent } from './bundle-example/bundle-example.component';
+import { BundleExampleComponent } from './components/bundle-example/bundle-example.component';
 import { SimpleMarkupExampleComponent } from './components/simple-markup-example/simple-markup-example.component';
 import { BasicStylingExampleComponent } from './components/basic-styling-example/basic-styling-example.component';
 import { DirectivesExampleComponent } from './components/directives-example/directives-example.component';
@@ -19,7 +18,6 @@ import { NgGistModule } from 'ng-gist';
     declarations: [
         AboutComponent,
         AppComponent,
-        BundleComponent,
         BundleExampleComponent,
         SimpleMarkupExampleComponent,
         BasicStylingExampleComponent,
