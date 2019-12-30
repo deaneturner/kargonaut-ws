@@ -13,6 +13,7 @@ import { DirectivesExampleComponent } from './components/directives-example/dire
 import { CargoModule } from '../../../cargo-domain/src/cn/cargo.module';
 import { TemplateExampleComponent } from './components/template-example/template-example.component';
 import { NgGistModule } from 'ng-gist';
+import { ComponentExampleComponent } from './components/component-example/component-example.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { NgGistModule } from 'ng-gist';
         SimpleMarkupExampleComponent,
         BasicStylingExampleComponent,
         DirectivesExampleComponent,
-        TemplateExampleComponent
+        TemplateExampleComponent,
+        ComponentExampleComponent
     ],
     imports: [
         BrowserModule,

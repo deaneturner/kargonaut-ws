@@ -1,11 +1,11 @@
-<div class="package-component-example">
+<div class="template-component-example">
   <div></div>
   <div>
     <div>
       <h2>{{ label }}</h2>
     </div>
     <h3>Package Config w/ Content Projection</h3>
-    <cn-package-component [config]="packageConfig">
+    <cn-template-component [config]="packageConfig">
       <div class="cn-select-items">
         <div class="example-item" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
           <div class="cn-checkbox material-icons">check_box_outline_blank</div>
@@ -44,7 +44,7 @@
           <div class="cn-weight-amount">5.0</div>
         </div>
       </div>
-    </cn-package-component>
+    </cn-template-component>
 
     <h3>Templates - No Package Configuration</h3>
 
@@ -66,19 +66,19 @@
       <div class="cn-weight-amount">{{item.weightAmount}}</div>
     </ng-template>
 
-    <cn-package-component>
+    <cn-template-component>
       <ng-container class="cn-select-package" *ngTemplateOutlet="packageTpl; context: packageConfig"></ng-container>
       <div class="cn-select-items" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
         <ng-container *ngTemplateOutlet="itemTpl; context:{cnData: itemConfig.cnData[0]}"></ng-container>
       </div>
-    </cn-package-component>
+    </cn-template-component>
     <hr>
-    <cn-package-component>
+    <cn-template-component>
       <ng-container  class="cn-select-package" *ngTemplateOutlet="packageTpl; context: packageConfig"></ng-container>
       <div class="cn-select-items" *ngFor="let item of itemConfig.cnData" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
         <ng-container *ngTemplateOutlet="itemTpl; context: {cnData: item}"></ng-container>
       </div>
-    </cn-package-component>
+    </cn-template-component>
   </div>
   <div class="source">
     <h3>Source</h3>
