@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { PackageConfig } from '../../../models/Package.config';
 
 @Component({
-    selector: 'cn-template-component',
+    selector: 'cn-package-component',
     templateUrl: './package.component.html',
     styleUrls: ['./package.component.less']
 })
