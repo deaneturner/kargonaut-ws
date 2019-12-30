@@ -11,8 +11,7 @@ import { Item } from '../../../../cargo-domain/src/models/Item';
 })
 export class PackageExampleComponent implements OnInit {
 
-  static label = 'Package: Content Projection, Template, and Directive';
-
+  static label = 'Templates';
   packageConfig: PackageConfig;
   itemConfig: ItemConfig;
 
