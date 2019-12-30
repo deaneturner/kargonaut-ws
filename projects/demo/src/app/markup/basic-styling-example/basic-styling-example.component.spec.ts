@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BasicStylingExampleComponent } from './basic-styling-example.component';
+import { NgGistModule } from 'ng-gist';
 
 describe('DirectivesExampleComponent', () => {
   let component: BasicStylingExampleComponent;
@@ -8,7 +9,10 @@ describe('DirectivesExampleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BasicStylingExampleComponent ]
+      declarations: [ BasicStylingExampleComponent ],
+      imports: [
+        NgGistModule
+      ]
     })
     .compileComponents();
   }));
