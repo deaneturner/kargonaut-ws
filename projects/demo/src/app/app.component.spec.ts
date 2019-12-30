@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { AppConfigService } from '../../services/app-config-service.service';
+import { AppConfigService } from './services/app-config-service.service';
 
 describe('AppComponent', () => {
   const mockedAppConfigService: any = jasmine.createSpyObj('AppConfigService', ['init']);

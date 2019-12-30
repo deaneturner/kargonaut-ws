@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AppConfig } from '../models/appConfig';
+import { AppConfig } from '../../../models/appConfig';
 
 @Injectable({
     providedIn: 'root'
@@ -25,7 +25,7 @@ export class AppConfigService {
                 resolve();
 
             }).catch((response: any) => {
-                reject(`Could not load the config file`);
+                reject(`Could not load the config file: ` + response);
             });
         });
     }

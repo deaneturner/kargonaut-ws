@@ -1,6 +1,6 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { examples } from './examples';
-import { AppConfigService } from '../../services/app-config-service.service';
+import { AppConfigService } from './services/app-config-service.service';
 
 @Component({
     selector: 'demo-root',
