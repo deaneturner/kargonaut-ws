@@ -1,7 +1,7 @@
-import { SimpleMarkupExampleComponent } from './markup/simple-markup-example/simple-markup-example.component';
-import { BasicStylingExampleComponent } from './markup/basic-styling-example/basic-styling-example.component';
-import { DirectivesExampleComponent } from './markup/directives-example/directives-example.component';
-import { PackageExampleComponent } from './package-example/package-example.component';
+import { SimpleMarkupExampleComponent } from './components/simple-markup-example/simple-markup-example.component';
+import { BasicStylingExampleComponent } from './components/basic-styling-example/basic-styling-example.component';
+import { DirectivesExampleComponent } from './components/directives-example/directives-example.component';
+import { PackageExampleComponent } from './components/package-example/package-example.component';
 
 export const examples = [
   { path: 'markup-example', component: SimpleMarkupExampleComponent },
