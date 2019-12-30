@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   `,
   styles: []
 })
-export class CargoComponent implements OnInit {
+export class BundleComponent implements OnInit {
 
   constructor() { }
 

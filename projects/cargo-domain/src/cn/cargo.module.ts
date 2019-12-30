@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CargoComponent } from './components/cargo.component';
-import { InlineGridDirective } from './directives/inline-grid.directive';
+import { BundleComponent } from './components/bundle/bundle.component';
+import { InlineGridDirective } from './directives/inline-grid/inline-grid.directive';
 import { PackageComponent } from './components/package/package.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [CargoComponent, InlineGridDirective, PackageComponent],
+  declarations: [BundleComponent, InlineGridDirective, PackageComponent],
   imports: [
       CommonModule
   ],
-  exports: [CargoComponent, InlineGridDirective, PackageComponent]
+  exports: [BundleComponent, InlineGridDirective, PackageComponent]
 })
 export class CargoModule { }

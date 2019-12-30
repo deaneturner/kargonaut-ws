@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PackageComponent } from './package.component';
-import { InlineGridDirective } from '../../directives/inline-grid.directive';
+import { InlineGridDirective } from '../../directives/inline-grid/inline-grid.directive';
 import { PackageConfig } from '../../../models/Package.config';
 
 describe('PackageComponent', () => {
