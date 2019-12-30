@@ -6,10 +6,10 @@ import { Item } from '../../../../../cargo-domain/src/models/Item';
 
 @Component({
   selector: 'demo-package-example',
-  templateUrl: './package-example.component.html',
-  styleUrls: ['./package-example.component.less']
+  templateUrl: './template-example.component.html',
+  styleUrls: ['./template-example.component.less']
 })
-export class PackageExampleComponent implements OnInit {
+export class TemplateExampleComponent implements OnInit {
 
   static label = 'Templates';
   packageConfig: PackageConfig;
@@ -38,6 +38,6 @@ export class PackageExampleComponent implements OnInit {
   }
 
   get label() {
-    return PackageExampleComponent.label;
+    return TemplateExampleComponent.label;
   }
 }

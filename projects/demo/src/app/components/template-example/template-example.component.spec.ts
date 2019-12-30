@@ -1,18 +1,18 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PackageExampleComponent } from './package-example.component';
+import { TemplateExampleComponent } from './template-example.component';
 import { PackageComponent } from '../../../../../cargo-domain/src/cn/components/package/package.component';
 import { InlineGridDirective } from '../../../../../cargo-domain/src/cn/directives/inline-grid.directive';
 import { NgGistModule } from 'ng-gist';
 
-describe('PackageExampleComponent', () => {
-    let component: PackageExampleComponent;
-    let fixture: ComponentFixture<PackageExampleComponent>;
+describe('TemplateExampleComponent', () => {
+    let component: TemplateExampleComponent;
+    let fixture: ComponentFixture<TemplateExampleComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [
-                PackageExampleComponent,
+                TemplateExampleComponent,
                 PackageComponent,
                 InlineGridDirective
             ],
@@ -24,7 +24,7 @@ describe('PackageExampleComponent', () => {
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(PackageExampleComponent);
+        fixture = TestBed.createComponent(TemplateExampleComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

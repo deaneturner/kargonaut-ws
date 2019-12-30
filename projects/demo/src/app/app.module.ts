@@ -11,7 +11,7 @@ import { SimpleMarkupExampleComponent } from './components/simple-markup-example
 import { BasicStylingExampleComponent } from './components/basic-styling-example/basic-styling-example.component';
 import { DirectivesExampleComponent } from './components/directives-example/directives-example.component';
 import { CargoModule } from '../../../cargo-domain/src/cn/cargo.module';
-import { PackageExampleComponent } from './components/package-example/package-example.component';
+import { TemplateExampleComponent } from './components/template-example/template-example.component';
 import { NgGistModule } from 'ng-gist';
 
 @NgModule({
@@ -22,7 +22,7 @@ import { NgGistModule } from 'ng-gist';
         SimpleMarkupExampleComponent,
         BasicStylingExampleComponent,
         DirectivesExampleComponent,
-        PackageExampleComponent
+        TemplateExampleComponent
     ],
     imports: [
         BrowserModule,
