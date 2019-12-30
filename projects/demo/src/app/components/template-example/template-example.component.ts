@@ -5,7 +5,7 @@ import { items } from '../../../assets/data/items';
 import { Item } from '../../../../../cargo-domain/src/models/Item';
 
 @Component({
-  selector: 'demo-package-example',
+  selector: 'demo-template-example',
   templateUrl: './template-example.component.html',
   styleUrls: ['./template-example.component.less']
 })
