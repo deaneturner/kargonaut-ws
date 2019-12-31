@@ -25,7 +25,8 @@ export class ComponentExampleComponent implements OnInit {
     this.packageConfig = {
       cnLabel: 'Package Component',
       cnLayout: {
-        cnColumns: ['30px', 'auto', '60px']
+        cnColumns: ['30px', 'auto', '60px'],
+        cnTemplateRef: null
       }
     };
     this.itemConfig = {

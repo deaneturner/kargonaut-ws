@@ -8,6 +8,7 @@
   </ng-template>
   <ng-template #cnItemTpl>
     <div *ngFor="let item of itemConfig.cnData" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
+      TEST
       <ng-container *ngTemplateOutlet="itemConfig.cnLayout.itemTpl; context: { cnData: item }"></ng-container>
     </div>
   </ng-template>

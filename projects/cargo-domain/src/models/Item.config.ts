@@ -1,10 +1,10 @@
 import { Item } from './Item';
-import { ElementRef } from '@angular/core';
+import { TemplateRef } from '@angular/core';
 
 export interface ItemConfig {
     cnData: Item[];
     cnLayout: {
         cnColumns: string[];
-        cnTemplateRef?: ElementRef;
+        cnTemplateRef?: TemplateRef<any>;
     };
 }

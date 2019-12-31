@@ -24,12 +24,12 @@
       <div class="cn-weight-amount">{{item.weightAmount}}</div>
     </ng-template>
     <!-- component-->
-    <cn-package-component>
+    <cn-package-component [itemConfig]="itemConfig">
       <ng-container class="cn-select-package" *ngTemplateOutlet="packageTpl; context: packageConfig"></ng-container>
-      <div class="cn-select-items" *ngFor="let item of itemConfig.cnData" cnGrid
-           [columns]="itemConfig.cnLayout.cnColumns">
-        <ng-container *ngTemplateOutlet="itemTpl; context: {cnData: item}"></ng-container>
-      </div>
+<!--      <div class="cn-select-items" *ngFor="let item of itemConfig.cnData" cnGrid-->
+<!--           [columns]="itemConfig.cnLayout.cnColumns">-->
+<!--        <ng-container *ngTemplateOutlet="itemTpl; context: {cnData: item}"></ng-container>-->
+<!--      </div>-->
     </cn-package-component>
   </div>
   <div class="source">
