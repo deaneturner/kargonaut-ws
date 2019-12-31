@@ -6,10 +6,10 @@
     </div>
     <h3>Component</h3>
     <!-- package template-->
-    <ng-template #packageTpl let-package="cnData" let-layout="cnLayout">
+    <ng-template #packageTpl let-label="cnLabel" let-layout="cnLayout">
       <div class="example-header" cnGrid [columns]="layout.cnColumns">
         <div class="material-icons">all_out</div>
-        <div>{{ package.cnLabel }}</div>
+        <div>{{ label }}</div>
         <div class="cn-count">x4</div>
       </div>
     </ng-template>

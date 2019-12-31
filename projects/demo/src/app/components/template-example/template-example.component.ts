@@ -22,9 +22,7 @@ export class TemplateExampleComponent implements OnInit {
   ngOnInit() {
     this.items = items;
     this.packageConfig = {
-      cnData: {
-        cnLabel: 'Package Component',
-      },
+      cnLabel: 'Package Component',
       cnLayout: {
         cnColumns: ['30px', 'auto', '60px']
       }

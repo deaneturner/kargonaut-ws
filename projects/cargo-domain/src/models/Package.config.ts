@@ -1,7 +1,5 @@
-import { Package } from './Package';
-
 export interface PackageConfig {
-    cnData: Package;
+    cnLabel: string;
     cnLayout: {
         cnColumns: string[];
     };
