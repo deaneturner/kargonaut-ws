@@ -1,11 +1,16 @@
 <div class="cn-package example-package">
-  <ng-template #packageConfigTpl>
-    <div class="example-header" cnGrid [columns]="config.cnLayout.cnColumns">
+  <ng-template #cnPackageTpl>
+    <div cnGrid [columns]="config.cnLayout.cnColumns">
       <div class="material-icons">grade</div>
       <div>{{ config.cnLabel }}</div>
       <div class="cn-count">x4</div>
     </div>
   </ng-template>
-  <ng-content select=".cn-select-package" *ngIf="!config; else packageConfigTpl"></ng-content>
-  <ng-content select=".cn-select-items"></ng-content>
+  <ng-template #cnItemTpl>
+    <div *ngFor="let item of itemConfig.cnData" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
+      <ng-container *ngTemplateOutlet="itemConfig.cnLayout.itemTpl; context: { cnData: item }"></ng-container>
+    </div>
+  </ng-template>
+  <ng-content select=".cn-select-package" *ngIf="!config; else cnPackageTpl"></ng-content>
+  <ng-content select=".cn-select-items" *ngIf="!itemConfig; else cnItemTpl"></ng-content>
 </div>
