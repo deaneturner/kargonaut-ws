@@ -24,11 +24,13 @@
       <div class="cn-weight-amount">{{item?.weightAmount}}</div>
     </ng-template>
     <!-- component-->
-    <cn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
-      <ng-container *cnListItem="let item">
-        <ng-container *ngTemplateOutlet="itemTpl; context:{item: item}"></ng-container>
-      </ng-container>
-    </cn-package-component>
+    <p class="cn-surface">
+      <cn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
+        <ng-container *cnListItem="let item">
+          <ng-container *ngTemplateOutlet="itemTpl; context:{item: item}"></ng-container>
+        </ng-container>
+      </cn-package-component>
+    </p>
   </div>
   <div class="source">
     <h3>Source</h3>
