@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { PackageConfig } from '../../../../../cargo-domain/src/models/Package.config';
 import { ItemConfig } from '../../../../../cargo-domain/src/models/Item.config';
 import { Item } from '../../../../../cargo-domain/src/models/Item';
@@ -13,6 +13,9 @@ export class ComponentExampleComponent implements OnInit {
 
   static label = 'Component';
 
+  @ViewChild('itemTpl', {static: false, read: TemplateRef})
+  itemTpl: TemplateRef<any>;
+
   packageConfig: PackageConfig;
   itemConfig: ItemConfig;
 
@@ -25,14 +28,14 @@ export class ComponentExampleComponent implements OnInit {
     this.packageConfig = {
       cnLabel: 'Package Component',
       cnLayout: {
-        cnColumns: ['30px', 'auto', '60px'],
-        cnTemplateRef: null
+        cnColumns: ['30px', 'auto', '60px']
       }
     };
     this.itemConfig = {
       cnData: this.items,
       cnLayout: {
-        cnColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
+        cnColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px'],
+        cnTemplateRef: this.itemTpl
       }
     };
   }

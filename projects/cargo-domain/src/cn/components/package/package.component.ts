@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { PackageConfig } from '../../../models/Package.config';
 import { ItemConfig } from '../../../models/Item.config';
 
@@ -7,7 +7,7 @@ import { ItemConfig } from '../../../models/Item.config';
     templateUrl: './package.component.html',
     styleUrls: ['./package.component.less']
 })
-export class PackageComponent implements OnInit {
+export class PackageComponent implements OnInit, AfterViewInit {
 
     @Input()
     config: PackageConfig | any;
@@ -15,10 +15,18 @@ export class PackageComponent implements OnInit {
     @Input()
     itemConfig: ItemConfig | any;
 
+    @ViewChild('cn-select-item', {static: false, read: ViewContainerRef})
+    itemViewContainer: ViewContainerRef;
+
     constructor() {
+
     }
 
     ngOnInit() {
+        // this.itemViewContainer.createEmbeddedView(this.itemConfig.cnLayou.cnTemplateRef);
     }
 
+    ngAfterViewInit(): void {
+        // this.itemViewContainer.createEmbeddedView(this.itemConfig.cnLayou.cnTemplateRef);
+    }
 }
