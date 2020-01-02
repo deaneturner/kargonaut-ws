@@ -7,15 +7,12 @@
     </div>
   </ng-template>
   <div *ngIf="itemConfig">
-    <div
-        *ngFor="let item of itemConfig.cnData"
-        [ngTemplateOutlet]="itemConfig.cnLayout.itemTpl"
-        [ngTemplateOutletContext]="{ cnData: item }"
-        cnGrid
-        [columns]="itemConfig.cnLayout.cnColumns">
-      TEST
-    </div>
+    ITEM
+    <ng-container *ngTemplateOutlet="listItemTemplate"></ng-container>
+<!--   <ng-container *ngFor="let item of itemConfig.cnData">-->
+<!--     TESt-->
+<!--    <ng-container *ngTemplateOutlet="listItemTemplate; context: {$implicit: item}"></ng-container>-->
   </div>
-  <ng-content select=".cn-select-package" *ngIf="!config; else cnPackageTpl"></ng-content>
-  <ng-content select=".cn-select-items" *ngIf="!itemConfig"></ng-content>
+<!--  <ng-content select=".cn-select-package" *ngIf="!config; else cnPackageTpl"></ng-content>-->
+<!--  <ng-content select=".cn-select-items" *ngIf="!itemConfig"></ng-content>-->
 </div>

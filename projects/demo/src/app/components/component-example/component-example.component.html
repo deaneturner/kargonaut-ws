@@ -25,9 +25,9 @@
     </ng-template>
     <!-- component-->
     <cn-package-component [itemConfig]="itemConfig">
-      <ng-container class="cn-select-package" *ngTemplateOutlet="packageTpl; context: packageConfig"></ng-container>
-      <div class="cn-select-items" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
-        <ng-container *ngTemplateOutlet="itemTpl"></ng-container>
+<!--      <ng-container class="cn-select-package" *ngTemplateOutlet="packageTpl; context: packageConfig"></ng-container>-->
+      <div *cnListItem>
+        TEST
       </div>
     </cn-package-component>
   </div>

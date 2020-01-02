@@ -34,8 +34,7 @@ export class ComponentExampleComponent implements OnInit {
     this.itemConfig = {
       cnData: this.items,
       cnLayout: {
-        cnColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px'],
-        cnTemplateRef: this.itemTpl
+        cnColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
       }
     };
   }
