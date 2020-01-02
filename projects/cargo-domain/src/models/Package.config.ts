@@ -1,8 +1,9 @@
-import { Package } from './Package';
+import { TemplateRef } from '@angular/core';
 
 export interface PackageConfig {
-    cnData: Package;
+    cnLabel: string;
     cnLayout: {
         cnColumns: string[];
+        cnTemplateRef?: TemplateRef<any>;
     };
 }
