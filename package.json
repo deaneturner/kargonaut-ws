@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
+    "start-docs": "node server-docs.js",
     "start-dev": "ng serve",
     "build": "ng build",
     "test": "ng test --browsers=ChromeHeadless",
@@ -14,7 +15,8 @@
     "verify-dep": "yarn cache clean -y && yarn && yarn verify",
     "compodoc-generate": "npx compodoc -p projects/cargo-domain/tsconfig.lib.json",
     "compodoc-start": "compodoc -p projects/cargo-domain/tsconfig.lib.json -s",
-    "heroku-postbuild": "ng build demo --aot --prod"
+    "heroku-postbuild": "ng build demo --aot --prod",
+    "heroku-postbuild-docs": "yarn compodoc-generate"
   },
   "private": true,
   "dependencies": {
