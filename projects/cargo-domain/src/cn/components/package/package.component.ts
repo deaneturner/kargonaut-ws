@@ -1,4 +1,5 @@
 import {
+    AfterContentChecked,
     Component,
     ContentChild,
     Input,
@@ -14,7 +15,7 @@ import { ListItemDirective } from '../../directives/list-item/list-item.directiv
     templateUrl: './package.component.html',
     styleUrls: ['./package.component.less']
 })
-export class PackageComponent implements OnInit {
+export class PackageComponent implements OnInit, AfterContentChecked {
 
     @Input()
     config: PackageConfig | any;
@@ -30,5 +31,9 @@ export class PackageComponent implements OnInit {
     }
 
     ngOnInit() {
+    }
+
+    ngAfterContentChecked() {
+        console.log(this.listItemTemplate);
     }
 }
