@@ -14,14 +14,14 @@
       </div>
     </ng-template>
     <!--  item template-->
-    <ng-template #itemTpl let-item="cnData">
-      <div class="cn-checkbox material-icons">{{item.checkbox}}</div>
-      <div class="cn-symbol material-icons">{{item.symbol}}</div>
-      <div class="cn-label">{{item.cnLabel}}</div>
+    <ng-template #itemTpl let-item="item">
+      <div class="cn-checkbox material-icons">{{item?.checkbox}}</div>
+      <div class="cn-symbol material-icons">{{item?.symbol}}</div>
+      <div class="cn-label">{{item?.cnLabel}}</div>
       <div class="cn-max-likes"></div>
-      <div class="cn-symbol cn-weight-code material-icons">{{item.weightCode}}</div>
-      <div class="cn-symbol cn-weight-symbol material-icons">{{item.weightSymbol}}</div>
-      <div class="cn-weight-amount">{{item.weightAmount}}</div>
+      <div class="cn-symbol cn-weight-code material-icons">{{item?.weightCode}}</div>
+      <div class="cn-symbol cn-weight-symbol material-icons">{{item?.weightSymbol}}</div>
+      <div class="cn-weight-amount">{{item?.weightAmount}}</div>
     </ng-template>
     <!-- component-->
     <cn-package-component [itemConfig]="itemConfig">
