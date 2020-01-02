@@ -30,14 +30,7 @@
     <cn-package-component [itemConfig]="itemConfig">
 <!--      <ng-container class="cn-select-package" *ngTemplateOutlet="packageTpl; context: packageConfig"></ng-container>-->
       <ng-container *cnListItem="let item">
-<!--        <ng-container *ngTemplateOutlet="itemTpl"></ng-container>-->
-        <div class="cn-checkbox material-icons">{{item?.checkbox}}</div>
-        <div class="cn-symbol material-icons">{{item?.symbol}}</div>
-        <div class="cn-label">{{item?.cnLabel}}</div>
-        <div class="cn-max-likes"></div>
-        <div class="cn-symbol cn-weight-code material-icons">{{item?.weightCode}}</div>
-        <div class="cn-symbol cn-weight-symbol material-icons">{{item?.weightSymbol}}</div>
-        <div class="cn-weight-amount">{{item?.weightAmount}}</div>
+        <ng-container *ngTemplateOutlet="itemTpl; context:{item: item}"></ng-container>
       </ng-container>
     </cn-package-component>
   </div>
