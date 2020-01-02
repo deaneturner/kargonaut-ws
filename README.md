@@ -8,7 +8,7 @@ https://kargonaut.herokuapp.com/
 
 ## Documentation
 
-https://kargonaut-docs.herokuapp.com/
+https://kargonaut-docs.herokuapp.com/overview.html
 
 ## Development server
 
