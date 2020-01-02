@@ -6,9 +6,11 @@
       <div class="cn-count">x4</div>
     </div>
   </div>
-  <div *ngIf="itemConfig" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
+  <div *ngIf="itemConfig">
    <ng-container *ngFor="let item of itemConfig.cnData">
-      <ng-container *ngTemplateOutlet="listItemTemplate; context: {$implicit: item}"></ng-container>
+     <div class="cn-sub-surface" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
+       <ng-container *ngTemplateOutlet="listItemTemplate; context: {$implicit: item}"></ng-container>
+     </div>
    </ng-container>
   </div>
   <ng-content select=".cn-select-package" *ngIf="!config"></ng-content>
