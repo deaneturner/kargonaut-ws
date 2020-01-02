@@ -6,12 +6,11 @@
       <div class="cn-count">x4</div>
     </div>
   </ng-template>
-  <div *ngIf="itemConfig">
-<!--    <ng-container *ngTemplateOutlet="listItemTemplate"></ng-container>-->
+  <div *ngIf="itemConfig" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
    <ng-container *ngFor="let item of itemConfig.cnData">
       <ng-container *ngTemplateOutlet="listItemTemplate; context: {$implicit: item}"></ng-container>
    </ng-container>
   </div>
-<!--  <ng-content select=".cn-select-package" *ngIf="!config; else cnPackageTpl"></ng-content>-->
-<!--  <ng-content select=".cn-select-items" *ngIf="!itemConfig"></ng-content>-->
+  <ng-content select=".cn-select-package" *ngIf="!config; else cnPackageTpl"></ng-content>
+  <ng-content select=".cn-select-items" *ngIf="!itemConfig"></ng-content>
 </div>
