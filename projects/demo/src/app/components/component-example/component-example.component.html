@@ -23,12 +23,8 @@
       <div class="cn-symbol cn-weight-symbol material-icons">{{item?.weightSymbol}}</div>
       <div class="cn-weight-amount">{{item?.weightAmount}}</div>
     </ng-template>
-<!--    <ng-template #itemTpl>-->
-<!--      TEST-->
-<!--    </ng-template>-->
     <!-- component-->
     <cn-package-component [itemConfig]="itemConfig">
-<!--      <ng-container class="cn-select-package" *ngTemplateOutlet="packageTpl; context: packageConfig"></ng-container>-->
       <ng-container *cnListItem="let item">
         <ng-container *ngTemplateOutlet="itemTpl; context:{item: item}"></ng-container>
       </ng-container>
