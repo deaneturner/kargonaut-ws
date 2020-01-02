@@ -11,7 +11,7 @@ import { items } from '../../../assets/data/items';
 })
 export class ComponentExampleComponent implements OnInit {
 
-  static label = 'Component';
+  static label = 'Components';
 
   @ViewChild('itemTpl', {static: false, read: TemplateRef})
   itemTpl: TemplateRef<any>;
