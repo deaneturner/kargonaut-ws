@@ -7,11 +7,14 @@
     </div>
   </ng-template>
   <div *ngIf="itemConfig">
-    <ng-container
+    <div
         *ngFor="let item of itemConfig.cnData"
         [ngTemplateOutlet]="itemConfig.cnLayout.itemTpl"
-        [ngTemplateOutletContext]="{ cnData: item }">
-    </ng-container>
+        [ngTemplateOutletContext]="{ cnData: item }"
+        cnGrid
+        [columns]="itemConfig.cnLayout.cnColumns">
+      TEST
+    </div>
   </div>
   <ng-content select=".cn-select-package" *ngIf="!config; else cnPackageTpl"></ng-content>
   <ng-content select=".cn-select-items" *ngIf="!itemConfig"></ng-content>

@@ -20,5 +20,6 @@ export class PackageComponent implements OnInit {
     }
 
     ngOnInit() {
+        console.log(this.itemConfig);
     }
 }
