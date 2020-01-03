@@ -7,7 +7,7 @@
     </div>
   </div>
   <div *ngIf="itemConfig">
-   <ng-container *ngFor="let item of itemConfig.cnData">
+   <ng-container *ngFor="let item of itemConfig.cnData | async">
      <div cnGrid [columns]="itemConfig.cnLayout.cnColumns">
        <ng-container *ngTemplateOutlet="listItemTemplate; context: {$implicit: item}"></ng-container>
      </div>

@@ -3,6 +3,16 @@ import { PackageConfig } from '../../../../../cargo-domain/src/models/Package.co
 import { ItemConfig } from '../../../../../cargo-domain/src/models/Item.config';
 import { Item } from '../../../../../cargo-domain/src/models/Item';
 import { items } from '../../../assets/data/items';
+import { Store, select } from '@ngrx/store';
+import { AppState } from '../../app.state';
+// import {
+//   appendItem,
+//     replaceItem,
+//     deleteItem,
+//     editItem,
+//     cancelItem
+// } from '../../actions/item-actions';
+// import { async } from 'rxjs/internal/scheduler/async';
 
 @Component({
   selector: 'demo-component-example',
@@ -17,8 +27,10 @@ export class ComponentExampleComponent implements OnInit {
   itemConfig: ItemConfig;
 
   items: Item[];
+  items$ = this.store.pipe(select(state => state.items));
+  editItemTag$ = this.store.pipe(select('tag'));
 
-  constructor() { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
     this.items = items;
@@ -29,7 +41,7 @@ export class ComponentExampleComponent implements OnInit {
       }
     };
     this.itemConfig = {
-      cnData: this.items,
+      cnData: this.items$,
       cnLayout: {
         cnColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
       }

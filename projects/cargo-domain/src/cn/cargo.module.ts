@@ -19,7 +19,7 @@ import { ListItemDirective } from './directives/list-item/list-item.directive';
       BundleComponent,
       InlineGridDirective,
       PackageComponent,
-      ListItemDirective
+      ListItemDirective,
   ]
 })
 export class CargoModule { }

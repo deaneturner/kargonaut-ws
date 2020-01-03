@@ -14,6 +14,8 @@ import { CargoModule } from '../../../cargo-domain/src/cn/cargo.module';
 import { TemplateExampleComponent } from './components/template-example/template-example.component';
 import { NgGistModule } from 'ng-gist';
 import { ComponentExampleComponent } from './components/component-example/component-example.component';
+import { StoreModule } from '@ngrx/store';
+import { editItemTagReducer, itemsReducer } from './reducers/item.reducers';
 
 @NgModule({
     declarations: [
@@ -31,7 +33,11 @@ import { ComponentExampleComponent } from './components/component-example/compon
         AppRoutingModule,
         HttpClientModule,
         CargoModule,
-        NgGistModule
+        NgGistModule,
+        StoreModule.forRoot({
+            items: itemsReducer,
+            editItemTag: editItemTagReducer
+        })
     ],
     providers: [
         AppConfigService,
