@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PackageConfig } from '../../../../../cargo-domain/src/models/Package.config';
 import { ItemConfig } from '../../../../../cargo-domain/src/models/Item.config';
-import { Item } from '../../../../../cargo-domain/src/models/Item';
-import { items } from '../../../assets/data/items';
 import { Store, select } from '@ngrx/store';
 import { AppState } from '../../app.state';
 // import {
@@ -26,14 +24,12 @@ export class ComponentExampleComponent implements OnInit {
   packageConfig: PackageConfig;
   itemConfig: ItemConfig;
 
-  items: Item[];
   items$ = this.store.pipe(select(state => state.items));
-  editItemTag$ = this.store.pipe(select('tag'));
+  // editItemTag$ = this.store.pipe(select('tag'));
 
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
-    this.items = items;
     this.packageConfig = {
       cnLabel: 'Package Component',
       cnLayout: {
