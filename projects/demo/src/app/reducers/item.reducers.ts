@@ -8,7 +8,6 @@ import { on } from '@ngrx/store';
 const initialItems: Item[] = items;
 
 export function itemsReducer(state: Item[] | undefined, action: Action) {
-    // return cnItemsReducer(state, action);
     return createReducer<Item[]>(
         initialItems,
         on(appendItem, (s, a) => s.concat({

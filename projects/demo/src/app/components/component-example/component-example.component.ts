@@ -3,49 +3,63 @@ import { PackageConfig } from '../../../../../cargo-domain/src/models/Package.co
 import { ItemConfig } from '../../../../../cargo-domain/src/models/Item.config';
 import { Store, select } from '@ngrx/store';
 import { AppState } from '../../app.state';
-// import {
-//   appendItem,
-//     replaceItem,
-//     deleteItem,
-//     editItem,
-//     cancelItem
-// } from '../../actions/item-actions';
+import { Item } from '../../../../../cargo-domain/src/models/Item';
+import { Tag } from '../../../../../cargo-domain/src/common/TagGenerator';
+import {
+    appendItem,
+    deleteItem,
+} from '../../actions/item-actions';
+
 // import { async } from 'rxjs/internal/scheduler/async';
 
 @Component({
-  selector: 'demo-component-example',
-  templateUrl: './component-example.component.html',
-  styleUrls: ['./component-example.component.less']
+    selector: 'demo-component-example',
+    templateUrl: './component-example.component.html',
+    styleUrls: ['./component-example.component.less']
 })
 export class ComponentExampleComponent implements OnInit {
 
-  static label = 'Components';
+    static label = 'Components';
 
-  packageConfig: PackageConfig;
-  itemConfig: ItemConfig;
+    packageConfig: PackageConfig;
+    itemConfig: ItemConfig;
 
-  items$ = this.store.pipe(select(state => state.items));
-  // editItemTag$ = this.store.pipe(select('tag'));
+    items$ = this.store.pipe(select(state => state.items));
 
-  constructor(private store: Store<AppState>) { }
+    // editItemTag$ = this.store.pipe(select('tag'));
 
-  ngOnInit() {
-    this.packageConfig = {
-      cnLabel: 'Package Component',
-      cnLayout: {
-        cnColumns: ['30px', 'auto', '60px']
-      }
-    };
-    this.itemConfig = {
-      cnData: this.items$,
-      cnLayout: {
-        cnColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
-      }
-    };
-  }
+    constructor(private store: Store<AppState>) {
+    }
 
-  get label() {
-    return ComponentExampleComponent.label;
-  }
+    ngOnInit() {
+        this.packageConfig = {
+            cnLabel: 'Package Component',
+            cnLayout: {
+                cnColumns: ['30px', 'auto', '60px']
+            }
+        };
+        this.itemConfig = {
+            cnData: this.items$,
+            cnLayout: {
+                cnColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
+            }
+        };
+    }
+
+    doAppendItem(item: Item) {
+        this.store.dispatch(appendItem({
+            item
+        }));
+    }
+
+    doDeleteItem(cnTag: Tag) {
+        this.store.dispatch(deleteItem({
+            cnTag
+        }));
+    }
+
+    get label() {
+        return ComponentExampleComponent.label;
+    }
 }
 

@@ -16,6 +16,7 @@ import { NgGistModule } from 'ng-gist';
 import { ComponentExampleComponent } from './components/component-example/component-example.component';
 import { StoreModule } from '@ngrx/store';
 import { editItemTagReducer, itemsReducer } from './reducers/item.reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,8 @@ import { editItemTagReducer, itemsReducer } from './reducers/item.reducers';
         StoreModule.forRoot({
             items: itemsReducer,
             editItemTag: editItemTagReducer
-        })
+        }),
+        StoreDevtoolsModule.instrument(),
     ],
     providers: [
         AppConfigService,
