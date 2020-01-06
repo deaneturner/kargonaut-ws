@@ -26,6 +26,8 @@
     <!-- component-->
     <p class="cn-surface">
       <cn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
+        <!-- package - markup rendered by config -->
+        <!--items -->
         <ng-container *cnListItem="let item">
           <ng-container *ngTemplateOutlet="itemTpl; context:{item: item}"></ng-container>
         </ng-container>

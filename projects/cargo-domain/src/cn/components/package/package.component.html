@@ -6,9 +6,9 @@
       <div class="cn-count">x4</div>
     </div>
   </div>
-  <div *ngIf="itemConfig">
+  <div class="cn-items" *ngIf="itemConfig">
    <ng-container *ngFor="let item of (itemConfig.cnData | async)">
-     <div cnGrid [columns]="itemConfig.cnLayout.cnColumns">
+     <div class="cn-item" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
        <ng-container *ngTemplateOutlet="listItemTemplate; context: {$implicit: item}"></ng-container>
      </div>
    </ng-container>
