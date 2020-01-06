@@ -7,32 +7,29 @@ import { on } from '@ngrx/store';
 
 const initialItems: Item[] = items;
 
-const cnItemsReducer = createReducer<Item[]>(
-    initialItems,
-    on(appendItem, (state, action) => state.concat({
-        ...action.item,
-        cnTag: TagGenerator.generateId(),
-    })),
-    on(replaceItem, (state, action) => {
-        const newItems = state.concat();
-        newItems[newItems.findIndex(item => item.cnTag === action.item.cnTag)] = action.item;
-        return newItems;
-    }),
-    on(deleteItem, (state, action) => state.filter(
-        item => item.cnTag !== action.cnTag)),
-);
-
-const cnEditItemTagReducer = createReducer <Tag>(undefined,
-        on(editItem, (_, action) => action.cnTag),
-        on(replaceItem, () => undefined),
-        on(deleteItem, () => undefined),
-        on(cancelItem, () => undefined),
-);
-
 export function itemsReducer(state: Item[] | undefined, action: Action) {
-    return cnItemsReducer(state, action);
+    // return cnItemsReducer(state, action);
+    return createReducer<Item[]>(
+        initialItems,
+        on(appendItem, (s, a) => s.concat({
+            ...a.item,
+            cnTag: TagGenerator.generateId(),
+        })),
+        on(replaceItem, (s, a) => {
+            const newItems = s.concat();
+            newItems[newItems.findIndex(item => item.cnTag === a.item.cnTag)] = a.item;
+            return newItems;
+        }),
+        on(deleteItem, (s, a) => s.filter(
+            item => item.cnTag !== a.cnTag)),
+    )(state, action);
 }
 
 export function editItemTagReducer(state: string | undefined, action: Action) {
-    return cnEditItemTagReducer(state, action);
+    return createReducer<Tag>(undefined,
+        on(editItem, (_, a) => a.cnTag),
+        on(replaceItem, () => undefined),
+        on(deleteItem, () => undefined),
+        on(cancelItem, () => undefined),
+    )(state, action);
 }
