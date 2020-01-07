@@ -4,7 +4,7 @@
       <ng-content select=".cn-select-max-no-collapse"></ng-content>
     </div>
   </ng-template>
-  <div *ngIf="config">
+  <div (click)="collapse()" *ngIf="config">
     <div cnGrid [columns]="config.cnLayout.cnColumns">
       <div class="material-icons">grade</div>
       <div>{{ config.cnLabel }}</div>
@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="cn-items" *ngIf="itemConfig">
-    <ng-container *ngIf="collapse(); else collapseTpl">
+    <ng-container *ngIf="isCollapsed(); else collapseTpl">
       <ng-container *ngFor="let item of items">
         <div class="cn-item" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
           <ng-container *ngTemplateOutlet="listItemTemplate; context: {$implicit: item}"></ng-container>
@@ -21,6 +21,7 @@
       </ng-container>
     </ng-container>
   </div>
+  <!-- allow tempates to be unsed INSTEAD of config objects -->
   <ng-content select=".cn-select-package" *ngIf="!config"></ng-content>
   <ng-content select=".cn-select-items" *ngIf="!itemConfig"></ng-content>
 </div>
