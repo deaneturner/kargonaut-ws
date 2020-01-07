@@ -17,6 +17,7 @@ import { ComponentExampleComponent } from './components/component-example/compon
 import { StoreModule } from '@ngrx/store';
 import { editItemTagReducer, itemsReducer } from './reducers/item.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -30,6 +31,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
         ComponentExampleComponent
     ],
     imports: [
+        CommonModule,
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,

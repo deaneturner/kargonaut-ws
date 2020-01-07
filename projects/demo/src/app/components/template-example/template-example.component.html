@@ -72,15 +72,18 @@
       <cn-package-component>
         <ng-container class="cn-select-package" *ngTemplateOutlet="packageTpl; context: packageConfig"></ng-container>
         <div class="cn-select-items" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
-          <ng-container *ngTemplateOutlet="itemTpl; context:{cnData: (itemConfig.cnData | async)[0]}"></ng-container>
+          <ng-container *ngTemplateOutlet="itemTpl; context:{cnData: itemConfig.cnData}"></ng-container>
         </div>
       </cn-package-component>
     </p>
 
     <p class="cn-surface">
       <cn-package-component>
-        <ng-container class="cn-select-package" *ngTemplateOutlet="packageTpl; context: packageConfig"></ng-container>
-        <div class="cn-select-items" *ngFor="let item of (itemConfig.cnData | async)" cnGrid
+        <ng-container class="cn-select-package" *ngTemplateOutlet="packageTpl
+        ; context: packageConfig"></ng-container>
+        <div class="cn-select-items"
+             *ngFor="let item of itemConfig.cnData"
+             cnGrid
              [columns]="itemConfig.cnLayout.cnColumns">
           <ng-container *ngTemplateOutlet="itemTpl; context: {cnData: item}"></ng-container>
         </div>
