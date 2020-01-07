@@ -46,10 +46,10 @@ export class PackageComponent implements OnInit {
 
     collapse() {
         // return false;
-       return ((this.items.length <= this.config.cnLayout.cnMaxNoCollapse) || this.config.cnLayout.cnIsCollapsed);
+       return ((this.items.length <= this.config.cnLayout.cnMaxNoCollapse) || this.config.cnLayout.cnIsExpanded);
     }
 
     expand() {
-        this.config.cnLayout.cnIsCollapsed = true;
+        this.config.cnLayout.cnIsExpanded = true;
     }
 }
