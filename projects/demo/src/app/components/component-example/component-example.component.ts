@@ -9,6 +9,7 @@ import {
     appendItem,
     deleteItem,
 } from '../../actions/item-actions';
+import { of } from 'rxjs/internal/observable/of';
 
 // import { async } from 'rxjs/internal/scheduler/async';
 
@@ -23,6 +24,7 @@ export class ComponentExampleComponent implements OnInit {
 
     packageConfig: PackageConfig;
     itemConfig: ItemConfig;
+    itemConfigEmpty: ItemConfig;
 
     items$ = this.store.pipe(select(state => state.items));
 
@@ -40,6 +42,12 @@ export class ComponentExampleComponent implements OnInit {
         };
         this.itemConfig = {
             cnData: this.items$,
+            cnLayout: {
+                cnColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
+            }
+        };
+        this.itemConfigEmpty = {
+            cnData: of<Item[]>([]),
             cnLayout: {
                 cnColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
             }

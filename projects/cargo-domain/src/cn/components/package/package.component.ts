@@ -17,6 +17,12 @@ import { ListItemDirective } from '../../directives/list-item/list-item.directiv
 export class PackageComponent implements OnInit {
 
     @Input()
+    label: string;
+
+    @Input()
+    count: number;
+
+    @Input()
     config: PackageConfig | any;
 
     @Input()

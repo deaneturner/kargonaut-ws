@@ -3,7 +3,8 @@
     <div cnGrid [columns]="config.cnLayout.cnColumns">
       <div class="material-icons">grade</div>
       <div>{{ config.cnLabel }}</div>
-      <div class="cn-count">x4</div>
+      <div class="cn-count" *ngIf="itemConfig">x{{(itemConfig.cnData | async).length}}</div>
+      <div class="cn-count" *ngIf="!itemConfig">x{{config.cnCount}}</div>
     </div>
   </div>
   <div class="cn-items" *ngIf="itemConfig">

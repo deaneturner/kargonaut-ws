@@ -4,13 +4,13 @@
     <div>
       <h2>{{ label }}</h2>
     </div>
-    <h3>Component w/ Configuration Object</h3>
+    <h3>Package Component</h3>
     <!-- package template-->
-    <ng-template #packageTpl let-label="cnLabel" let-layout="cnLayout">
+    <ng-template #packageTpl let-label="cnLabel" let-layout="cnLayout" let-data="cnData">
       <div class="example-header" cnGrid [columns]="layout.cnColumns">
         <div class="material-icons">all_out</div>
         <div>{{ label }}</div>
-        <div class="cn-count">x4</div>
+        <div class="cn-count">xP</div>
       </div>
     </ng-template>
     <!--  item template-->
@@ -23,7 +23,14 @@
       <div class="cn-symbol cn-weight-symbol material-icons">{{item?.weightSymbol}}</div>
       <div class="cn-weight-amount">{{item?.weightAmount}}</div>
     </ng-template>
-    <!-- component-->
+    <!-- component - empty -->
+    <p class="cn-surface">
+      <cn-package-component [config]="packageConfig" [itemConfig]="itemConfigEmpty">
+        <!-- package - markup rendered by config -->
+        <!--items -->
+      </cn-package-component>
+    </p>
+    <!-- component - w/ items list -->
     <p class="cn-surface">
       <cn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
         <!-- package - markup rendered by config -->
@@ -31,6 +38,13 @@
         <ng-container *cnListItem="let item">
           <ng-container *ngTemplateOutlet="itemTpl; context:{item: item}"></ng-container>
         </ng-container>
+      </cn-package-component>
+    </p>
+    <!-- component - list collapsed -->
+    <p class="cn-surface">
+      <cn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
+        <!-- package - markup rendered by config -->
+        <!--items -->
       </cn-package-component>
     </p>
   </div>
