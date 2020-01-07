@@ -43,7 +43,7 @@ export class ComponentExampleComponent implements OnInit {
             }
         };
         this.packageConfig2 = {
-            cnLabel: 'Package Component - Collapsed',
+            cnLabel: 'Package Component ( > x3 )',
             cnLayout: {
                 cnColumns: ['30px', 'auto', '60px'],
                 cnMaxNoCollapse: 3
