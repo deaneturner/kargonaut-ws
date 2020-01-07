@@ -29,8 +29,7 @@ describe('TemplateExampleComponent', () => {
         fixture.detectChanges();
     });
 
-    // TODO: add mocked store to fix test
-    // it('should create', () => {
-    //     expect(component).toBeTruthy();
-    // });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });
