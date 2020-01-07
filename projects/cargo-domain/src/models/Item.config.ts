@@ -3,7 +3,7 @@ import { TemplateRef } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface ItemConfig {
-    cnData: Item[] | Observable<Item[]>;
+    cnData: Observable<Item[]>;
     cnLayout: {
         cnColumns: string[];
         cnTemplateRef?: TemplateRef<any>;
