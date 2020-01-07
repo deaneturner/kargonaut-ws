@@ -9,7 +9,7 @@ import {
 import { PackageConfig } from '../../../models/Package.config';
 import { ItemConfig } from '../../../models/Item.config';
 import { ListItemDirective } from '../../directives/list-item/list-item.directive';
-import { Item } from "../../../models/Item";
+import { Item } from '../../../models/Item';
 
 @Component({
     selector: 'cn-package-component',

@@ -12,7 +12,8 @@ describe('PackageComponent', () => {
     const mockConfig: PackageConfig = {
         cnLabel: 'test-label',
         cnLayout: {
-            cnColumns: []
+            cnColumns: [],
+            cnMaxNoCollapse: 0
         }
     };
     const mockItemConfig: ItemConfig = {
