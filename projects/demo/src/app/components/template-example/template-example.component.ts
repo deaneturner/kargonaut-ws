@@ -15,6 +15,7 @@ export class TemplateExampleComponent implements OnInit {
 
   static label = 'Templates';
   packageConfig: PackageConfig;
+  packageConfigSingle: PackageConfig;
   itemConfig: ItemConfig;
 
   items$: Observable<Item[]> = this.store.pipe(select(state => state.items));
@@ -25,6 +26,13 @@ export class TemplateExampleComponent implements OnInit {
     this.packageConfig = {
       cnLabel: 'Package Component',
       cnCount: 4,
+      cnLayout: {
+        cnColumns: ['30px', 'auto', '60px']
+      }
+    };
+    this.packageConfigSingle = {
+      cnLabel: 'Package Component',
+      cnCount: 1,
       cnLayout: {
         cnColumns: ['30px', 'auto', '60px']
       }
