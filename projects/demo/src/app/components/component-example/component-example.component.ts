@@ -23,6 +23,7 @@ export class ComponentExampleComponent implements OnInit {
     static label = 'Components';
 
     packageConfig: PackageConfig;
+    packageConfig2: PackageConfig;
     itemConfig: ItemConfig;
     itemConfigEmpty: ItemConfig;
 
@@ -37,7 +38,15 @@ export class ComponentExampleComponent implements OnInit {
         this.packageConfig = {
             cnLabel: 'Package Component',
             cnLayout: {
-                cnColumns: ['30px', 'auto', '60px']
+                cnColumns: ['30px', 'auto', '60px'],
+                cnMaxNoCollapse: 4
+            }
+        };
+        this.packageConfig2 = {
+            cnLabel: 'Package Component - Collapsed',
+            cnLayout: {
+                cnColumns: ['30px', 'auto', '60px'],
+                cnMaxNoCollapse: 3
             }
         };
         this.itemConfig = {

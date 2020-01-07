@@ -5,6 +5,7 @@ export interface PackageConfig {
     cnCount?: number;
     cnLayout: {
         cnColumns: string[];
+        cnMaxNoCollapse: number;
         cnTemplateRef?: TemplateRef<any>;
     };
 }

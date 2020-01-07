@@ -27,14 +27,16 @@ export class TemplateExampleComponent implements OnInit {
       cnLabel: 'Package Component',
       cnCount: 4,
       cnLayout: {
-        cnColumns: ['30px', 'auto', '60px']
+        cnColumns: ['30px', 'auto', '60px'],
+        cnMaxNoCollapse: 4
       }
     };
     this.packageConfigSingle = {
       cnLabel: 'Package Component',
       cnCount: 1,
       cnLayout: {
-        cnColumns: ['30px', 'auto', '60px']
+        cnColumns: ['30px', 'auto', '60px'],
+        cnMaxNoCollapse: 4
       }
     };
     this.itemConfig = {

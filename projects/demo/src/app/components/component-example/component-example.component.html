@@ -38,13 +38,18 @@
         <ng-container *cnListItem="let item">
           <ng-container *ngTemplateOutlet="itemTpl; context:{item: item}"></ng-container>
         </ng-container>
+        <div class="cn-select-max-no-collapse">expand</div>
       </cn-package-component>
     </p>
     <!-- component - list collapsed -->
     <p class="cn-surface">
-      <cn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
+      <cn-package-component [config]="packageConfig2" [itemConfig]="itemConfig">
         <!-- package - markup rendered by config -->
         <!--items -->
+        <ng-container *cnListItem="let item">
+          <ng-container *ngTemplateOutlet="itemTpl; context:{item: item}"></ng-container>
+        </ng-container>
+        <div class="cn-select-max-no-collapse">x{{(itemConfig.cnData | async).length}} (collapsed items)</div>
       </cn-package-component>
     </p>
   </div>

@@ -1,4 +1,7 @@
 <div class="cn-package example-package">
+  <ng-template #collapseTpl>
+    <ng-content select=".cn-select-max-no-collapse"></ng-content>
+  </ng-template>
   <div *ngIf="config">
     <div cnGrid [columns]="config.cnLayout.cnColumns">
       <div class="material-icons">grade</div>
@@ -8,11 +11,13 @@
     </div>
   </div>
   <div class="cn-items" *ngIf="itemConfig">
-   <ng-container *ngFor="let item of (itemConfig.cnData | async)">
-     <div class="cn-item" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
-       <ng-container *ngTemplateOutlet="listItemTemplate; context: {$implicit: item}"></ng-container>
-     </div>
-   </ng-container>
+    <ng-container *ngIf="(itemConfig.cnData | async).length <= config.cnLayout.cnMaxNoCollapse; else collapseTpl">
+      <ng-container *ngFor="let item of (itemConfig.cnData | async)">
+        <div class="cn-item" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
+          <ng-container *ngTemplateOutlet="listItemTemplate; context: {$implicit: item}"></ng-container>
+        </div>
+      </ng-container>
+    </ng-container>
   </div>
   <ng-content select=".cn-select-package" *ngIf="!config"></ng-content>
   <ng-content select=".cn-select-items" *ngIf="!itemConfig"></ng-content>
