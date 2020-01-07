@@ -1,4 +1,5 @@
 import {
+    ChangeDetectionStrategy,
     Component,
     ContentChild,
     Input,
@@ -12,7 +13,8 @@ import { ListItemDirective } from '../../directives/list-item/list-item.directiv
 @Component({
     selector: 'cn-package-component',
     templateUrl: './package.component.html',
-    styleUrls: ['./package.component.less']
+    styleUrls: ['./package.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PackageComponent implements OnInit {
 
@@ -35,5 +37,9 @@ export class PackageComponent implements OnInit {
     }
 
     ngOnInit() {
+    }
+
+    toggleCollapse() {
+        this.config.cnLayout.cnIsCollapsed = !this.config.cnLayout.cnIsCollapsed;
     }
 }

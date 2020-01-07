@@ -1,5 +1,6 @@
 <div class="cn-package example-package">
   <ng-template #collapseTpl>
+    <div (click)="toggleCollapse()">TEST</div>
     <ng-content select=".cn-select-max-no-collapse"></ng-content>
   </ng-template>
   <div *ngIf="config">
