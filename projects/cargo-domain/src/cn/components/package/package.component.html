@@ -11,7 +11,7 @@
     </div>
   </div>
   <div class="cn-items" *ngIf="itemConfig">
-    <ng-container *ngIf="(itemConfig.cnData | async).length <= config.cnLayout.cnMaxNoCollapse; else collapseTpl">
+    <ng-container *ngIf="((itemConfig.cnData | async).length <= config.cnLayout.cnMaxNoCollapse) && !config.cnLayout.cnIsCollapsed; else collapseTpl">
       <ng-container *ngFor="let item of (itemConfig.cnData | async)">
         <div class="cn-item" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
           <ng-container *ngTemplateOutlet="listItemTemplate; context: {$implicit: item}"></ng-container>
