@@ -1,10 +1,10 @@
 <div class="cn-package example-package">
   <ng-template #collapseTpl>
-    <div (click)="expand()">
+    <div (click)="expand($event)">
       <ng-content select=".cn-select-max-no-collapse"></ng-content>
     </div>
   </ng-template>
-  <div (click)="collapse()" *ngIf="config">
+  <div (click)="collapse($event)" *ngIf="config">
     <div cnGrid [columns]="config.cnLayout.cnColumns">
       <div class="material-icons">grade</div>
       <div>{{ config.cnLabel }}</div>

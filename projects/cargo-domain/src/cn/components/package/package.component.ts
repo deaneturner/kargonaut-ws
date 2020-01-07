@@ -51,12 +51,14 @@ export class PackageComponent implements OnInit, OnDestroy {
        return ((this.items.length <= this.config.cnLayout.cnMaxNoCollapse) || this.config.cnLayout.cnIsExpanded);
     }
 
-    expand() {
+    expand($event) {
         this.config.cnLayout.cnIsExpanded = true;
+        $event.stopPropagation();
     }
 
-    collapse() {
+    collapse($event) {
         this.config.cnLayout.cnIsExpanded = false;
+        $event.stopPropagation();
     }
 
     ngOnDestroy() {
