@@ -8,13 +8,13 @@
     <div cnGrid [columns]="config.cnLayout.cnColumns">
       <div class="material-icons">grade</div>
       <div>{{ config.cnLabel }}</div>
-      <div class="cn-count" *ngIf="itemConfig">x{{(itemConfig?.cnData | async)?.length}}</div>
+      <div class="cn-count" *ngIf="itemConfig">x{{items.length}}</div>
       <div class="cn-count" *ngIf="!itemConfig">x{{config.cnCount}}</div>
     </div>
   </div>
   <div class="cn-items" *ngIf="itemConfig">
     <ng-container *ngIf="collapse(); else collapseTpl">
-      <ng-container *ngFor="let item of (itemConfig.cnData | async)">
+      <ng-container *ngFor="let item of items">
         <div class="cn-item" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
           <ng-container *ngTemplateOutlet="listItemTemplate; context: {$implicit: item}"></ng-container>
         </div>

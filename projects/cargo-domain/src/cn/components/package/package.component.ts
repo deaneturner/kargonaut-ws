@@ -1,8 +1,7 @@
 import {
-    ChangeDetectionStrategy,
     Component,
     ContentChild,
-    Input,
+    Input, OnDestroy,
     OnInit,
     TemplateRef
 } from '@angular/core';
@@ -10,13 +9,14 @@ import { PackageConfig } from '../../../models/Package.config';
 import { ItemConfig } from '../../../models/Item.config';
 import { ListItemDirective } from '../../directives/list-item/list-item.directive';
 import { Item } from '../../../models/Item';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'cn-package-component',
     templateUrl: './package.component.html',
     styleUrls: ['./package.component.less']
 })
-export class PackageComponent implements OnInit {
+export class PackageComponent implements OnInit, OnDestroy {
 
     @Input()
     label: string;
@@ -35,11 +35,13 @@ export class PackageComponent implements OnInit {
 
     items: Item[];
 
+    subscription: Subscription;
+
     constructor() {
     }
 
     ngOnInit() {
-        const subscription = this.itemConfig.cnData.subscribe((data) => {
+        this.subscription = this.itemConfig && this.itemConfig.cnData.subscribe((data) => {
             this.items = data;
         });
     }
@@ -51,5 +53,11 @@ export class PackageComponent implements OnInit {
 
     expand() {
         this.config.cnLayout.cnIsExpanded = true;
+    }
+
+    ngOnDestroy() {
+        if (this.subscription) {
+            this.subscription.unsubscribe();
+        }
     }
 }
