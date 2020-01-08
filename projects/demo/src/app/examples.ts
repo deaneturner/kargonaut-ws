@@ -4,6 +4,7 @@ import { DirectivesExampleComponent } from './components/directives-example/dire
 import { TemplateExampleComponent } from './components/template-example/template-example.component';
 import { ComponentExampleComponent } from './components/component-example/component-example.component';
 import { AboutComponent } from './components/about/about.component';
+import { SubComponentExampleComponent } from './components/sub-component-example/sub-component-example.component';
 
 export const examples = [
   { path: 'About', component: AboutComponent },
@@ -11,5 +12,6 @@ export const examples = [
   { path: 'basic-styling-example', component: BasicStylingExampleComponent },
   { path: 'directives-example', component: DirectivesExampleComponent },
   { path: 'template-example', component: TemplateExampleComponent },
-  { path: 'component-example', component: ComponentExampleComponent }
+  { path: 'component-example', component: ComponentExampleComponent },
+  { path: 'sub-component-example', component: SubComponentExampleComponent }
 ];

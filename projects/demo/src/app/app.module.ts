@@ -18,6 +18,7 @@ import { StoreModule } from '@ngrx/store';
 import { editItemTagReducer, itemsReducer } from './reducers/item.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CommonModule } from '@angular/common';
+import { SubComponentExampleComponent } from './components/sub-component-example/sub-component-example.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import { CommonModule } from '@angular/common';
         BasicStylingExampleComponent,
         DirectivesExampleComponent,
         TemplateExampleComponent,
-        ComponentExampleComponent
+        ComponentExampleComponent,
+        SubComponentExampleComponent
     ],
     imports: [
         CommonModule,
