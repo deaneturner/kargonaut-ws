@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Contract } from '../../../../models/contract';
 import { ItemConfig } from '../../../../../cargo-domain/src/models/Item.config';
 
@@ -15,9 +15,23 @@ export class ItemExampleComponent implements OnInit {
   @Input()
   itemConfig: ItemConfig;
 
+  @Output()
+  selected: EventEmitter<Contract> = new EventEmitter();
+
+  layout = {
+    selected: {
+      true: 'check_box',
+      false: 'check_box_outline_blank'
+    }};
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSelect() {
+    this.item.isSelected = !this.item.isSelected;
+    this.selected.emit(this.item);
+    console.log(this.item);
+  }
 }
