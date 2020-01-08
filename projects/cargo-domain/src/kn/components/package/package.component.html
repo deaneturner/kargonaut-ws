@@ -7,7 +7,7 @@
   <div (click)="collapse($event)" *ngIf="config">
     <div knGrid [columns]="config.knLayout.knColumns">
       <div class="material-icons">grade</div>
-      <div>{{ config.knLabel }}</div>
+      <div class="kn-label">{{ config.knLabel }}</div>
       <div class="kn-count" *ngIf="itemConfig">x{{items.length}}</div>
       <div class="kn-count" *ngIf="!itemConfig">x{{config.knCount}}</div>
     </div>
