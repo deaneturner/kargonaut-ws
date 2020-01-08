@@ -15,12 +15,12 @@ import { of } from 'rxjs/internal/observable/of';
 
 @Component({
     selector: 'demo-component-example',
-    templateUrl: './sub-component-example.component.html',
-    styleUrls: ['./sub-component-example.component.less']
+    templateUrl: './item-extension-example.component.html',
+    styleUrls: ['./item-extension-example.component.less']
 })
-export class SubComponentExampleComponent implements OnInit {
+export class ItemExtensionExampleComponent implements OnInit {
 
-    static label = 'Sub Components';
+    static label = 'Item Extension';
 
     packageConfig: PackageConfig;
     packageConfig2: PackageConfig;
@@ -76,7 +76,7 @@ export class SubComponentExampleComponent implements OnInit {
     }
 
     get label() {
-        return SubComponentExampleComponent.label;
+        return ItemExtensionExampleComponent.label;
     }
 }
 

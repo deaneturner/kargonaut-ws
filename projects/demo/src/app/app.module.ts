@@ -20,6 +20,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CommonModule } from '@angular/common';
 import { SubComponentExampleComponent } from './components/sub-component-example/sub-component-example.component';
 import { contractsReducer } from './reducers/contract.reducers';
+import { ItemExtensionExampleComponent } from './components/item-extension-example/item-extension-example.component';
 
 @NgModule({
     declarations: [
@@ -31,6 +32,7 @@ import { contractsReducer } from './reducers/contract.reducers';
         DirectivesExampleComponent,
         TemplateExampleComponent,
         ComponentExampleComponent,
+        ItemExtensionExampleComponent,
         SubComponentExampleComponent
     ],
     imports: [
