@@ -20,7 +20,7 @@ import { of } from 'rxjs/internal/observable/of';
 })
 export class SubComponentExampleComponent implements OnInit {
 
-    static label = 'Sub Components';
+    static label = 'Item Extension';
 
     packageConfig: PackageConfig;
     packageConfig2: PackageConfig;

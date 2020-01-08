@@ -19,6 +19,7 @@ import { editItemTagReducer, itemsReducer } from './reducers/item.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CommonModule } from '@angular/common';
 import { SubComponentExampleComponent } from './components/sub-component-example/sub-component-example.component';
+import { contractsReducer } from './reducers/contract.reducers';
 
 @NgModule({
     declarations: [
@@ -41,6 +42,7 @@ import { SubComponentExampleComponent } from './components/sub-component-example
         NgGistModule,
         StoreModule.forRoot({
             items: itemsReducer,
+            contracts: contractsReducer,
             editItemTag: editItemTagReducer
         }),
         StoreDevtoolsModule.instrument(),
