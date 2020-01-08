@@ -29,7 +29,8 @@
         <!-- package - markup rendered by config -->
         <!--items -->
         <ng-container *knListItem="let item">
-          <ng-container *ngTemplateOutlet="itemTpl; context:{item: item}"></ng-container>
+<!--          <ng-container *ngTemplateOutlet="itemTpl; context:{item: item}"></ng-container>-->
+          <demo-item-example [item]="item" [itemConfig]="itemConfig"></demo-item-example>
         </ng-container>
         <div class="kn-select-max-no-collapse">expand</div>
       </kn-package-component>

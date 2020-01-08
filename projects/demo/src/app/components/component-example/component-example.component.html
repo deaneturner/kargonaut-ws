@@ -15,13 +15,15 @@
     </ng-template>
     <!--  item template-->
     <ng-template #itemTpl let-item="item">
-      <div class="kn-checkbox material-icons">{{item?.checkbox}}</div>
-      <div class="kn-symbol material-icons">{{item?.symbol}}</div>
-      <div class="kn-label">{{item?.knLabel}}</div>
-      <div class="kn-max-likes"></div>
-      <div class="kn-symbol kn-weight-code material-icons">{{item?.weightCode}}</div>
-      <div class="kn-symbol kn-weight-symbol material-icons">{{item?.weightSymbol}}</div>
-      <div class="kn-weight-amount">{{item?.weightAmount}}</div>
+      <div class="kn-item" knGrid [columns]="itemConfig.knLayout.knColumns">
+        <div class="kn-checkbox material-icons">{{item?.checkbox}}</div>
+        <div class="kn-symbol material-icons">{{item?.symbol}}</div>
+        <div class="kn-label">{{item?.knLabel}}</div>
+        <div class="kn-max-likes"></div>
+        <div class="kn-symbol kn-weight-code material-icons">{{item?.weightCode}}</div>
+        <div class="kn-symbol kn-weight-symbol material-icons">{{item?.weightSymbol}}</div>
+        <div class="kn-weight-amount">{{item?.weightAmount}}</div>
+      </div>
     </ng-template>
     <!-- component - empty -->
     <p class="kn-surface">

@@ -15,9 +15,9 @@
   <div class="kn-items" *ngIf="itemConfig">
     <ng-container *ngIf="isCollapsed(); else collapseTpl">
       <ng-container *ngFor="let item of items">
-        <div class="kn-item" knGrid [columns]="itemConfig.knLayout.knColumns">
+<!--        <div class="kn-item" knGrid [columns]="itemConfig.knLayout.knColumns">-->
           <ng-container *ngTemplateOutlet="listItemTemplate; context: {$implicit: item}"></ng-container>
-        </div>
+<!--        </div>-->
       </ng-container>
     </ng-container>
   </div>
