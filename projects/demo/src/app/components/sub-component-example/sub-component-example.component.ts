@@ -27,7 +27,7 @@ export class SubComponentExampleComponent implements OnInit {
     itemConfig: ItemConfig;
     itemConfigEmpty: ItemConfig;
 
-    items$ = this.store.pipe(select(state => state.items));
+    items$ = this.store.pipe(select(state => state.contracts));
 
     // editItemTag$ = this.store.pipe(select('tag'));
 
