@@ -10,17 +10,17 @@ describe('PackageComponent', () => {
     let component: PackageComponent;
     let fixture: ComponentFixture<PackageComponent>;
     const mockConfig: PackageConfig = {
-        cnLabel: 'test-label',
-        cnLayout: {
-            cnColumns: [],
-            cnMaxNoCollapse: 0
+        knLabel: 'test-label',
+        knLayout: {
+            knColumns: [],
+            knMaxCollapse: 0
         }
     };
     const mockItemConfig: ItemConfig = {
-        cnData: of<Item[]>([]),
-        cnLayout: {
-            cnColumns: [],
-            cnTemplateRef: null
+        knData: of<Item[]>([]),
+        knLayout: {
+            knColumns: [],
+            knTemplateRef: null
         }
     };
 

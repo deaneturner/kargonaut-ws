@@ -24,25 +24,25 @@ export class TemplateExampleComponent implements OnInit {
 
   ngOnInit() {
     this.packageConfig = {
-      cnLabel: 'Package Component',
-      cnCount: 4,
-      cnLayout: {
-        cnColumns: ['30px', 'auto', '60px'],
-        cnMaxNoCollapse: 4
+      knLabel: 'Package Component',
+      knCount: 4,
+      knLayout: {
+        knColumns: ['30px', 'auto', '60px'],
+        knMaxCollapse: 4
       }
     };
     this.packageConfigSingle = {
-      cnLabel: 'Package Component',
-      cnCount: 1,
-      cnLayout: {
-        cnColumns: ['30px', 'auto', '60px'],
-        cnMaxNoCollapse: 4
+      knLabel: 'Package Component',
+      knCount: 1,
+      knLayout: {
+        knColumns: ['30px', 'auto', '60px'],
+        knMaxCollapse: 4
       }
     };
     this.itemConfig = {
-      cnData: this.items$,
-      cnLayout: {
-        cnColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
+      knData: this.items$,
+      knLayout: {
+        knColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
       }
     };
   }

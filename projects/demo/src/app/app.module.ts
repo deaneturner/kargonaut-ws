@@ -10,7 +10,7 @@ import { BundleExampleComponent } from './components/bundle-example/bundle-examp
 import { SimpleMarkupExampleComponent } from './components/simple-markup-example/simple-markup-example.component';
 import { BasicStylingExampleComponent } from './components/basic-styling-example/basic-styling-example.component';
 import { DirectivesExampleComponent } from './components/directives-example/directives-example.component';
-import { CargoModule } from '../../../cargo-domain/src/cn/cargo.module';
+import { CargoModule } from '../../../cargo-domain/src/kn/cargo.module';
 import { TemplateExampleComponent } from './components/template-example/template-example.component';
 import { NgGistModule } from 'ng-gist';
 import { ComponentExampleComponent } from './components/component-example/component-example.component';

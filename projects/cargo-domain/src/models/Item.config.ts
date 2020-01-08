@@ -3,9 +3,9 @@ import { TemplateRef } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface ItemConfig {
-    cnData: Observable<Item[]>;
-    cnLayout: {
-        cnColumns: string[];
-        cnTemplateRef?: TemplateRef<any>;
+    knData: Observable<Item[]>;
+    knLayout: {
+        knColumns: string[];
+        knTemplateRef?: TemplateRef<any>;
     };
 }

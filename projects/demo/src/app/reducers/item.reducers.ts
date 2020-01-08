@@ -12,21 +12,21 @@ export function itemsReducer(state: Item[] | undefined, action: Action) {
         initialItems,
         on(appendItem, (s, a) => s.concat({
             ...a.item,
-            cnTag: TagGenerator.generateId(),
+            knTag: TagGenerator.generateId(),
         })),
         on(replaceItem, (s, a) => {
             const newItems = s.concat();
-            newItems[newItems.findIndex(item => item.cnTag === a.item.cnTag)] = a.item;
+            newItems[newItems.findIndex(item => item.knTag === a.item.knTag)] = a.item;
             return newItems;
         }),
         on(deleteItem, (s, a) => s.filter(
-            item => item.cnTag !== a.cnTag)),
+            item => item.knTag !== a.knTag)),
     )(state, action);
 }
 
 export function editItemTagReducer(state: string | undefined, action: Action) {
     return createReducer<Tag>(undefined,
-        on(editItem, (_, a) => a.cnTag),
+        on(editItem, (_, a) => a.knTag),
         on(replaceItem, () => undefined),
         on(deleteItem, () => undefined),
         on(cancelItem, () => undefined),

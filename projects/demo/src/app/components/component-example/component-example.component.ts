@@ -36,29 +36,29 @@ export class ComponentExampleComponent implements OnInit {
 
     ngOnInit() {
         this.packageConfig = {
-            cnLabel: 'Package Component',
-            cnLayout: {
-                cnColumns: ['30px', 'auto', '60px'],
-                cnMaxNoCollapse: 4
+            knLabel: 'Package Component',
+            knLayout: {
+                knColumns: ['30px', 'auto', '60px'],
+                knMaxCollapse: 4
             }
         };
         this.packageConfig2 = {
-            cnLabel: 'Package Component ( > x3 )',
-            cnLayout: {
-                cnColumns: ['30px', 'auto', '60px'],
-                cnMaxNoCollapse: 3
+            knLabel: 'Package Component ( > x3 )',
+            knLayout: {
+                knColumns: ['30px', 'auto', '60px'],
+                knMaxCollapse: 3
             }
         };
         this.itemConfig = {
-            cnData: this.items$,
-            cnLayout: {
-                cnColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
+            knData: this.items$,
+            knLayout: {
+                knColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
             }
         };
         this.itemConfigEmpty = {
-            cnData: of<Item[]>([]),
-            cnLayout: {
-                cnColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
+            knData: of<Item[]>([]),
+            knLayout: {
+                knColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
             }
         };
     }
@@ -69,9 +69,9 @@ export class ComponentExampleComponent implements OnInit {
         }));
     }
 
-    doDeleteItem(cnTag: Tag) {
+    doDeleteItem(knTag: Tag) {
         this.store.dispatch(deleteItem({
-            cnTag
+            knTag
         }));
     }
 

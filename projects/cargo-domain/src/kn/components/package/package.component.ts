@@ -12,7 +12,7 @@ import { Item } from '../../../models/Item';
 import { Subscription } from 'rxjs';
 
 @Component({
-    selector: 'cn-package-component',
+    selector: 'kn-package-component',
     templateUrl: './package.component.html',
     styleUrls: ['./package.component.less']
 })
@@ -41,23 +41,23 @@ export class PackageComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.subscription = this.itemConfig && this.itemConfig.cnData.subscribe((data) => {
+        this.subscription = this.itemConfig && this.itemConfig.knData.subscribe((data) => {
             this.items = data;
         });
     }
 
     isCollapsed() {
         // return false;
-       return ((this.items.length <= this.config.cnLayout.cnMaxNoCollapse) || this.config.cnLayout.cnIsExpanded);
+       return ((this.items.length <= this.config.knLayout.knMaxCollapse) || this.config.knLayout.knIsExpanded);
     }
 
     expand($event) {
-        this.config.cnLayout.cnIsExpanded = true;
+        this.config.knLayout.knIsExpanded = true;
         $event.stopPropagation();
     }
 
     collapse($event) {
-        this.config.cnLayout.cnIsExpanded = false;
+        this.config.knLayout.knIsExpanded = false;
         $event.stopPropagation();
     }
 

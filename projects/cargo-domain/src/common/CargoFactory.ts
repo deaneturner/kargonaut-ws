@@ -21,8 +21,8 @@ export class CargoFactory {
      */
     static generate(type: Type, config?: Config): Cargo {
         let result = {
-            cnTag: TagGenerator.generateId(),
-            cnDescription: 'Description for cargo.',
+            knTag: TagGenerator.generateId(),
+            knDescription: 'Description for cargo.',
             ... config
         } as Cargo;
 

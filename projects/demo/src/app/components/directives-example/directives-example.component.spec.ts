@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DirectivesExampleComponent } from './directives-example.component';
-import { InlineGridDirective } from '../../../../../cargo-domain/src/cn/directives/inline-grid/inline-grid.directive';
+import { InlineGridDirective } from '../../../../../cargo-domain/src/kn/directives/inline-grid/inline-grid.directive';
 import { NgGistModule } from 'ng-gist';
 
 describe('DirectivesExampleComponent', () => {
