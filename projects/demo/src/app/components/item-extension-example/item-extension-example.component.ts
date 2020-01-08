@@ -20,7 +20,7 @@ import { of } from 'rxjs/internal/observable/of';
 })
 export class ItemExtensionExampleComponent implements OnInit {
 
-    static label = 'Item Extension';
+    static label = 'Item Interface Extension';
 
     packageConfig: PackageConfig;
     packageConfig2: PackageConfig;
