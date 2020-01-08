@@ -1,7 +1,7 @@
 import { Directive, HostBinding, Input } from '@angular/core';
 
 @Directive({
-  selector: '[cnGrid]'
+  selector: '[knGrid]'
 })
 export class InlineGridDirective {
 

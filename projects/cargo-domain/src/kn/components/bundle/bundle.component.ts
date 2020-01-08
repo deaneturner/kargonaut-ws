@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'cn-cargo',
+  selector: 'kn-cargo',
   template: `
     <p>
       cargo works!

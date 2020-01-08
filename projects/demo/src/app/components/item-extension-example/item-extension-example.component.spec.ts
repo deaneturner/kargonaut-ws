@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ComponentExampleComponent } from './component-example.component';
+import { ItemExtensionExampleComponent } from './item-extension-example.component';
 import { NgGistModule } from 'ng-gist';
 import { PackageComponent } from '../../../../../cargo-domain/src/kn/components/package/package.component';
 import { InlineGridDirective } from '../../../../../cargo-domain/src/kn/directives/inline-grid/inline-grid.directive';
 import { items } from '../../../assets/data/items';
 import { of } from 'rxjs/internal/observable/of';
 
-describe('ComponentExampleComponent', () => {
-  let component: ComponentExampleComponent;
-  let fixture: ComponentFixture<ComponentExampleComponent>;
+describe('ItemExtensionExampleComponent', () => {
+  let component: ItemExtensionExampleComponent;
+  let fixture: ComponentFixture<ItemExtensionExampleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-          ComponentExampleComponent,
+          ItemExtensionExampleComponent,
           PackageComponent,
           InlineGridDirective
       ],
@@ -26,7 +26,7 @@ describe('ComponentExampleComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ComponentExampleComponent);
+    fixture = TestBed.createComponent(ItemExtensionExampleComponent);
     component = fixture.componentInstance;
     component.items$ = of(items);
     fixture.detectChanges();

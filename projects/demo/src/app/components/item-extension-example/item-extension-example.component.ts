@@ -15,19 +15,19 @@ import { of } from 'rxjs/internal/observable/of';
 
 @Component({
     selector: 'demo-component-example',
-    templateUrl: './component-example.component.html',
-    styleUrls: ['./component-example.component.less']
+    templateUrl: './item-extension-example.component.html',
+    styleUrls: ['./item-extension-example.component.less']
 })
-export class ComponentExampleComponent implements OnInit {
+export class ItemExtensionExampleComponent implements OnInit {
 
-    static label = 'Components';
+    static label = 'Item Interface Extension';
 
     packageConfig: PackageConfig;
     packageConfig2: PackageConfig;
     itemConfig: ItemConfig;
     itemConfigEmpty: ItemConfig;
 
-    items$ = this.store.pipe(select(state => state.items));
+    items$ = this.store.pipe(select(state => state.contracts));
 
     // editItemTag$ = this.store.pipe(select('tag'));
 
@@ -76,7 +76,7 @@ export class ComponentExampleComponent implements OnInit {
     }
 
     get label() {
-        return ComponentExampleComponent.label;
+        return ItemExtensionExampleComponent.label;
     }
 }
 

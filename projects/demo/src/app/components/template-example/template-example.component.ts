@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { PackageConfig } from '../../../../../cargo-domain/src/models/Package.config';
 import { ItemConfig } from '../../../../../cargo-domain/src/models/Item.config';
-import { items } from '../../../assets/data/items';
 import { Item } from '../../../../../cargo-domain/src/models/Item';
+import { Observable } from 'rxjs';
+import { select, Store } from '@ngrx/store';
+import { AppState } from '../../app.state';
 
 @Component({
   selector: 'demo-template-example',
@@ -13,24 +15,34 @@ export class TemplateExampleComponent implements OnInit {
 
   static label = 'Templates';
   packageConfig: PackageConfig;
+  packageConfigSingle: PackageConfig;
   itemConfig: ItemConfig;
 
-  items: Item[];
+  items$: Observable<Item[]> = this.store.pipe(select(state => state.items));
 
-  constructor() { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
-    this.items = items;
     this.packageConfig = {
-      cnLabel: 'Package Component',
-      cnLayout: {
-        cnColumns: ['30px', 'auto', '60px']
+      knLabel: 'Package Component',
+      knCount: 4,
+      knLayout: {
+        knColumns: ['30px', 'auto', '60px'],
+        knMaxCollapse: 4
+      }
+    };
+    this.packageConfigSingle = {
+      knLabel: 'Package Component',
+      knCount: 1,
+      knLayout: {
+        knColumns: ['30px', 'auto', '60px'],
+        knMaxCollapse: 4
       }
     };
     this.itemConfig = {
-      cnData: this.items,
-      cnLayout: {
-        cnColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
+      knData: this.items$,
+      knLayout: {
+        knColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
       }
     };
   }

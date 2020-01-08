@@ -23,13 +23,6 @@
       <div class="kn-symbol kn-weight-symbol material-icons">{{item?.weightSymbol}}</div>
       <div class="kn-weight-amount">{{item?.weightAmount}}</div>
     </ng-template>
-    <!-- component - empty -->
-    <p class="kn-surface">
-      <kn-package-component [config]="packageConfig" [itemConfig]="itemConfigEmpty">
-        <!-- package - markup rendered by config -->
-        <!--items -->
-      </kn-package-component>
-    </p>
     <!-- component - w/ items list -->
     <p class="kn-surface">
       <kn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
@@ -39,17 +32,6 @@
           <ng-container *ngTemplateOutlet="itemTpl; context:{item: item}"></ng-container>
         </ng-container>
         <div class="kn-select-max-no-collapse">expand</div>
-      </kn-package-component>
-    </p>
-    <!-- component - list collapsed -->
-    <p class="kn-surface">
-      <kn-package-component [config]="packageConfig2" [itemConfig]="itemConfig">
-        <!-- package - markup rendered by config -->
-        <!--items -->
-        <ng-container *knListItem="let item">
-          <ng-container *ngTemplateOutlet="itemTpl; context:{item: item}"></ng-container>
-        </ng-container>
-        <div class="kn-select-max-no-collapse">x{{(itemConfig.knData | async).length}} (collapsed items)</div>
       </kn-package-component>
     </p>
   </div>

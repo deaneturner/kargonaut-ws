@@ -16,8 +16,8 @@ describe('CargoDomainService', () => {
         });
         it('package should be generated, with a config', () => {
             expect(CargoService.generatePackage({
-                cnLabel: 'test-label',
-                cnDescription: 'test-description'
+                knLabel: 'test-label',
+                knDescription: 'test-description'
             })).toBeTruthy();
         });
     });

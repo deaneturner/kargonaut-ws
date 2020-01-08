@@ -12,8 +12,8 @@ describe('Cargo Factory', () => {
         expect(CargoFactory.generate(
             Type.PACKAGE,
             {
-                cnLabel: 'test-label',
-                cnDescription: 'test-description'
+                knLabel: 'test-label',
+                knDescription: 'test-description'
             })).toBeTruthy();
     });
 });

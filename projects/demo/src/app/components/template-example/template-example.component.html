@@ -5,99 +5,101 @@
       <h2>{{ label }}</h2>
     </div>
     <h3>Package Config w/ Content Projection</h3>
-    <p class="cn-surface">
-      <cn-package-component [config]="packageConfig">
-        <div class="cn-select-items">
-          <div class="example-item" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
-            <div class="cn-checkbox material-icons">check_box_outline_blank</div>
-            <div class="cn-symbol material-icons">adjust</div>
-            <div class="cn-label">Item row</div>
-            <div class="cn-max-likes"></div>
-            <div class="cn-symbol cn-weight-code material-icons">filter_1</div>
-            <div class="cn-symbol cn-weight-symbol material-icons">device_unknown</div>
-            <div class="cn-weight-amount">5.0</div>
+    <p class="kn-surface">
+      <kn-package-component [config]="packageConfig">
+        <div class="kn-select-items">
+          <div class="example-item" knGrid [columns]="itemConfig.knLayout.knColumns">
+            <div class="kn-checkbox material-icons">check_box_outline_blank</div>
+            <div class="kn-symbol material-icons">adjust</div>
+            <div class="kn-label">Item row</div>
+            <div class="kn-max-likes"></div>
+            <div class="kn-symbol kn-weight-code material-icons">filter_1</div>
+            <div class="kn-symbol kn-weight-symbol material-icons">device_unknown</div>
+            <div class="kn-weight-amount">5.0</div>
           </div>
-          <div cnGrid [columns]="itemConfig.cnLayout.cnColumns">
-            <div class="cn-checkbox material-icons">check_box_outline_blank</div>
-            <div class="cn-symbol material-icons">wb_sunny</div>
-            <div class="cn-label">Item row</div>
-            <div class="cn-max-likes"></div>
-            <div class="cn-symbol cn-weight-code material-icons">filter_1</div>
-            <div class="cn-symbol cn-weight-symbol material-icons">device_unknown</div>
-            <div class="cn-weight-amount">5.0</div>
+          <div knGrid [columns]="itemConfig.knLayout.knColumns">
+            <div class="kn-checkbox material-icons">check_box_outline_blank</div>
+            <div class="kn-symbol material-icons">wb_sunny</div>
+            <div class="kn-label">Item row</div>
+            <div class="kn-max-likes"></div>
+            <div class="kn-symbol kn-weight-code material-icons">filter_1</div>
+            <div class="kn-symbol kn-weight-symbol material-icons">device_unknown</div>
+            <div class="kn-weight-amount">5.0</div>
           </div>
-          <div cnGrid [columns]="itemConfig.cnLayout.cnColumns">
-            <div class="cn-checkbox material-icons">check_box_outline_blank</div>
-            <div class="cn-symbol material-icons">adjust</div>
-            <div class="cn-label">Item row</div>
-            <div class="cn-max-likes"></div>
-            <div class="cn-symbol cn-weight-code material-icons">filter_1</div>
-            <div class="cn-symbol cn-weight-symbol material-icons">device_unknown</div>
-            <div class="cn-weight-amount">1.0</div>
+          <div knGrid [columns]="itemConfig.knLayout.knColumns">
+            <div class="kn-checkbox material-icons">check_box_outline_blank</div>
+            <div class="kn-symbol material-icons">adjust</div>
+            <div class="kn-label">Item row</div>
+            <div class="kn-max-likes"></div>
+            <div class="kn-symbol kn-weight-code material-icons">filter_1</div>
+            <div class="kn-symbol kn-weight-symbol material-icons">device_unknown</div>
+            <div class="kn-weight-amount">1.0</div>
           </div>
-          <div cnGrid [columns]="itemConfig.cnLayout.cnColumns">
-            <div class="cn-checkbox material-icons">check_box_outline_blank</div>
-            <div class="cn-symbol material-icons">adjust</div>
-            <div class="cn-label">Item row</div>
-            <div class="cn-max-likes"></div>
-            <div class="cn-symbol cn-weight-code material-icons">filter_1</div>
-            <div class="cn-symbol cn-weight-symbol material-icons">dock</div>
-            <div class="cn-weight-amount">5.0</div>
+          <div knGrid [columns]="itemConfig.knLayout.knColumns">
+            <div class="kn-checkbox material-icons">check_box_outline_blank</div>
+            <div class="kn-symbol material-icons">adjust</div>
+            <div class="kn-label">Item row</div>
+            <div class="kn-max-likes"></div>
+            <div class="kn-symbol kn-weight-code material-icons">filter_1</div>
+            <div class="kn-symbol kn-weight-symbol material-icons">dock</div>
+            <div class="kn-weight-amount">5.0</div>
           </div>
         </div>
-      </cn-package-component>
+      </kn-package-component>
     </p>
 
     <h3>Templates - No Package Configuration</h3>
 
-    <ng-template #packageTpl let-label="cnLabel" let-layout="cnLayout">
-      <div class="example-header" cnGrid [columns]="layout.cnColumns">
+    <ng-template #packageTpl let-label="knLabel" let-layout="knLayout" let-count="knCount">
+      <div class="example-header" knGrid [columns]="layout.knColumns">
         <div class="material-icons">all_out</div>
         <div>{{ label }}</div>
-        <div class="cn-count">x4</div>
+        <div class="kn-count">x{{count}}</div>
       </div>
     </ng-template>
 
-    <ng-template #itemTpl let-item="cnData">
-      <div class="cn-checkbox material-icons">{{item.checkbox}}</div>
-      <div class="cn-symbol material-icons">{{item.symbol}}</div>
-      <div class="cn-label">{{item.cnLabel}}</div>
-      <div class="cn-max-likes"></div>
-      <div class="cn-symbol cn-weight-code material-icons">{{item.weightCode}}</div>
-      <div class="cn-symbol cn-weight-symbol material-icons">{{item.weightSymbol}}</div>
-      <div class="cn-weight-amount">{{item.weightAmount}}</div>
+    <ng-template #itemTpl let-item="knData">
+      <div class="kn-checkbox material-icons">{{item.checkbox}}</div>
+      <div class="kn-symbol material-icons">{{item.symbol}}</div>
+      <div class="kn-label">{{item.knLabel}}</div>
+      <div class="kn-max-likes"></div>
+      <div class="kn-symbol kn-weight-code material-icons">{{item.weightCode}}</div>
+      <div class="kn-symbol kn-weight-symbol material-icons">{{item.weightSymbol}}</div>
+      <div class="kn-weight-amount">{{item.weightAmount}}</div>
     </ng-template>
 
-    <p class="cn-surface">
-      <cn-package-component>
-        <ng-container class="cn-select-package" *ngTemplateOutlet="packageTpl; context: packageConfig"></ng-container>
-        <div class="cn-select-items" cnGrid [columns]="itemConfig.cnLayout.cnColumns">
-          <ng-container *ngTemplateOutlet="itemTpl; context:{cnData: itemConfig.cnData[0]}"></ng-container>
+    <p class="kn-surface">
+      <kn-package-component>
+        <ng-container class="kn-select-package" *ngTemplateOutlet="packageTpl; context: packageConfigSingle"></ng-container>
+        <div class="kn-select-items" knGrid [columns]="itemConfig.knLayout.knColumns">
+          <ng-container *ngTemplateOutlet="itemTpl; context:{knData: (itemConfig.knData | async)[0]}"></ng-container>
         </div>
-      </cn-package-component>
+      </kn-package-component>
     </p>
 
-    <p class="cn-surface">
-      <cn-package-component>
-        <ng-container class="cn-select-package" *ngTemplateOutlet="packageTpl; context: packageConfig"></ng-container>
-        <div class="cn-select-items" *ngFor="let item of itemConfig.cnData" cnGrid
-             [columns]="itemConfig.cnLayout.cnColumns">
-          <ng-container *ngTemplateOutlet="itemTpl; context: {cnData: item}"></ng-container>
+    <p class="kn-surface">
+      <kn-package-component>
+        <ng-container class="kn-select-package" *ngTemplateOutlet="packageTpl; context: packageConfig"></ng-container>
+        <div class="kn-select-items"
+             *ngFor="let item of (itemConfig.knData | async)"
+             knGrid
+             [columns]="itemConfig.knLayout.knColumns">
+          <ng-container *ngTemplateOutlet="itemTpl; context: {knData: item}"></ng-container>
         </div>
-      </cn-package-component>
+      </kn-package-component>
     </p>
   </div>
   <div class="source">
     <h3>Source</h3>
     <div class="sample">
       <div class="sample">
-        <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/cargo-domain/src/cn/components/package/package.component.component.ts"
+        <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/cargo-domain/src/kn/components/package/package.component.component.ts"
            target="source">package.component.ts</a>
         <ng-gist userName="deaneturner" gistId="4a1d8ccd92f17452ed0bccd0ff7b02ab"></ng-gist>
       </div>
     </div>
     <div class="sample">
-      <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/cargo-domain/src/cn/components/package/package.component.html"
+      <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/cargo-domain/src/kn/components/package/package.component.html"
          target="source">package.component.html</a>
       <ng-gist userName="deaneturner" gistId="4d9e926bebd1c2ca8c241ec43ebf3d76"></ng-gist>
     </div>
