@@ -13,7 +13,7 @@ import { DirectivesExampleComponent } from './components/examples/directives-exa
 import { CargoModule } from '../../../cargo-domain/src/kn/cargo.module';
 import { TemplateExampleComponent } from './components/examples/template-example/template-example.component';
 import { NgGistModule } from 'ng-gist';
-import { ComponentExampleComponent } from './components/component-example/component-example.component';
+import { ComponentExampleComponent } from './components/examples/component-example/component-example.component';
 import { StoreModule } from '@ngrx/store';
 import { editItemTagReducer, itemsReducer } from './reducers/item.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
