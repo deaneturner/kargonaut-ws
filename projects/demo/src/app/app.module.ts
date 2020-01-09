@@ -9,7 +9,7 @@ import { initializeApp } from './app.initializer';
 import { BundleExampleComponent } from './components/bundle-example/bundle-example.component';
 import { SimpleMarkupExampleComponent } from './components/examples/simple-markup-example/simple-markup-example.component';
 import { BasicStylingExampleComponent } from './components/examples/basic-styling-example/basic-styling-example.component';
-import { DirectivesExampleComponent } from './components/directives-example/directives-example.component';
+import { DirectivesExampleComponent } from './components/examples/directives-example/directives-example.component';
 import { CargoModule } from '../../../cargo-domain/src/kn/cargo.module';
 import { TemplateExampleComponent } from './components/template-example/template-example.component';
 import { NgGistModule } from 'ng-gist';
