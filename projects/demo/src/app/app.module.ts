@@ -25,6 +25,7 @@ import { ItemExampleComponent } from './components/item-example/item-example.com
 
 @NgModule({
     declarations: [
+        // TODO: Lazy load my module vs eager load
         AboutComponent,
         AppComponent,
         BundleExampleComponent,
@@ -44,11 +45,13 @@ import { ItemExampleComponent } from './components/item-example/item-example.com
         HttpClientModule,
         CargoModule,
         NgGistModule,
+        // TODO: meta-reducers and reducers/index.ts?
         StoreModule.forRoot({
             items: itemsReducer,
             contracts: contractsReducer,
             editItemTag: editItemTagReducer
         }),
+        // TODO: add log only during production, and max age
         StoreDevtoolsModule.instrument(),
     ],
     providers: [
