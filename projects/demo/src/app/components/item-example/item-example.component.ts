@@ -22,7 +22,8 @@ export class ItemExampleComponent implements OnInit {
     selected: {
       true: 'check_box',
       false: 'check_box_outline_blank'
-    }};
+    }
+  };
 
   constructor() { }
 

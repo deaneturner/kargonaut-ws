@@ -16,7 +16,7 @@
     <!--  item template-->
     <ng-template #itemTpl let-item="item">
       <div class="kn-item" knGrid [columns]="itemConfig.knLayout.knColumns">
-        <div class="kn-checkbox material-icons">{{item?.checkbox}}</div>
+        <div (click)="onSelect(item)" class="kn-checkbox material-icons">{{layout.selected[item.isSelected]}}</div>
         <div class="kn-symbol material-icons">{{item?.symbol}}</div>
         <div class="kn-label">{{item?.knLabel}}</div>
         <div class="kn-max-likes"></div>

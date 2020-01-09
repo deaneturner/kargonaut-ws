@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { PackageConfig } from '../../../../../cargo-domain/src/models/Package.config';
 import { ItemConfig } from '../../../../../cargo-domain/src/models/Item.config';
 import { Store, select } from '@ngrx/store';
@@ -10,6 +10,8 @@ import {
     deleteItem,
 } from '../../actions/item-actions';
 import { of } from 'rxjs/internal/observable/of';
+import { ItemExample } from '../../../../models/item-example';
+import { Contract } from '../../../../models/contract';
 
 // import { async } from 'rxjs/internal/scheduler/async';
 
@@ -22,6 +24,9 @@ export class ItemExtensionExampleComponent implements OnInit {
 
     static label = 'Interface Extension';
 
+    @Output()
+    selected: EventEmitter<Contract> = new EventEmitter();
+
     packageConfig: PackageConfig;
     packageConfig2: PackageConfig;
     itemConfig: ItemConfig;
@@ -30,6 +35,13 @@ export class ItemExtensionExampleComponent implements OnInit {
     items$ = this.store.pipe(select(state => state.contracts));
 
     // editItemTag$ = this.store.pipe(select('tag'));
+
+    layout = {
+        selected: {
+            true: 'check_box',
+            false: 'check_box_outline_blank'
+        }
+    };
 
     constructor(private store: Store<AppState>) {
     }
@@ -77,6 +89,12 @@ export class ItemExtensionExampleComponent implements OnInit {
 
     get label() {
         return ItemExtensionExampleComponent.label;
+    }
+
+    onSelect(item: ItemExample) {
+        item.isSelected = !item.isSelected;
+        this.selected.emit(item);
+        console.log(item);
     }
 }
 
