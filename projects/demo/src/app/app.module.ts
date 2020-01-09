@@ -11,7 +11,7 @@ import { SimpleMarkupExampleComponent } from './components/examples/simple-marku
 import { BasicStylingExampleComponent } from './components/examples/basic-styling-example/basic-styling-example.component';
 import { DirectivesExampleComponent } from './components/examples/directives-example/directives-example.component';
 import { CargoModule } from '../../../cargo-domain/src/kn/cargo.module';
-import { TemplateExampleComponent } from './components/template-example/template-example.component';
+import { TemplateExampleComponent } from './components/examples/template-example/template-example.component';
 import { NgGistModule } from 'ng-gist';
 import { ComponentExampleComponent } from './components/component-example/component-example.component';
 import { StoreModule } from '@ngrx/store';

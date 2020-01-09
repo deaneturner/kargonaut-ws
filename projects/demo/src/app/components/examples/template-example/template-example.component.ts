@@ -1,12 +1,12 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { PackageConfig } from '../../../../../cargo-domain/src/kn/models/Package.config';
-import { ItemConfig } from '../../../../../cargo-domain/src/kn/models/Item.config';
-import { Item } from '../../../../../cargo-domain/src/kn/models/Item';
+import { PackageConfig } from '../../../../../../cargo-domain/src/kn/models/Package.config';
+import { ItemConfig } from '../../../../../../cargo-domain/src/kn/models/Item.config';
+import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
-import { AppState } from '../../app.state';
-import { ItemExample } from '../../../../models/item-example';
-import { Contract } from '../../../../models/contract';
+import { AppState } from '../../../app.state';
+import { ItemExample } from '../../../../../models/item-example';
+import { Contract } from '../../../../../models/contract';
 
 @Component({
   selector: 'demo-template-example',

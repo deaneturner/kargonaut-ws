@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TemplateExampleComponent } from './template-example.component';
-import { PackageComponent } from '../../../../../cargo-domain/src/kn/components/package/package.component';
-import { InlineGridDirective } from '../../../../../cargo-domain/src/kn/directives/inline-grid/inline-grid.directive';
+import { PackageComponent } from '../../../../../../cargo-domain/src/kn/components/package/package.component';
+import { InlineGridDirective } from '../../../../../../cargo-domain/src/kn/directives/inline-grid/inline-grid.directive';
 import { NgGistModule } from 'ng-gist';
 
 describe('TemplateExampleComponent', () => {
