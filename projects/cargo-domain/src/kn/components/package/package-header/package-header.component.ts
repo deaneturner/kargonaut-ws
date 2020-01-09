@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Injector, Input, OnInit } from '@angular/core';
 import { PackageConfig } from '../../../models/Package.config';
+import { PackageComponent } from '../package.component';
 
 @Component({
     selector: 'kn-package-header',
@@ -20,7 +21,10 @@ export class PackageHeaderComponent implements OnInit {
     @Input()
     config: PackageConfig;
 
-    constructor() {
+    parentComponent: PackageComponent;
+
+    constructor(private injector: Injector) {
+        this.parentComponent = this.injector.get(PackageComponent);
     }
 
     ngOnInit() {

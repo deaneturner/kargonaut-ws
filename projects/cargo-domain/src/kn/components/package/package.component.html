@@ -4,7 +4,6 @@
       <div class="material-icons">grade</div>
       <div class="kn-label">{{ config.knLabel }}</div>
       <div class="kn-count" *ngIf="itemConfig">x{{items.length}}</div>
-      <div class="kn-count" *ngIf="!itemConfig">x{{config.knCount}}</div>
     </div>
   </ng-template>
   <ng-template #collapseTpl>
@@ -18,9 +17,7 @@
   <div class="kn-items" *ngIf="itemConfig">
     <ng-container *ngIf="isCollapsed(); else collapseTpl">
       <ng-container *ngFor="let item of items">
-<!--        <div class="kn-item" knGrid [columns]="itemConfig.knLayout.knColumns">-->
           <ng-container *ngTemplateOutlet="listItemTemplate; context: {$implicit: item}"></ng-container>
-<!--        </div>-->
       </ng-container>
     </ng-container>
   </div>
