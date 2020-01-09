@@ -4,8 +4,8 @@ import { DirectivesExampleComponent } from './components/examples/directives-exa
 import { TemplateExampleComponent } from './components/examples/template-example/template-example.component';
 import { ComponentExampleComponent } from './components/examples/component-example/component-example.component';
 import { AboutComponent } from './components/about/about.component';
-import { SubComponentExampleComponent } from './components/sub-component-example/sub-component-example.component';
 import { ItemExtensionExampleComponent } from './components/examples/item-extension-example/item-extension-example.component';
+import { SubComponentExampleComponent } from './components/examples/sub-component-example/sub-component-example.component';
 
 export const examples = [
   { path: 'About', component: AboutComponent },

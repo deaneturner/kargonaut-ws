@@ -2,10 +2,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SubComponentExampleComponent } from './sub-component-example.component';
 import { NgGistModule } from 'ng-gist';
-import { PackageComponent } from '../../../../../cargo-domain/src/kn/components/package/package.component';
-import { InlineGridDirective } from '../../../../../cargo-domain/src/kn/directives/inline-grid/inline-grid.directive';
-import { items } from '../../../assets/data/items';
 import { of } from 'rxjs/internal/observable/of';
+import { PackageComponent } from '../../../../../../cargo-domain/src/kn/components/package/package.component';
+import { InlineGridDirective } from '../../../../../../cargo-domain/src/kn/directives/inline-grid/inline-grid.directive';
+import { items } from '../../../../assets/data/items';
 
 describe('SubComponentExampleComponent', () => {
   let component: SubComponentExampleComponent;

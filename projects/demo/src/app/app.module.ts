@@ -6,7 +6,6 @@ import { AboutComponent } from './components/about/about.component';
 import { AppConfigService } from './services/app-config-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { initializeApp } from './app.initializer';
-import { BundleExampleComponent } from './components/bundle-example/bundle-example.component';
 import { SimpleMarkupExampleComponent } from './components/examples/simple-markup-example/simple-markup-example.component';
 import { BasicStylingExampleComponent } from './components/examples/basic-styling-example/basic-styling-example.component';
 import { DirectivesExampleComponent } from './components/examples/directives-example/directives-example.component';
@@ -18,17 +17,16 @@ import { StoreModule } from '@ngrx/store';
 import { editItemTagReducer, itemsReducer } from './reducers/item.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CommonModule } from '@angular/common';
-import { SubComponentExampleComponent } from './components/sub-component-example/sub-component-example.component';
 import { contractsReducer } from './reducers/contract.reducers';
 import { ItemExtensionExampleComponent } from './components/examples/item-extension-example/item-extension-example.component';
-import { ItemExampleComponent } from './components/item-example/item-example.component';
+import { SubComponentExampleComponent } from './components/examples/sub-component-example/sub-component-example.component';
+import { ItemExampleComponent } from './components/examples/sub-component-example/item-example/item-example.component';
 
 @NgModule({
     declarations: [
         // TODO: Lazy load my module vs eager load
         AboutComponent,
         AppComponent,
-        BundleExampleComponent,
         SimpleMarkupExampleComponent,
         BasicStylingExampleComponent,
         DirectivesExampleComponent,

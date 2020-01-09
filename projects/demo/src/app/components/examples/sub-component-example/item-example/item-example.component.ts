@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Contract } from '../../../../models/contract';
-import { ItemConfig } from '../../../../../cargo-domain/src/kn/models/Item.config';
+import { ItemConfig } from '../../../../../../../cargo-domain/src/kn/models/Item.config';
+import { Contract } from '../../../../../../models/contract';
 
 @Component({
   selector: 'demo-item-example',
