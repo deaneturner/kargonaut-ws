@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { PackageConfig } from '../../../../../cargo-domain/src/models/Package.config';
 import { ItemConfig } from '../../../../../cargo-domain/src/models/Item.config';
 import { Item } from '../../../../../cargo-domain/src/models/Item';
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { AppState } from '../../app.state';
+import { ItemExample } from '../../../../models/item-example';
+import { Contract } from '../../../../models/contract';
 
 @Component({
   selector: 'demo-template-example',
@@ -14,11 +16,22 @@ import { AppState } from '../../app.state';
 export class TemplateExampleComponent implements OnInit {
 
   static label = 'Templates';
+
+  @Output()
+  selected: EventEmitter<Contract> = new EventEmitter();
+
   packageConfig: PackageConfig;
   packageConfigSingle: PackageConfig;
   itemConfig: ItemConfig;
 
   items$: Observable<Item[]> = this.store.pipe(select(state => state.items));
+
+  layout = {
+    selected: {
+      true: 'check_box',
+      false: 'check_box_outline_blank'
+    }
+  };
 
   constructor(private store: Store<AppState>) { }
 
@@ -49,5 +62,11 @@ export class TemplateExampleComponent implements OnInit {
 
   get label() {
     return TemplateExampleComponent.label;
+  }
+
+  onSelect(item: ItemExample) {
+    item.isSelected = !item.isSelected;
+    this.selected.emit(item);
+    console.log(item);
   }
 }
