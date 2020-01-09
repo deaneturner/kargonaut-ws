@@ -5,28 +5,9 @@
       <h2>{{ label }}</h2>
     </div>
     <h3>Package Component</h3>
-    <!-- package template-->
-    <ng-template #packageTpl let-label="knLabel" let-layout="knLayout" let-data="knData">
-      <div class="example-header" knGrid [columns]="layout.knColumns">
-        <div class="material-icons">all_out</div>
-        <div class="kn-label">{{ label }}</div>
-        <div class="kn-count">xP</div>
-      </div>
-    </ng-template>
-    <!--  item template-->
-    <ng-template #itemTpl let-item="item">
-      <div class="kn-checkbox material-icons">{{item?.checkbox}}</div>
-      <div class="kn-symbol material-icons">{{item?.symbol}}</div>
-      <div class="kn-label">{{item?.knLabel}}</div>
-      <div class="kn-max-likes"></div>
-      <div class="kn-symbol kn-weight-code material-icons">{{item?.weightCode}}</div>
-      <div class="kn-symbol kn-weight-symbol material-icons">{{item?.weightSymbol}}</div>
-      <div class="kn-weight-amount">{{item?.weightAmount}}</div>
-    </ng-template>
-    <!-- component - w/ items list -->
     <p class="kn-surface">
       <kn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
-        <demo-package-header-example></demo-package-header-example>
+        <demo-package-header-example [config]="packageConfig"></demo-package-header-example>
         <!--items -->
         <demo-item-example *knListItem="let item" [item]="item" [config]="itemConfig"></demo-item-example>
         <div class="kn-select-max-no-collapse">expand</div>
