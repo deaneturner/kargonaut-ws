@@ -7,7 +7,7 @@
     <h3>Package Component</h3>
     <p class="kn-surface">
       <kn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
-        <demo-package-header-example [config]="packageConfig"></demo-package-header-example>
+        <kn-package-header [config]="packageConfig"></kn-package-header>
         <!--items -->
         <demo-item-example *knListItem="let item" [item]="item" [config]="itemConfig"></demo-item-example>
         <div class="kn-select-max-no-collapse">expand</div>

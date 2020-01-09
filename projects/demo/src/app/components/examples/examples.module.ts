@@ -8,7 +8,6 @@ import { ComponentExampleComponent } from './component-example/component-example
 import { SubComponentExampleComponent } from './sub-component-example/sub-component-example.component';
 import { ItemExtensionExampleComponent } from './item-extension-example/item-extension-example.component';
 import { ItemExampleComponent } from './sub-component-example/item-example/item-example.component';
-import { PackageHeaderExampleComponent } from './sub-component-example/package-header-example/package-header-example.component';
 import { CargoModule } from '../../../../../cargo-domain/src/kn/cargo.module';
 import { NgGistModule } from 'ng-gist';
 
@@ -23,8 +22,7 @@ import { NgGistModule } from 'ng-gist';
       ComponentExampleComponent,
       SubComponentExampleComponent,
       ItemExtensionExampleComponent,
-      ItemExampleComponent,
-      PackageHeaderExampleComponent
+      ItemExampleComponent
   ],
   imports: [
     CommonModule,
