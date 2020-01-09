@@ -1,5 +1,5 @@
-import { SimpleMarkupExampleComponent } from './components/simple-markup-example/simple-markup-example.component';
-import { BasicStylingExampleComponent } from './components/basic-styling-example/basic-styling-example.component';
+import { SimpleMarkupExampleComponent } from './components/examples/simple-markup-example/simple-markup-example.component';
+import { BasicStylingExampleComponent } from './components/examples/basic-styling-example/basic-styling-example.component';
 import { DirectivesExampleComponent } from './components/directives-example/directives-example.component';
 import { TemplateExampleComponent } from './components/template-example/template-example.component';
 import { ComponentExampleComponent } from './components/component-example/component-example.component';
