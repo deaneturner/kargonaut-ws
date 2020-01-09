@@ -1,4 +1,4 @@
-import { Item } from '../../../../cargo-domain/src/models/Item';
+import { Item } from '../../../../cargo-domain/src/kn/models/Item';
 import { items } from '../../assets/data/items';
 import { Tag, TagGenerator } from '../../../../cargo-domain/src/common/TagGenerator';
 import { appendItem, cancelItem, deleteItem, editItem, replaceItem } from '../actions/item-actions';

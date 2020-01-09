@@ -5,10 +5,10 @@ import {
     OnInit,
     TemplateRef
 } from '@angular/core';
-import { PackageConfig } from '../../../models/Package.config';
-import { ItemConfig } from '../../../models/Item.config';
+import { PackageConfig } from '../../models/Package.config';
+import { ItemConfig } from '../../models/Item.config';
 import { ListItemDirective } from '../../directives/list-item/list-item.directive';
-import { Item } from '../../../models/Item';
+import { Item } from '../../models/Item';
 import { Subscription } from 'rxjs';
 
 @Component({

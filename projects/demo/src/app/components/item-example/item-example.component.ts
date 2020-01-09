@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Contract } from '../../../../models/contract';
-import { ItemConfig } from '../../../../../cargo-domain/src/models/Item.config';
+import { ItemConfig } from '../../../../../cargo-domain/src/kn/models/Item.config';
 
 @Component({
   selector: 'demo-item-example',
@@ -33,6 +33,5 @@ export class ItemExampleComponent implements OnInit {
   onSelect() {
     this.item.isSelected = !this.item.isSelected;
     this.selected.emit(this.item);
-    console.log(this.item);
   }
 }

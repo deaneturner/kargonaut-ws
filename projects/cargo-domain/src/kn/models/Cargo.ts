@@ -1,4 +1,4 @@
-import { Tag } from '../common/TagGenerator';
+import { Tag } from '../../common/TagGenerator';
 
 export abstract class Cargo {
     knTag?: Tag;

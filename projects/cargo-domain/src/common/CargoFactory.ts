@@ -1,8 +1,8 @@
 import { TagGenerator } from './TagGenerator';
-import { Package } from '../models/Package';
-import { Item } from '../models/Item';
-import { Bundle } from '../models/Bundle';
-import { Cargo } from '../models/Cargo';
+import { Package } from '../kn/models/Package';
+import { Item } from '../kn/models/Item';
+import { Bundle } from '../kn/models/Bundle';
+import { Cargo } from '../kn/models/Cargo';
 
 export enum Type {
     ITEM,

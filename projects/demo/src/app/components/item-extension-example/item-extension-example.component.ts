@@ -1,9 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { PackageConfig } from '../../../../../cargo-domain/src/models/Package.config';
-import { ItemConfig } from '../../../../../cargo-domain/src/models/Item.config';
+import { PackageConfig } from '../../../../../cargo-domain/src/kn/models/Package.config';
+import { ItemConfig } from '../../../../../cargo-domain/src/kn/models/Item.config';
 import { Store, select } from '@ngrx/store';
 import { AppState } from '../../app.state';
-import { Item } from '../../../../../cargo-domain/src/models/Item';
+import { Item } from '../../../../../cargo-domain/src/kn/models/Item';
 import { Tag } from '../../../../../cargo-domain/src/common/TagGenerator';
 import {
     appendItem,
@@ -94,7 +94,6 @@ export class ItemExtensionExampleComponent implements OnInit {
     onSelect(item: ItemExample) {
         item.isSelected = !item.isSelected;
         this.selected.emit(item);
-        console.log(item);
     }
 }
 
