@@ -5,7 +5,7 @@ import { TemplateExampleComponent } from './components/examples/template-example
 import { ComponentExampleComponent } from './components/examples/component-example/component-example.component';
 import { AboutComponent } from './components/about/about.component';
 import { SubComponentExampleComponent } from './components/sub-component-example/sub-component-example.component';
-import { ItemExtensionExampleComponent } from './components/item-extension-example/item-extension-example.component';
+import { ItemExtensionExampleComponent } from './components/examples/item-extension-example/item-extension-example.component';
 
 export const examples = [
   { path: 'About', component: AboutComponent },

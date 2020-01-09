@@ -20,7 +20,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CommonModule } from '@angular/common';
 import { SubComponentExampleComponent } from './components/sub-component-example/sub-component-example.component';
 import { contractsReducer } from './reducers/contract.reducers';
-import { ItemExtensionExampleComponent } from './components/item-extension-example/item-extension-example.component';
+import { ItemExtensionExampleComponent } from './components/examples/item-extension-example/item-extension-example.component';
 import { ItemExampleComponent } from './components/item-example/item-example.component';
 
 @NgModule({

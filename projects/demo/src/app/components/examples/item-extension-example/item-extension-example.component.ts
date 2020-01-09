@@ -1,17 +1,17 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { PackageConfig } from '../../../../../cargo-domain/src/kn/models/Package.config';
-import { ItemConfig } from '../../../../../cargo-domain/src/kn/models/Item.config';
+import { PackageConfig } from '../../../../../../cargo-domain/src/kn/models/Package.config';
+import { ItemConfig } from '../../../../../../cargo-domain/src/kn/models/Item.config';
 import { Store, select } from '@ngrx/store';
-import { AppState } from '../../app.state';
-import { Item } from '../../../../../cargo-domain/src/kn/models/Item';
-import { Tag } from '../../../../../cargo-domain/src/common/TagGenerator';
+import { AppState } from '../../../app.state';
+import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
+import { Tag } from '../../../../../../cargo-domain/src/common/TagGenerator';
 import {
     appendItem,
     deleteItem,
-} from '../../actions/item-actions';
+} from '../../../actions/item-actions';
 import { of } from 'rxjs/internal/observable/of';
-import { ItemExample } from '../../../../models/item-example';
-import { Contract } from '../../../../models/contract';
+import { ItemExample } from '../../../../../models/item-example';
+import { Contract } from '../../../../../models/contract';
 
 // import { async } from 'rxjs/internal/scheduler/async';
 
