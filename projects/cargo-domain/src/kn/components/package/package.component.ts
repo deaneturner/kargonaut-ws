@@ -40,6 +40,8 @@ export class PackageComponent implements OnInit, OnDestroy {
     constructor() {
     }
 
+    // TODO: pipe instead of subscribe
+
     ngOnInit() {
         this.subscription = this.itemConfig && this.itemConfig.knData.subscribe((data) => {
             this.items = data;
