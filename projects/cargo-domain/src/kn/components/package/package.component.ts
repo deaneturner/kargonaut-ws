@@ -31,7 +31,7 @@ export class PackageComponent implements OnInit, OnDestroy {
     @Input()
     itemConfig: ItemConfig | any;
 
-    @ContentChild(PackageHeaderComponent, {static: false, read: TemplateRef})
+    @ContentChild(PackageHeaderComponent, {static: false})
     packageHeader;
 
     @ContentChild(ListItemDirective, {static: false, read: TemplateRef})

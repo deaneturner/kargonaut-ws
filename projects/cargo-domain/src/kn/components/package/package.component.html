@@ -1,16 +1,19 @@
 <div class="kn-package example-package">
-  <ng-template #collapseTpl>
-    <div (click)="expand($event)">
-      <ng-content select=".kn-select-max-no-collapse"></ng-content>
-    </div>
-  </ng-template>
-  <div (click)="collapse($event)" *ngIf="config">
+  <ng-template #packageHeaderTpl>
     <div knGrid [columns]="config.knLayout.knColumns">
       <div class="material-icons">grade</div>
       <div class="kn-label">{{ config.knLabel }}</div>
       <div class="kn-count" *ngIf="itemConfig">x{{items.length}}</div>
       <div class="kn-count" *ngIf="!itemConfig">x{{config.knCount}}</div>
     </div>
+  </ng-template>
+  <ng-template #collapseTpl>
+    <div (click)="expand($event)">
+      <ng-content select=".kn-select-max-no-collapse"></ng-content>
+    </div>
+  </ng-template>
+  <div (click)="collapse($event)" *ngIf="config">
+    <ng-content select="kn-package-header" *ngIf="packageHeader; else packageHeaderTpl"></ng-content>
   </div>
   <div class="kn-items" *ngIf="itemConfig">
     <ng-container *ngIf="isCollapsed(); else collapseTpl">
