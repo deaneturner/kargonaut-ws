@@ -5,7 +5,7 @@ import { ItemConfig } from '../../../../../cargo-domain/src/models/Item.config';
 @Component({
   selector: 'demo-item-example',
   templateUrl: './item-example.component.html',
-  styleUrls: ['./item-example.component.less']
+  styleUrls: ['./item-example.component.less'],
 })
 export class ItemExampleComponent implements OnInit {
 
@@ -13,7 +13,7 @@ export class ItemExampleComponent implements OnInit {
   item: Contract;
 
   @Input()
-  itemConfig: ItemConfig;
+  config: ItemConfig;
 
   @Output()
   selected: EventEmitter<Contract> = new EventEmitter();

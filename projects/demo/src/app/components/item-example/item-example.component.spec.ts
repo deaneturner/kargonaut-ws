@@ -1,25 +1,40 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ItemExampleComponent } from './item-example.component';
+import { ItemConfig } from '../../../../../cargo-domain/src/models/Item.config';
+import { of } from 'rxjs';
+import { Item } from '../../../../../cargo-domain/src/models/Item';
+import { InlineGridDirective } from '../../../../../cargo-domain/src/kn/directives/inline-grid/inline-grid.directive';
 
 describe('ItemExampleComponent', () => {
-  let component: ItemExampleComponent;
-  let fixture: ComponentFixture<ItemExampleComponent>;
+    let component: ItemExampleComponent;
+    let fixture: ComponentFixture<ItemExampleComponent>;
+    const mockConfig: ItemConfig = {
+        knData: of<Item[]>([]),
+        knLayout: {
+            knColumns: [],
+            knTemplateRef: null
+        }
+    };
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ItemExampleComponent ]
-    })
-    .compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [
+                ItemExampleComponent,
+                InlineGridDirective
+            ]
+        })
+            .compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ItemExampleComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(ItemExampleComponent);
+        component = fixture.componentInstance;
+        component.config = mockConfig;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

@@ -35,7 +35,7 @@ import { ItemExampleComponent } from './components/item-example/item-example.com
         ComponentExampleComponent,
         ItemExtensionExampleComponent,
         SubComponentExampleComponent,
-        ItemExampleComponent
+        ItemExampleComponent,
     ],
     imports: [
         CommonModule,
