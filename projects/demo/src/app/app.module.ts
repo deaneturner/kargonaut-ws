@@ -14,10 +14,10 @@ import { TemplateExampleComponent } from './components/examples/template-example
 import { NgGistModule } from 'ng-gist';
 import { ComponentExampleComponent } from './components/examples/component-example/component-example.component';
 import { StoreModule } from '@ngrx/store';
-import { editItemTagReducer, itemsReducer } from './reducers/item.reducers';
+import { editItemTagReducer, itemsReducer } from './components/examples/reducers/item.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CommonModule } from '@angular/common';
-import { contractsReducer } from './reducers/contract.reducers';
+import { contractsReducer } from './components/examples/reducers/contract.reducers';
 import { ItemExtensionExampleComponent } from './components/examples/item-extension-example/item-extension-example.component';
 import { SubComponentExampleComponent } from './components/examples/sub-component-example/sub-component-example.component';
 import { ItemExampleComponent } from './components/examples/sub-component-example/item-example/item-example.component';

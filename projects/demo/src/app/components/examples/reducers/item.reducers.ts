@@ -1,6 +1,6 @@
-import { Item } from '../../../../cargo-domain/src/kn/models/Item';
-import { items } from '../../assets/data/items';
-import { Tag, TagGenerator } from '../../../../cargo-domain/src/common/TagGenerator';
+import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
+import { items } from '../../../../assets/data/items';
+import { Tag, TagGenerator } from '../../../../../../cargo-domain/src/common/TagGenerator';
 import { appendItem, cancelItem, deleteItem, editItem, replaceItem } from '../actions/item-actions';
 import { Action, createReducer } from '@ngrx/store';
 import { on } from '@ngrx/store';

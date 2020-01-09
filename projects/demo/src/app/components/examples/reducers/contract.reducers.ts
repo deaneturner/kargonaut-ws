@@ -1,9 +1,9 @@
-import { Tag, TagGenerator } from '../../../../cargo-domain/src/common/TagGenerator';
+import { Tag, TagGenerator } from '../../../../../../cargo-domain/src/common/TagGenerator';
 import { appendContract, cancelContract, deleteContract, editContract, replaceContract } from '../actions/contract-actions';
 import { Action, createReducer } from '@ngrx/store';
 import { on } from '@ngrx/store';
-import { Contract } from '../../../models/contract';
-import { contracts } from '../../assets/data/contracts';
+import { Contract } from '../../../../../models/contract';
+import { contracts } from '../../../../assets/data/contracts';
 
 const initialContracts: Contract[] = contracts;
 

@@ -1,5 +1,5 @@
-import { Item } from '../../../../cargo-domain/src/kn/models/Item';
-import { Tag } from '../../../../cargo-domain/src/common/TagGenerator';
+import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
+import { Tag } from '../../../../../../cargo-domain/src/common/TagGenerator';
 import { createAction, props } from '@ngrx/store';
 
 export const appendItem = createAction('[Item[ Append Item', props<{ item: Item }>());
