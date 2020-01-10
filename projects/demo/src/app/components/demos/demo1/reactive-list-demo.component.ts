@@ -19,7 +19,7 @@ export class ReactiveListDemoComponent implements OnInit {
     packageConfig: PackageConfig;
     itemConfig: ItemConfig;
 
-    items$ = this.store.pipe(select(state => state.contracts));
+    items$ = this.store.pipe(select(state => state.results));
 
     // editItemTag$ = this.store.pipe(select('tag'));
 
@@ -28,7 +28,7 @@ export class ReactiveListDemoComponent implements OnInit {
 
     ngOnInit() {
         this.packageConfig = {
-            knLabel: 'Package Component',
+            knLabel: 'Result Group Label',
             knLayout: {
                 knMaxCollapse: 4
             }

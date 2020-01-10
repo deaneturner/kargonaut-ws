@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 import { contractsReducer } from './components/examples/reducers/contract.reducers';
 import { ExamplesModule } from './components/examples/examples.module';
 import { DemosModule } from './components/demos/demos/demos.module';
+import { resultsReducer } from './components/examples/reducers/results.reducers';
 
 @NgModule({
     declarations: [
@@ -31,6 +32,7 @@ import { DemosModule } from './components/demos/demos/demos.module';
         StoreModule.forRoot({
             items: itemsReducer,
             contracts: contractsReducer,
+            results: resultsReducer,
             editItemTag: editItemTagReducer
         }),
         // TODO: add log only during production, and max age
