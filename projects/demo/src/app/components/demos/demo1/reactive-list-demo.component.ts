@@ -10,7 +10,7 @@ import { appendItem, deleteItem } from '../../examples/actions/item-actions';
 @Component({
     selector: 'demo-1-component-example',
     templateUrl: './reactive-list.component.html',
-    styleUrls: ['./reactive=list.component.less']
+    styleUrls: ['./reactive-list.component.less']
 })
 export class ReactiveListDemoComponent implements OnInit {
 
@@ -18,10 +18,9 @@ export class ReactiveListDemoComponent implements OnInit {
 
     packageConfig: PackageConfig;
     itemConfig: ItemConfig;
+    item: Item;
 
     items$ = this.store.pipe(select(state => state.results));
-
-    // editItemTag$ = this.store.pipe(select('tag'));
 
     constructor(private store: Store<AppState>) {
     }
@@ -35,6 +34,10 @@ export class ReactiveListDemoComponent implements OnInit {
         };
         this.itemConfig = {
             knData: this.items$
+        };
+
+        this.item = {
+            knLabel: 'An Item'
         };
     }
 

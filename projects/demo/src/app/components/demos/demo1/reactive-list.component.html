@@ -1,8 +1,9 @@
+
+<div>
+  <h2>{{ label }}</h2>
+</div>
 <div class="reactive-list-demo">
   <div>
-    <div>
-      <h2>{{ label }}</h2>
-    </div>
     <p class="kn-surface">
       <kn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
         <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
@@ -11,5 +12,13 @@
       </kn-package-component>
     </p>
   </div>
-  <div></div>
+  <div>
+    <div class="kn-surface">
+      <div class="kn-items">
+        <div >
+          {{ item.knLabel }}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
