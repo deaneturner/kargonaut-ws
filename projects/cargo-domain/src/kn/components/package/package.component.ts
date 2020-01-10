@@ -10,6 +10,7 @@ import { ItemConfig } from '../../models/Item.config';
 import { ListItemDirective } from '../../directives/list-item/list-item.directive';
 import { Item } from '../../models/Item';
 import { Subscription } from 'rxjs';
+import { PackageHeaderDirective } from '../../directives/package-header/package-header.directive';
 
 @Component({
     selector: 'kn-package-component',
@@ -30,7 +31,7 @@ export class PackageComponent implements OnInit, OnDestroy {
     @Input()
     itemConfig: ItemConfig | any;
 
-    @ContentChild('kn-select-package-header', {static: false})
+    @ContentChild(PackageHeaderDirective, {static: false, read: TemplateRef})
     packageHeader;
 
     @ContentChild(ListItemDirective, {static: false, read: TemplateRef})

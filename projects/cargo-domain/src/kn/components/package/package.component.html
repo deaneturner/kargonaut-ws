@@ -12,12 +12,14 @@
     </div>
   </ng-template>
   <div (click)="collapse($event)" *ngIf="config">
-    <ng-content select=".kn-select-package-header" *ngIf="packageHeader; else packageHeaderTpl"></ng-content>
+    <ng-container *ngIf="packageHeader; else packageHeaderTpl">
+      <ng-container *ngTemplateOutlet="packageHeader"></ng-container>
+    </ng-container>
   </div>
   <div class="kn-items" *ngIf="itemConfig">
     <ng-container *ngIf="isCollapsed(); else collapseTpl">
       <ng-container *ngFor="let item of items">
-          <ng-container *ngTemplateOutlet="listItemTemplate; context: {$implicit: item}"></ng-container>
+        <ng-container *ngTemplateOutlet="listItemTemplate; context: {$implicit: item}"></ng-container>
       </ng-container>
     </ng-container>
   </div>

@@ -1,8 +1,8 @@
-import { ListItemDirective } from './list-item.directive';
+import { PackageHeaderDirective } from './package-header.directive';
 
 describe('PackageHeaderDirective', () => {
   it('should create an instance', () => {
-    const directive = new ListItemDirective();
+    const directive = new PackageHeaderDirective();
     expect(directive).toBeTruthy();
   });
 });

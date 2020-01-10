@@ -4,13 +4,15 @@ import { InlineGridDirective } from './directives/inline-grid/inline-grid.direct
 import { PackageComponent } from './components/package/package.component';
 import { CommonModule } from '@angular/common';
 import { ListItemDirective } from './directives/list-item/list-item.directive';
+import { PackageHeaderDirective } from './directives/package-header/package-header.directive';
 
 @NgModule({
   declarations: [
       BundleComponent,
       InlineGridDirective,
       PackageComponent,
-      ListItemDirective
+      ListItemDirective,
+      PackageHeaderDirective,
   ],
   imports: [
       CommonModule
@@ -20,6 +22,7 @@ import { ListItemDirective } from './directives/list-item/list-item.directive';
       InlineGridDirective,
       PackageComponent,
       ListItemDirective,
+      PackageHeaderDirective,
   ]
 })
 export class CargoModule { }
