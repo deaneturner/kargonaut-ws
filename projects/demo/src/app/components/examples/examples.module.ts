@@ -24,7 +24,7 @@ import { PackageHeaderExampleComponent } from './sub-component-example/package-h
       SubComponentExampleComponent,
       ItemExtensionExampleComponent,
       ItemExampleComponent,
-      PackageHeaderExampleComponent
+      PackageHeaderExampleComponent,
   ],
   imports: [
     CommonModule,

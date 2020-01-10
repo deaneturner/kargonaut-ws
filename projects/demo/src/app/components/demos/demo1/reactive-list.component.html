@@ -1,0 +1,16 @@
+<div class="package-component-example">
+  <div></div>
+  <div>
+    <div>
+      <h2>{{ label }}</h2>
+    </div>
+    <h3>Package Component</h3>
+    <p class="kn-surface">
+      <kn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
+        <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
+        <demo-reactive-list-item *knListItem="let item" [item]="item"></demo-reactive-list-item>
+        <div class="kn-select-max-no-collapse">Click to expand...</div>
+      </kn-package-component>
+    </p>
+  </div>
+</div>

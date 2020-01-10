@@ -6,6 +6,7 @@ import { ComponentExampleComponent } from './components/examples/component-examp
 import { AboutComponent } from './components/about/about.component';
 import { ItemExtensionExampleComponent } from './components/examples/item-extension-example/item-extension-example.component';
 import { SubComponentExampleComponent } from './components/examples/sub-component-example/sub-component-example.component';
+import { ReactiveListDemoComponent } from './components/demos/demo1/reactive-list-demo.component';
 
 export const examples = [
   { path: 'About', component: AboutComponent },
@@ -16,4 +17,5 @@ export const examples = [
   { path: 'component-example', component: ComponentExampleComponent },
   { path: 'item-extension-component-example', component: ItemExtensionExampleComponent },
   { path: 'sub-component-example', component: SubComponentExampleComponent },
+  { path: 'demo1', component: ReactiveListDemoComponent },
 ];

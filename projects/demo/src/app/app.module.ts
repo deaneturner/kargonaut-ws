@@ -12,6 +12,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CommonModule } from '@angular/common';
 import { contractsReducer } from './components/examples/reducers/contract.reducers';
 import { ExamplesModule } from './components/examples/examples.module';
+import { DemosModule } from './components/demos/demos/demos.module';
 
 @NgModule({
     declarations: [
@@ -25,6 +26,7 @@ import { ExamplesModule } from './components/examples/examples.module';
         AppRoutingModule,
         HttpClientModule,
         ExamplesModule,
+        DemosModule,
         // TODO: meta-reducers and reducers/index.ts?
         StoreModule.forRoot({
             items: itemsReducer,

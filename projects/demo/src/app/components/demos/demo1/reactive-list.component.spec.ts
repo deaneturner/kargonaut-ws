@@ -1,22 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { SubComponentExampleComponent } from './sub-component-example.component';
+import { ReactiveListDemoComponent } from './reactive-list-demo.component';
 import { NgGistModule } from 'ng-gist';
 import { of } from 'rxjs/internal/observable/of';
 import { PackageComponent } from '../../../../../../cargo-domain/src/kn/components/package/package.component';
 import { InlineGridDirective } from '../../../../../../cargo-domain/src/kn/directives/inline-grid/inline-grid.directive';
 import { items } from '../../../../assets/data/items';
-import { PackageHeaderExampleComponent } from './package-header-example/package-header-example.component';
+import { ReactiveListHeaderComponent } from './reactive-list-header-example/reactive-list-header.component';
 
 describe('ReactiveListDemoComponent', () => {
-  let component: SubComponentExampleComponent;
-  let fixture: ComponentFixture<SubComponentExampleComponent>;
+  let component: ReactiveListDemoComponent;
+  let fixture: ComponentFixture<ReactiveListDemoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-          SubComponentExampleComponent,
+          ReactiveListDemoComponent,
           PackageComponent,
-          PackageHeaderExampleComponent,
+          ReactiveListHeaderComponent,
           InlineGridDirective
       ],
       imports: [
@@ -27,7 +27,7 @@ describe('ReactiveListDemoComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SubComponentExampleComponent);
+    fixture = TestBed.createComponent(ReactiveListDemoComponent);
     component = fixture.componentInstance;
     component.items$ = of(items);
     fixture.detectChanges();
