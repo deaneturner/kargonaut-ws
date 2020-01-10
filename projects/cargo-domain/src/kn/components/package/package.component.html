@@ -12,7 +12,7 @@
     </div>
   </ng-template>
   <div (click)="collapse($event)" *ngIf="config">
-    <ng-content select="kn-package-header" *ngIf="packageHeader; else packageHeaderTpl"></ng-content>
+    <ng-content select=".kn-select-package-header" *ngIf="packageHeader; else packageHeaderTpl"></ng-content>
   </div>
   <div class="kn-items" *ngIf="itemConfig">
     <ng-container *ngIf="isCollapsed(); else collapseTpl">

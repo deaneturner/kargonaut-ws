@@ -4,14 +4,12 @@ import { InlineGridDirective } from './directives/inline-grid/inline-grid.direct
 import { PackageComponent } from './components/package/package.component';
 import { CommonModule } from '@angular/common';
 import { ListItemDirective } from './directives/list-item/list-item.directive';
-import { PackageHeaderComponent } from './components/package/package-header/package-header.component';
 
 @NgModule({
   declarations: [
       BundleComponent,
       InlineGridDirective,
       PackageComponent,
-      PackageHeaderComponent,
       ListItemDirective
   ],
   imports: [
@@ -21,7 +19,6 @@ import { PackageHeaderComponent } from './components/package/package-header/pack
       BundleComponent,
       InlineGridDirective,
       PackageComponent,
-      PackageHeaderComponent,
       ListItemDirective,
   ]
 })

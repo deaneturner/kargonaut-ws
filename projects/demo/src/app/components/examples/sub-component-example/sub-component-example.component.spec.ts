@@ -5,7 +5,7 @@ import { of } from 'rxjs/internal/observable/of';
 import { PackageComponent } from '../../../../../../cargo-domain/src/kn/components/package/package.component';
 import { InlineGridDirective } from '../../../../../../cargo-domain/src/kn/directives/inline-grid/inline-grid.directive';
 import { items } from '../../../../assets/data/items';
-import { PackageHeaderComponent } from '../../../../../../cargo-domain/src/kn/components/package/package-header/package-header.component';
+import { PackageHeaderExampleComponent } from './package-header-example/package-header-example.component';
 
 describe('SubComponentExampleComponent', () => {
   let component: SubComponentExampleComponent;
@@ -16,7 +16,7 @@ describe('SubComponentExampleComponent', () => {
       declarations: [
           SubComponentExampleComponent,
           PackageComponent,
-          PackageHeaderComponent,
+          PackageHeaderExampleComponent,
           InlineGridDirective
       ],
       imports: [
