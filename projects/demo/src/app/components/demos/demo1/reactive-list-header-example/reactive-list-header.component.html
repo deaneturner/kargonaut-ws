@@ -1,5 +1,8 @@
-<div class="example-header" knGrid [columns]="parentComponent.config.knLayout.knColumns">
-  <div class="material-icons">grade</div>
-  <div class="kn-label">{{ parentComponent.config.knLabel }}</div>
-  <div class="kn-count">x{{parentComponent.items.length}}</div>
+<div class="reactive-list-header">
+  <div class="row1">
+    <div class="label">{{ parentComponent.config.knLabel }}</div>
+    <div>content 2</div>
+    <div class="last">3</div>
+  </div>
+  <div class="row2">{{parentComponent.items.length}} results</div>
 </div>
