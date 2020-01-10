@@ -9,7 +9,14 @@
       <kn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
         <demo-package-header-example *knPackageHeader></demo-package-header-example>
         <demo-item-example *knListItem="let item" [item]="item"></demo-item-example>
-        <div class="kn-select-max-no-collapse">expand</div>
+        <div class="kn-select-max-no-collapse">Click to expand...</div>
+      </kn-package-component>
+    </p>
+    <p class="kn-surface">
+      <kn-package-component [config]="packageConfigCollapsed" [itemConfig]="itemConfig">
+        <demo-package-header-example *knPackageHeader></demo-package-header-example>
+        <demo-item-example *knListItem="let item" [item]="item"></demo-item-example>
+        <div class="kn-select-max-no-collapse">Click to expand...</div>
       </kn-package-component>
     </p>
   </div>

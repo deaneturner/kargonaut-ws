@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { of } from 'rxjs/internal/observable/of';
 import { PackageConfig } from '../../../../../../cargo-domain/src/kn/models/Package.config';
 import { ItemConfig } from '../../../../../../cargo-domain/src/kn/models/Item.config';
 import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
@@ -18,9 +17,8 @@ export class SubComponentExampleComponent implements OnInit {
     static label = 'Sub Components';
 
     packageConfig: PackageConfig;
-    packageConfig2: PackageConfig;
+    packageConfigCollapsed: PackageConfig;
     itemConfig: ItemConfig;
-    itemConfigEmpty: ItemConfig;
 
     items$ = this.store.pipe(select(state => state.contracts));
 
@@ -37,7 +35,7 @@ export class SubComponentExampleComponent implements OnInit {
                 knMaxCollapse: 4
             }
         };
-        this.packageConfig2 = {
+        this.packageConfigCollapsed = {
             knLabel: 'Package Component ( > x3 )',
             knLayout: {
                 knColumns: ['30px', 'auto', '60px'],
@@ -46,12 +44,6 @@ export class SubComponentExampleComponent implements OnInit {
         };
         this.itemConfig = {
             knData: this.items$,
-            knLayout: {
-                knColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
-            }
-        };
-        this.itemConfigEmpty = {
-            knData: of<Item[]>([]),
             knLayout: {
                 knColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
             }

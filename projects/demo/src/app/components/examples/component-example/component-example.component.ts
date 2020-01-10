@@ -28,7 +28,7 @@ export class ComponentExampleComponent implements OnInit {
     selected: EventEmitter<Contract> = new EventEmitter();
 
     packageConfig: PackageConfig;
-    packageConfig2: PackageConfig;
+    packageConfigCollapsed: PackageConfig;
     itemConfig: ItemConfig;
     itemConfigEmpty: ItemConfig;
 
@@ -54,7 +54,7 @@ export class ComponentExampleComponent implements OnInit {
                 knMaxCollapse: 4
             }
         };
-        this.packageConfig2 = {
+        this.packageConfigCollapsed = {
             knLabel: 'Package Component ( > x3 )',
             knLayout: {
                 knColumns: ['30px', 'auto', '60px'],
