@@ -12,8 +12,6 @@ import { CargoModule } from '../../../../../cargo-domain/src/kn/cargo.module';
 import { NgGistModule } from 'ng-gist';
 import { PackageHeaderExampleComponent } from './sub-component-example/package-header-example/package-header-example.component';
 
-
-
 @NgModule({
   declarations: [
       SimpleMarkupExampleComponent,
