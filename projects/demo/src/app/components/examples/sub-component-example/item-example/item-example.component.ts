@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Injector, Input, OnInit, Output } from '@angular/core';
 import { ItemConfig } from '../../../../../../../cargo-domain/src/kn/models/Item.config';
 import { Contract } from '../../../../../../models/contract';
+import { PackageComponent } from '../../../../../../../cargo-domain/src/kn/components/package/package.component';
 
 @Component({
   selector: 'demo-item-example',
@@ -25,7 +26,11 @@ export class ItemExampleComponent implements OnInit {
     }
   };
 
-  constructor() { }
+  parentComponent: PackageComponent;
+
+  constructor(private injector: Injector) {
+    this.parentComponent = this.injector.get(PackageComponent);
+  }
 
   ngOnInit() {
   }
