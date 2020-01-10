@@ -30,15 +30,11 @@ export class ReactiveListDemoComponent implements OnInit {
         this.packageConfig = {
             knLabel: 'Package Component',
             knLayout: {
-                knColumns: ['30px', 'auto', '60px'],
                 knMaxCollapse: 4
             }
         };
         this.itemConfig = {
-            knData: this.items$,
-            knLayout: {
-                knColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
-            }
+            knData: this.items$
         };
     }
 

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 export interface ItemConfig {
     knData: Observable<Item[]>;
-    knLayout: {
+    knLayout?: {
         knColumns: string[];
         knTemplateRef?: TemplateRef<any>;
     };
