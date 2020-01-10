@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { examples } from './examples';
-import { ComponentExampleComponent } from './components/examples/component-example/component-example.component';
+import { ReactiveListDemoComponent } from './components/demos/demo1/reactive-list-demo.component';
 
 
 const routes: Routes = [
-  { path: '', component: ComponentExampleComponent, pathMatch: 'full' },
+  { path: '', component: ReactiveListDemoComponent, pathMatch: 'full' },
   ...examples,
   { path: '**', redirectTo: '' },
 ];
