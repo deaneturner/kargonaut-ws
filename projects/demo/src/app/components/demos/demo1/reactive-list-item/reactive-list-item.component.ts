@@ -6,7 +6,7 @@ import { PackageComponent } from '../../../../../../../cargo-domain/src/kn/compo
 @Component({
   selector: 'demo-reactive-list-item',
   templateUrl: './reactive-list-item.component.html',
-  styleUrls: ['./reactive-list-item.component.less'],
+  styleUrls: ['./reactive-list-item.component.scss'],
 })
 export class ReactiveListItemComponent implements OnInit {
 

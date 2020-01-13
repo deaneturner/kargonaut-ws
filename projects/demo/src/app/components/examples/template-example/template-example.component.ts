@@ -11,7 +11,7 @@ import { Contract } from '../../../../../models/contract';
 @Component({
   selector: 'demo-template-example',
   templateUrl: './template-example.component.html',
-  styleUrls: ['./template-example.component.less']
+  styleUrls: ['./template-example.component.scss']
 })
 export class TemplateExampleComponent implements OnInit {
 

@@ -5,7 +5,7 @@ import { PackageComponent } from '../../../../../../../cargo-domain/src/kn/compo
 @Component({
     selector: 'demo-package-header-example',
     templateUrl: './package-header-example.component.html',
-    styleUrls: ['./package-header-example.component.less']
+    styleUrls: ['./package-header-example.component.scss']
 })
 export class PackageHeaderExampleComponent implements OnInit {
 

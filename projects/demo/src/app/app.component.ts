@@ -5,7 +5,7 @@ import { AppConfigService } from './services/app-config-service.service';
 @Component({
     selector: 'demo-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.less']
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
     title: string;

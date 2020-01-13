@@ -15,7 +15,7 @@ import { PackageHeaderDirective } from '../../directives/package-header/package-
 @Component({
     selector: 'kn-package-component',
     templateUrl: './package.component.html',
-    styleUrls: ['./package.component.less']
+    styleUrls: ['./package.component.scss']
 })
 export class PackageComponent implements OnInit, OnDestroy {
 

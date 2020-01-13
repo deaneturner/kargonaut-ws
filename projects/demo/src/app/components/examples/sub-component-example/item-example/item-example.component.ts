@@ -6,7 +6,7 @@ import { PackageComponent } from '../../../../../../../cargo-domain/src/kn/compo
 @Component({
   selector: 'demo-item-example',
   templateUrl: './item-example.component.html',
-  styleUrls: ['./item-example.component.less'],
+  styleUrls: ['./item-example.component.scss'],
 })
 export class ItemExampleComponent implements OnInit {
 

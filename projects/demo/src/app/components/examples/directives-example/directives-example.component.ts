@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'demo-basic-styling-example',
   templateUrl: './directives-example.component.html',
-  styleUrls: ['./directives-example.component.less']
+  styleUrls: ['./directives-example.component.scss']
 })
 export class DirectivesExampleComponent implements OnInit {
 

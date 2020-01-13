@@ -18,7 +18,7 @@ import { ItemExample } from '../../../../../models/item-example';
 @Component({
     selector: 'demo-component-example',
     templateUrl: './component-example.component.html',
-    styleUrls: ['./component-example.component.less']
+    styleUrls: ['./component-example.component.scss']
 })
 export class ComponentExampleComponent implements OnInit {
 

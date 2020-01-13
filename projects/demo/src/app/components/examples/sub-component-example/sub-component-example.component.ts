@@ -10,7 +10,7 @@ import { appendItem, deleteItem } from '../actions/item-actions';
 @Component({
     selector: 'demo-component-example',
     templateUrl: './sub-component-example.component.html',
-    styleUrls: ['./sub-component-example.component.less']
+    styleUrls: ['./sub-component-example.component.scss']
 })
 export class SubComponentExampleComponent implements OnInit {
 

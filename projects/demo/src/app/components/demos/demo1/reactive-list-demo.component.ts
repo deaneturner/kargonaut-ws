@@ -10,7 +10,7 @@ import { appendItem, deleteItem } from '../../examples/actions/item-actions';
 @Component({
     selector: 'demo-1-component-example',
     templateUrl: './reactive-list.component.html',
-    styleUrls: ['./reactive-list.component.less']
+    styleUrls: ['./reactive-list.component.scss']
 })
 export class ReactiveListDemoComponent implements OnInit {
 
