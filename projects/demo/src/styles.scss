@@ -12,3 +12,49 @@
   // use our theme with angular-material-theme mixin
   @include angular-material-theme($demo-app-theme);
 }
+
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+header, footer, nav {
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+footer {
+  a {
+    color: grey;
+  }
+
+  // Separate footer links with bullet characters
+  a:not(:last-child)::after {
+    padding-left: 10px;
+    padding-right: 10px;
+    content: '\2022';
+  }
+}
+
+li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.currentSelection {
+  font-weight: bold;
+}
+

@@ -62,14 +62,13 @@ header {
 
 nav {
   grid-area: nav;
-
   transform: translateX(-9999px);
-
   opacity: 0.95;
   background: lightgrey;
   border-right: 3px solid darkgrey;
   padding: 15px;
   overflow: auto;
+  z-index: 1;
 
   & > * {
     display: block;
