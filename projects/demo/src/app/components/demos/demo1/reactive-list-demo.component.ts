@@ -14,7 +14,7 @@ import { appendItem, deleteItem } from '../../examples/actions/item-actions';
 })
 export class ReactiveListDemoComponent implements OnInit {
 
-    static label = 'Reactive Lists';
+    static label = 'Material Design';
 
     packageConfig: PackageConfig;
     itemConfig: ItemConfig;
