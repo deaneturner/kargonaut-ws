@@ -1,38 +1,14 @@
-<div>
+<div style="margin-left: 40px">
   <h2>{{ label }}</h2>
 </div>
 <div class="reactive-list-demo">
   <div>
-    <div class="kn-surface">
+    <div>
       <kn-package-material-component [config]="packageConfig" [itemConfig]="itemConfig">
         <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
         <demo-reactive-list-item *knListItem="let item" [item]="item"></demo-reactive-list-item>
         <div class="kn-select-max-no-collapse">Click to expand...</div>
       </kn-package-material-component>
-    </div>
-  </div>
-  <div class="">
-    <div class="kn-surface">
-      <div class="kn-items demo-item-detail">
-        <p>{{ item.knLabel }}</p>
-        <p>{{ item.knLabel }}</p>
-        <p>{{ item.knLabel }}</p>
-        <p>{{ item.knLabel }}</p>
-        <p>{{ item.knLabel }}</p>
-        <p>{{ item.knLabel }}</p>
-        <p>{{ item.knLabel }}</p>
-        <p>{{ item.knLabel }}</p>
-        <p>{{ item.knLabel }}</p>
-        <p>{{ item.knLabel }}</p>
-        <p>{{ item.knLabel }}</p>
-        <p>{{ item.knLabel }}</p>
-        <p>{{ item.knLabel }}</p>
-        <p>{{ item.knLabel }}</p>
-        <p>{{ item.knLabel }}</p>
-        <p>{{ item.knLabel }}</p>
-        <p>{{ item.knLabel }}</p>
-        <p>{{ item.knLabel }}</p>
-      </div>
     </div>
   </div>
 </div>
