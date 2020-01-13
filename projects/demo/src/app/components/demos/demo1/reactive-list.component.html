@@ -1,6 +1,9 @@
 <div style="margin-left: 40px">
   <h2>{{ label }}</h2>
 </div>
+<mat-toolbar>
+  Result Row Details
+</mat-toolbar>
 <div class="reactive-list-demo">
   <div>
     <div>
@@ -11,5 +14,20 @@
       </kn-package-material-component>
     </div>
     <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+  </div>
+  <div>
+    <mat-card>
+      <mat-card-content>
+        <mat-toolbar>
+          Result Row Details
+        </mat-toolbar>
+        <mat-list role="list">
+          <mat-list-item role="listitem">Item 1</mat-list-item>
+          <mat-list-item role="listitem">Item 2</mat-list-item>
+          <mat-list-item role="listitem">Item 3</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+
   </div>
 </div>

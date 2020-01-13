@@ -10,19 +10,17 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$demo-app-primary: mat-palette($mat-indigo);
-$demo-app-accent:  mat-palette($mat-pink, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
-$demo-app-warn:    mat-palette($mat-red);
+$demo-app-theme-primary: mat-palette($mat-indigo, 700, 300, 900);
+$demo-app-theme-accent: mat-palette($mat-light-blue);
+$demo-app-theme-warn: mat-palette($mat-deep-orange, A200);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$demo-app-theme: mat-light-theme($demo-app-primary, $demo-app-accent, $demo-app-warn);
+$demo-app-theme: mat-light-theme($demo-app-theme-primary, $demo-app-theme-accent, $demo-app-theme-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($demo-app-theme);
+// @include angular-material-theme($demo-app-theme);
 
 // custom components
 @include reactive-list-header-theme($demo-app-theme);

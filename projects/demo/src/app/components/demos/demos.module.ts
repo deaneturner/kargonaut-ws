@@ -4,7 +4,7 @@ import { ReactiveListDemoComponent } from './demo1/reactive-list-demo.component'
 import { CargoModule } from '../../../../../cargo-domain/src/kn/cargo.module';
 import { ReactiveListHeaderComponent } from './demo1/reactive-list-header-example/reactive-list-header.component';
 import { ReactiveListItemComponent } from './demo1/reactive-list-item/reactive-list-item.component';
-import { MatSliderModule } from '@angular/material';
+import { MatCardModule, MatListModule, MatSliderModule, MatToolbarModule } from '@angular/material';
 
 
 @NgModule({
@@ -17,6 +17,9 @@ import { MatSliderModule } from '@angular/material';
         CommonModule,
         CargoModule,
         MatSliderModule,
+        MatListModule,
+        MatCardModule,
+        MatToolbarModule,
     ]
 })
 export class DemosModule {

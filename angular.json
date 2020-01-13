@@ -63,8 +63,7 @@
               "projects/demo/src/assets"
             ],
             "styles": [
-              "projects/demo/src/styles.scss",
-              "projects/demo/src/demo-app-theme.scss"
+              "projects/demo/src/styles.scss"
             ],
             "scripts": []
           },
@@ -129,8 +128,7 @@
               "projects/demo/src/assets"
             ],
             "styles": [
-              "projects/demo/src/styles.scss",
-              "projects/demo/src/demo-app-theme.scss"
+              "projects/demo/src/styles.scss"
             ],
             "scripts": []
           }
