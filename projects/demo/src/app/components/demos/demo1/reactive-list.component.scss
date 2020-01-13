@@ -1,5 +1,3 @@
-@import '~@angular/material/theming';
-
 .reactive-list-demo {
   display: grid;
   grid-template-columns: 400px auto;
@@ -9,37 +7,3 @@
 ::ng-deep .reactive-list-header {
   margin: 0 5px 0 5px;
 }
-
-@mixin reactive-list-header-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-
-  .reactive-list-header {
-    background-color: mat-color($primary);
-    border-color: mat-color($accent, A400);
-  }
-}
-
-@mixin reactive-list-header-typography($config) {
-  .reactive-list-header {
-    font: {
-      family: mat-font-family($config, body-1);
-      size: mat-font-size($config, body-1);
-      weight: mat-font-weight($config, body-1);
-    }
-  }
-}
-
-@include mat-core();
-
-// Define your application's custom theme.
-$primary: mat-palette($mat-indigo);
-$accent:  mat-palette($mat-pink, A200, A100, A400);
-$theme: mat-light-theme($primary, $accent);
-
-// Include theme styles for Angular Material components.
-@include angular-material-theme($theme);
-
-// Include theme styles for your custom components.
-@include reactive-list-header-theme($theme);
-
