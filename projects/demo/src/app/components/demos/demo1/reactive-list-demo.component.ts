@@ -17,6 +17,7 @@ export class ReactiveListDemoComponent implements OnInit {
     static label = 'Material Design';
 
     packageConfig: PackageConfig;
+    packageConfig2: PackageConfig;
     itemConfig: ItemConfig;
     item: Item;
 
@@ -27,6 +28,12 @@ export class ReactiveListDemoComponent implements OnInit {
 
     ngOnInit() {
         this.packageConfig = {
+            knLabel: 'Result Group Label',
+            knLayout: {
+                knMaxCollapse: 3
+            }
+        };
+        this.packageConfig2 = {
             knLabel: 'Result Group Label',
             knLayout: {
                 knMaxCollapse: 4
