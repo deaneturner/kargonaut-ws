@@ -12,7 +12,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CommonModule } from '@angular/common';
 import { contractsReducer } from './components/examples/reducers/contract.reducers';
 import { ExamplesModule } from './components/examples/examples.module';
-import { DemosModule } from './components/demos/demos/demos.module';
+import { DemosModule } from './components/demos/demos.module';
 import { resultsReducer } from './components/examples/reducers/results.reducers';
 
 @NgModule({
