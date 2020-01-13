@@ -1,24 +1,25 @@
 <div style="margin-left: 40px">
   <h2>{{ label }}</h2>
 </div>
-<mat-toolbar>
-  Result Row Details
-</mat-toolbar>
 <div class="reactive-list-demo">
   <div>
     <div>
-      <kn-package-material-component [config]="packageConfig" [itemConfig]="itemConfig">
-        <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
-        <demo-reactive-list-item *knListItem="let item" [item]="item"></demo-reactive-list-item>
-        <div class="kn-select-max-no-collapse">Click to expand...</div>
-      </kn-package-material-component>
+      <mat-card>
+        <mat-card-content>
+          <kn-package-material-component [config]="packageConfig" [itemConfig]="itemConfig">
+            <demo-reactive-list-header class="mat-toolbar mat-primary" *knPackageHeader></demo-reactive-list-header>
+            <demo-reactive-list-item *knListItem="let item" [item]="item"></demo-reactive-list-item>
+            <div class="kn-select-max-no-collapse">Click to expand...</div>
+          </kn-package-material-component>
+        </mat-card-content>
+      </mat-card>
     </div>
     <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
   </div>
   <div>
     <mat-card>
       <mat-card-content>
-        <mat-toolbar>
+        <mat-toolbar color="primary">
           Result Row Details
         </mat-toolbar>
         <mat-list role="list">
