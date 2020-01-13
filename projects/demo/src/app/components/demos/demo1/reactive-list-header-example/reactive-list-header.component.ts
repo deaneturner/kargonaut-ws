@@ -1,6 +1,7 @@
 import { Component, Injector, Input, OnInit } from '@angular/core';
 import { PackageConfig } from '../../../../../../../cargo-domain/src/kn/models/Package.config';
 import { PackageComponent } from '../../../../../../../cargo-domain/src/kn/components/package/package.component';
+import { PackageMaterialComponent } from '../../../../../../../cargo-domain/src/kn/components/package-material/package-material.component';
 
 @Component({
     selector: 'demo-reactive-list-header',
@@ -24,7 +25,7 @@ export class ReactiveListHeaderComponent implements OnInit {
     parentComponent: PackageComponent;
 
     constructor(private injector: Injector) {
-        this.parentComponent = this.injector.get(PackageComponent);
+        this.parentComponent = this.injector.get(PackageMaterialComponent);
     }
 
     ngOnInit() {
