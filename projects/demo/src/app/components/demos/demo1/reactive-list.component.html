@@ -6,15 +6,14 @@
     <div>
       <mat-card>
         <mat-card-content>
-          <kn-package-material-component [config]="packageConfig" [itemConfig]="itemConfig">
+          <kn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
             <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
             <demo-reactive-list-item *knListItem="let item" [item]="item"></demo-reactive-list-item>
             <div class="kn-select-max-no-collapse">Click to expand...</div>
-          </kn-package-material-component>
+          </kn-package-component>
         </mat-card-content>
       </mat-card>
     </div>
-    <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
   </div>
   <div>
     <mat-card>
@@ -29,6 +28,5 @@
         </mat-list>
       </mat-card-content>
     </mat-card>
-
   </div>
 </div>

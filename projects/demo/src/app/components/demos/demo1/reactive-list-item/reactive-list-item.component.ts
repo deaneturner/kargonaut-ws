@@ -2,7 +2,6 @@ import { Component, EventEmitter, Injector, Input, OnInit, Output } from '@angul
 import { ItemConfig } from '../../../../../../../cargo-domain/src/kn/models/Item.config';
 import { Contract } from '../../../../../../models/contract';
 import { PackageComponent } from '../../../../../../../cargo-domain/src/kn/components/package/package.component';
-import { PackageMaterialComponent } from '../../../../../../../cargo-domain/src/kn/components/package-material/package-material.component';
 
 @Component({
   selector: 'demo-reactive-list-item',
@@ -30,7 +29,7 @@ export class ReactiveListItemComponent implements OnInit {
   parentComponent: PackageComponent;
 
   constructor(private injector: Injector) {
-    this.parentComponent = this.injector.get(PackageMaterialComponent);
+    this.parentComponent = this.injector.get(PackageComponent);
   }
 
   ngOnInit() {
