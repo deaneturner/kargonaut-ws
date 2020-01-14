@@ -1,6 +1,6 @@
 <div class="reactive-list-item">
   <div class="kn-item" knGrid [columns]="parentComponent.itemConfig.knLayout.knColumns">
-    <div (click)="onSelect()" class="kn-checkbox material-icons">{{layout.selected[item.isSelected]}}</div>
+    <div (click)="onSelect()" class="kn-checkbox material-icons">{{layout.selected[item.isSelected.toString()]}}</div>
     <div class="kn-symbol material-icons">{{item?.symbol}}</div>
     <div class="kn-label">{{item?.knLabel}}</div>
     <div class="kn-max-likes"></div>
