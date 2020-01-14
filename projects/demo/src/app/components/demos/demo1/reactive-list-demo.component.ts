@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { PackageConfig } from '../../../../../../cargo-domain/src/kn/models/Package.config';
 import { ItemConfig } from '../../../../../../cargo-domain/src/kn/models/Item.config';
-import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
-import { Tag } from '../../../../../../cargo-domain/src/common/TagGenerator';
 import { AppState } from '../../../app.state';
-import { appendItem, deleteItem } from '../../examples/actions/item-actions';
 
 @Component({
     selector: 'demo-1-component-example',
@@ -22,10 +19,10 @@ export class ReactiveListDemoComponent implements OnInit {
     itemConfig: ItemConfig;
     itemConfig2: ItemConfig;
     itemConfig3: ItemConfig;
-    item: Item;
 
     items$ = this.store.pipe(select(state => state.items));
     results$ = this.store.pipe(select(state => state.results));
+    contracts$ = this.store.pipe(select(state => state.contracts));
 
     constructor(private store: Store<AppState>) {
     }
@@ -55,29 +52,17 @@ export class ReactiveListDemoComponent implements OnInit {
         };
 
         this.packageConfig3 = {
-            knLabel: 'Item Group Label',
+            knLabel: 'Contract Group Label',
             knLayout: {
                 knMaxCollapse: 3
             }
         };
         this.itemConfig3 = {
-            knData: this.items$,
+            knData: this.contracts$,
             knLayout: {
                 knColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
             }
         };
-    }
-
-    doAppendItem(item: Item) {
-        this.store.dispatch(appendItem({
-            item
-        }));
-    }
-
-    doDeleteItem(knTag: Tag) {
-        this.store.dispatch(deleteItem({
-            knTag
-        }));
     }
 
     get label() {
