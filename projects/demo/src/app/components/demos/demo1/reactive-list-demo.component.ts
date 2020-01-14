@@ -19,9 +19,11 @@ export class ReactiveListDemoComponent implements OnInit {
     packageConfig: PackageConfig;
     packageConfig2: PackageConfig;
     itemConfig: ItemConfig;
+    itemConfig2: ItemConfig;
     item: Item;
 
     items$ = this.store.pipe(select(state => state.items));
+    results$ = this.store.pipe(select(state => state.results));
 
     constructor(private store: Store<AppState>) {
     }
@@ -33,21 +35,23 @@ export class ReactiveListDemoComponent implements OnInit {
                 knMaxCollapse: 4
             }
         };
-        // this.packageConfig2 = {
-        //     knLabel: 'Result Group Label',
-        //     knLayout: {
-        //         knMaxCollapse: 4
-        //     }
-        // };
+
         this.itemConfig = {
+            knData: this.results$
+        };
+
+        this.packageConfig2 = {
+            knLabel: 'Item Group Label',
+            knLayout: {
+                knMaxCollapse: 4
+            }
+        };
+
+        this.itemConfig2 = {
             knData: this.items$,
             knLayout: {
                 knColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
             }
-        };
-
-        this.item = {
-            knLabel: 'An Item'
         };
     }
 

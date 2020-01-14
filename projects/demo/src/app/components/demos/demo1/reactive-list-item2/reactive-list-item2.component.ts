@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Injector, Input, OnInit, Output } from '@angular/core';
-import { ItemConfig } from '../../../../../../../cargo-domain/src/kn/models/Item.config';
 import { PackageComponent } from '../../../../../../../cargo-domain/src/kn/components/package/package.component';
 import { ItemExample } from '../../../../../../models/item-example';
 
@@ -12,9 +11,6 @@ export class ReactiveListItem2Component implements OnInit {
 
     @Input()
     item: ItemExample;
-
-    @Input()
-    config: ItemConfig;
 
     @Output()
     selected: EventEmitter<ItemExample> = new EventEmitter();
