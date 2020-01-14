@@ -18,8 +18,10 @@ export class ReactiveListDemoComponent implements OnInit {
 
     packageConfig: PackageConfig;
     packageConfig2: PackageConfig;
+    packageConfig3: PackageConfig;
     itemConfig: ItemConfig;
     itemConfig2: ItemConfig;
+    itemConfig3: ItemConfig;
     item: Item;
 
     items$ = this.store.pipe(select(state => state.items));
@@ -35,7 +37,6 @@ export class ReactiveListDemoComponent implements OnInit {
                 knMaxCollapse: 4
             }
         };
-
         this.itemConfig = {
             knData: this.results$
         };
@@ -46,8 +47,20 @@ export class ReactiveListDemoComponent implements OnInit {
                 knMaxCollapse: 4
             }
         };
-
         this.itemConfig2 = {
+            knData: this.items$,
+            knLayout: {
+                knColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
+            }
+        };
+
+        this.packageConfig3 = {
+            knLabel: 'Item Group Label',
+            knLayout: {
+                knMaxCollapse: 3
+            }
+        };
+        this.itemConfig3 = {
             knData: this.items$,
             knLayout: {
                 knColumns: ['30px', '30px', 'auto', '60px', '30px', '30px', '60px']
