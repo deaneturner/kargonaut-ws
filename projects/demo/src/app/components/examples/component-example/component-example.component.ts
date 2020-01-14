@@ -10,7 +10,6 @@ import {
     deleteItem,
 } from '../actions/item-actions';
 import { of } from 'rxjs/internal/observable/of';
-import { Contract } from '../../../../../models/contract';
 import { ItemExample } from '../../../../../models/item-example';
 
 // import { async } from 'rxjs/internal/scheduler/async';
@@ -25,7 +24,7 @@ export class ComponentExampleComponent implements OnInit {
     static label = 'Components';
 
     @Output()
-    selected: EventEmitter<Contract> = new EventEmitter();
+    selected: EventEmitter<Item> = new EventEmitter();
 
     packageConfig: PackageConfig;
     packageConfigCollapsed: PackageConfig;

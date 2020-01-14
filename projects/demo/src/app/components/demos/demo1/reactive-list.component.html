@@ -8,17 +8,17 @@
         <mat-card-content>
           <kn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
             <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
-            <demo-reactive-list-item *knListItem="let item" [item]="item"></demo-reactive-list-item>
+            <demo-reactive-list-item2 *knListItem="let item" [item]="item"></demo-reactive-list-item2>
             <div class="kn-select-max-no-collapse">Click to expand...</div>
           </kn-package-component>
         </mat-card-content>
-        <mat-card-content>
-          <kn-package-component [config]="packageConfig2" [itemConfig]="itemConfig">
-            <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
-            <demo-reactive-list-item *knListItem="let item" [item]="item"></demo-reactive-list-item>
-            <div class="kn-select-max-no-collapse">Click to expand...</div>
-          </kn-package-component>
-        </mat-card-content>
+<!--        <mat-card-content>-->
+<!--          <kn-package-component [config]="packageConfig2" [itemConfig]="itemConfig">-->
+<!--            <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>-->
+<!--            <demo-reactive-list-item2 *knListItem="let item" [item]="item"></demo-reactive-list-item2>-->
+<!--            <div class="kn-select-max-no-collapse">Click to expand...</div>-->
+<!--          </kn-package-component>-->
+<!--        </mat-card-content>-->
       </mat-card>
     </div>
   </div>
