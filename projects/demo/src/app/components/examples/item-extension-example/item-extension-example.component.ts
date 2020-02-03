@@ -8,7 +8,7 @@ import { Tag } from '../../../../../../cargo-domain/src/common/TagGenerator';
 import {
     appendItem,
     deleteItem,
-} from '../actions/item-actions';
+} from '../../../actions/item-actions';
 import { of } from 'rxjs/internal/observable/of';
 import { ItemExample } from '../../../../../models/item-example';
 import { Contract } from '../../../../../models/contract';

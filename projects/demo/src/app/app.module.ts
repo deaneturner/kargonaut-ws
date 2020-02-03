@@ -7,13 +7,13 @@ import { AppConfigService } from './services/app-config-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { initializeApp } from './app.initializer';
 import { StoreModule } from '@ngrx/store';
-import { editItemTagReducer, itemsReducer } from './components/examples/reducers/item.reducers';
+import { editItemTagReducer, itemsReducer } from './reducers/item.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CommonModule } from '@angular/common';
-import { contractsReducer } from './components/examples/reducers/contract.reducers';
+import { contractsReducer } from './reducers/contract.reducers';
 import { ExamplesModule } from './components/examples/examples.module';
 import { DemosModule } from './components/demos/demos.module';
-import { resultsReducer } from './components/examples/reducers/results.reducers';
+import { resultsReducer } from './reducers/results.reducers';
 
 @NgModule({
     declarations: [
