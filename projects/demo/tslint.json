@@ -10,8 +10,7 @@
     "component-selector": [
       true,
       "element",
-      "demo",
-      "kebab-case"
+      "demo"
     ]
   }
 }
