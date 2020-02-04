@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
     "start-dev": "ng serve",
+    "serve-dev": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
     "build": "ng build",
     "test": "ng test --browsers=ChromeHeadless",
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
