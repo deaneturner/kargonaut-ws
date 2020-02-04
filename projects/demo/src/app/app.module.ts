@@ -14,6 +14,10 @@ import { contractsReducer } from './reducers/contract.reducers';
 import { ExamplesModule } from './components/examples/examples.module';
 import { DemosModule } from './components/demos/demos.module';
 import { resultsReducer } from './reducers/results.reducers';
+import { AuthModule } from './auth/auth.module';
+import { metaReducers, reducers } from './reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
     declarations: [
@@ -26,6 +30,7 @@ import { resultsReducer } from './reducers/results.reducers';
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
+        AuthModule.forRoot(),
         ExamplesModule,
         DemosModule,
         // TODO: meta-reducers and reducers/index.ts?
@@ -33,7 +38,21 @@ import { resultsReducer } from './reducers/results.reducers';
             items: itemsReducer,
             contracts: contractsReducer,
             results: resultsReducer,
-            editItemTag: editItemTagReducer
+            editItemTag: editItemTagReducer,
+            ...reducers
+        }, {
+            metaReducers,
+            runtimeChecks : {
+                strictStateImmutability: true,
+                strictActionImmutability: true,
+                strictActionSerializability: true,
+                strictStateSerializability: true
+            }
+        }),
+        EffectsModule.forRoot([]),
+        StoreRouterConnectingModule.forRoot({
+            stateKey: 'router',
+            routerState: RouterState.Minimal
         }),
         // TODO: add log only during production, and max age
         StoreDevtoolsModule.instrument(),

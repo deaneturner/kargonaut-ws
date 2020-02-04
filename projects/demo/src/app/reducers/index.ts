@@ -8,9 +8,9 @@ import {
 import { environment } from '../../environments/environment';
 import {routerReducer} from '@ngrx/router-store';
 
-export interface AppState {}
+export interface AuthAppState {}
 
-export const reducers: ActionReducerMap<AppState> = {
+export const reducers: ActionReducerMap<AuthAppState> = {
     router: routerReducer
 };
 
@@ -25,8 +25,6 @@ export function logger(reducer: ActionReducer<any>)
 
 }
 
-
-export const metaReducers: MetaReducer<AppState>[] =
+export const metaReducers: MetaReducer<AuthAppState>[] =
     !environment.production ? [logger] : [];
-
 
