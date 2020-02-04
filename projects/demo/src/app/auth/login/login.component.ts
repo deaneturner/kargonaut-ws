@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
 
                   this.store.dispatch(login({user}));
 
-                  this.router.navigateByUrl('/courses');
+                  this.router.navigateByUrl('/demos');
 
               })
           )

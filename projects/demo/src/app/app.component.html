@@ -17,11 +17,11 @@
     [class.showNav]="showNav"
     [class.hideNav]="showNav === false"
 >
-  <a *ngFor="let example of examples"
+  <a *ngFor="let route of routes"
      routerLinkActive="currentSelection"
-     [routerLink]="example.path"
+     [routerLink]="route.path"
   >
-    {{ example.component.label || example.path }}
+    {{ route.component.label || route.path }}
   </a>
 </nav>
 

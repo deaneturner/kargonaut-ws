@@ -15,6 +15,6 @@ export class AppComponent {
     }
 
     showNav: boolean;
-    examples = examples;
+    routes = examples;
 }
 
