@@ -18,6 +18,7 @@ import { AuthModule } from './auth/auth.module';
 import { metaReducers, reducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
     imports: [
         CommonModule,
         BrowserModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
         HttpClientModule,
         AuthModule.forRoot(),

@@ -5,9 +5,9 @@ import { ReactiveListDemoComponent } from './components/demos/demo1/reactive-lis
 
 
 const routes: Routes = [
-  { path: '', component: ReactiveListDemoComponent, pathMatch: 'full' },
+  { path: 'demos', component: ReactiveListDemoComponent, pathMatch: 'full' },
   ...examples,
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({
