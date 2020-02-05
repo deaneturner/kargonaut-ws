@@ -18,8 +18,7 @@
     "verify-prod": "yarn cache clean -y && yarn heroku-postbuild",
     "verify-dep": "yarn cache clean -y && yarn && yarn verify",
     "compodoc-generate": "npx compodoc -p projects/cargo-domain/tsconfig.lib.json",
-    "compodoc-start": "compodoc -p projects/cargo-domain/tsconfig.lib.json -s",
-    "heroku-postbuild": "yarn build"
+    "compodoc-start": "compodoc -p projects/cargo-domain/tsconfig.lib.json -s"
   },
   "private": true,
   "dependencies": {
