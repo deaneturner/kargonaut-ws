@@ -5,6 +5,8 @@ import { ItemConfig } from '../../../../../../cargo-domain/src/kn/models/Item.co
 import { ItemExample } from '../../../../../models/item-example';
 import { replaceItem } from '../../../actions/item-actions';
 import { AppState } from '../../../app.state';
+import { Contract } from '../../../../../models/contract';
+import { replaceContract } from '../../../actions/contract-actions';
 
 @Component({
     selector: 'demo-1-component-example',
@@ -73,7 +75,10 @@ export class ReactiveListDemoComponent implements OnInit {
 
     onItemSelected(item: ItemExample) {
         this.store.dispatch(replaceItem({item: {...item, isSelected: !item.isSelected}}));
-        console.log('item: ' + item);
+    }
+
+    onContractSelected(contract: Contract) {
+        this.store.dispatch(replaceContract({contract: {...contract, isSelected: !contract.isSelected}}));
     }
 }
 

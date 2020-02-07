@@ -1,5 +1,5 @@
-import { Tag, TagGenerator } from '../../../../cargo-domain/src/common/TagGenerator';
-import { appendContract, cancelContract, deleteContract, editContract, replaceContract } from '../actions/contract-actions';
+import { TagGenerator } from '../../../../cargo-domain/src/common/TagGenerator';
+import { appendContract, deleteContract, replaceContract } from '../actions/contract-actions';
 import { Action, createReducer } from '@ngrx/store';
 import { on } from '@ngrx/store';
 import { Contract } from '../../../models/contract';
@@ -11,24 +11,15 @@ export function contractsReducer(state: Contract[] | undefined, action: Action) 
     return createReducer<Contract[]>(
         initialContracts,
         on(appendContract, (s, a) => s.concat({
-            ...a.item,
+            ...a.contract,
             knTag: TagGenerator.generateId(),
         })),
         on(replaceContract, (s, a) => {
             const newContracts = s.concat();
-            newContracts[newContracts.findIndex(item => item.knTag === a.item.knTag)] = a.item;
+            newContracts[newContracts.findIndex(contract => contract.knTag === a.contract.knTag)] = a.contract;
             return newContracts;
         }),
         on(deleteContract, (s, a) => s.filter(
-            item => item.knTag !== a.knTag)),
-    )(state, action);
-}
-
-export function editContractTagReducer(state: string | undefined, action: Action) {
-    return createReducer<Tag>(undefined,
-        on(editContract, (_, a) => a.knTag),
-        on(replaceContract, () => undefined),
-        on(deleteContract, () => undefined),
-        on(cancelContract, () => undefined),
+            contract => contract.knTag !== a.knTag)),
     )(state, action);
 }
