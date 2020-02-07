@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { PackageConfig } from '../../../../../../cargo-domain/src/kn/models/Package.config';
 import { ItemConfig } from '../../../../../../cargo-domain/src/kn/models/Item.config';
-import { AppState } from '../../../app.state';
 import { ItemExample } from '../../../../../models/item-example';
 import { replaceItem } from '../../../actions/item-actions';
+import { AppState } from '../../../app.state';
 
 @Component({
     selector: 'demo-1-component-example',

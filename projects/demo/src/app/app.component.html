@@ -17,11 +17,13 @@
     [class.showNav]="showNav"
     [class.hideNav]="showNav === false"
 >
+  <a routerLink="./login" *ngIf="isLoggedOut$ | async">Login</a>
+  <a (click)="logout()" *ngIf="isLoggedIn$ | async">Logout</a>
   <a *ngFor="let route of routes"
      routerLinkActive="currentSelection"
      [routerLink]="route.path"
   >
-    {{ route.component.label || route.path }}
+    {{ route.component['label'] || route.path }}
   </a>
 </nav>
 
