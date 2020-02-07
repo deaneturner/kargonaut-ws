@@ -3,6 +3,8 @@ import { Store, select } from '@ngrx/store';
 import { PackageConfig } from '../../../../../../cargo-domain/src/kn/models/Package.config';
 import { ItemConfig } from '../../../../../../cargo-domain/src/kn/models/Item.config';
 import { AppState } from '../../../app.state';
+import { ItemExample } from '../../../../../models/item-example';
+import { replaceItem } from '../../../actions/item-actions';
 
 @Component({
     selector: 'demo-1-component-example',
@@ -67,6 +69,11 @@ export class ReactiveListDemoComponent implements OnInit {
 
     get label() {
         return ReactiveListDemoComponent.label;
+    }
+
+    onItemSelected(item: ItemExample) {
+        this.store.dispatch(replaceItem({item: {...item, isSelected: !item.isSelected}}));
+        console.log('item: ' + item);
     }
 }
 

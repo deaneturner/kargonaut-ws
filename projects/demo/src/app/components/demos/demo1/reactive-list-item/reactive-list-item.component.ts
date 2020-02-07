@@ -25,7 +25,6 @@ export class ReactiveListItemComponent implements OnInit {
   }
 
   onSelect() {
-    this.item.isSelected = !this.item.isSelected;
     this.selected.emit(this.item);
   }
 }

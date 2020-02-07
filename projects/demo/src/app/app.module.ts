@@ -7,7 +7,6 @@ import { AppConfigService } from './services/app-config-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { initializeApp } from './app.initializer';
 import { StoreModule } from '@ngrx/store';
-import { editItemTagReducer, itemsReducer } from './reducers/item.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CommonModule } from '@angular/common';
 import { contractsReducer } from './reducers/contract.reducers';
@@ -19,6 +18,7 @@ import { metaReducers, reducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { itemsReducer } from './reducers/item.reducers';
 
 @NgModule({
     declarations: [
@@ -40,7 +40,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
             items: itemsReducer,
             contracts: contractsReducer,
             results: resultsReducer,
-            editItemTag: editItemTagReducer,
             ...reducers
         }, {
             metaReducers,

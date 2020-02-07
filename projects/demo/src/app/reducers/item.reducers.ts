@@ -1,14 +1,15 @@
 import { Item } from '../../../../cargo-domain/src/kn/models/Item';
 import { items } from '../../assets/data/items';
-import { Tag, TagGenerator } from '../../../../cargo-domain/src/common/TagGenerator';
-import { appendItem, cancelItem, deleteItem, editItem, replaceItem } from '../actions/item-actions';
-import { Action, createReducer } from '@ngrx/store';
+import { TagGenerator } from '../../../../cargo-domain/src/common/TagGenerator';
+import { appendItem, deleteItem, replaceItem } from '../actions/item-actions';
+import { createReducer } from '@ngrx/store';
 import { on } from '@ngrx/store';
+import { ItemExample } from '../../../models/item-example';
 
 const initialItems: Item[] = items;
 
-export function itemsReducer(state: Item[] | undefined, action: Action) {
-    return createReducer<Item[]>(
+export function itemsReducer(state: any | undefined, action: any) {
+    return createReducer<ItemExample[]>(
         initialItems,
         on(appendItem, (s, a) => s.concat({
             ...a.item,
@@ -24,11 +25,3 @@ export function itemsReducer(state: Item[] | undefined, action: Action) {
     )(state, action);
 }
 
-export function editItemTagReducer(state: string | undefined, action: Action) {
-    return createReducer<Tag>(undefined,
-        on(editItem, (_, a) => a.knTag),
-        on(replaceItem, () => undefined),
-        on(deleteItem, () => undefined),
-        on(cancelItem, () => undefined),
-    )(state, action);
-}

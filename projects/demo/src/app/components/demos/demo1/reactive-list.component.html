@@ -15,14 +15,14 @@
         <mat-card-content>
           <kn-package-component [config]="packageConfig2" [itemConfig]="itemConfig2">
             <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
-            <demo-reactive-list-item2 *knListItem="let item" [item]="item"></demo-reactive-list-item2>
+            <demo-reactive-list-item2 *knListItem="let item" [item]="item" (selected)="onItemSelected(item)"></demo-reactive-list-item2>
             <div class="kn-select-max-no-collapse">Click to expand...</div>
           </kn-package-component>
         </mat-card-content>
         <mat-card-content>
           <kn-package-component [config]="packageConfig3" [itemConfig]="itemConfig3">
             <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
-            <demo-reactive-list-item2 *knListItem="let item" [item]="item"></demo-reactive-list-item2>
+            <demo-reactive-list-item2 *knListItem="let item" [item]="item" (selected)="onItemSelected(item)"></demo-reactive-list-item2>
             <div class="kn-select-max-no-collapse">Click to expand...</div>
           </kn-package-component>
         </mat-card-content>
