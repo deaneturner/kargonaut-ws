@@ -4,16 +4,9 @@ import { ItemConfig } from '../../../../../../cargo-domain/src/kn/models/Item.co
 import { Store, select } from '@ngrx/store';
 import { AppState } from '../../../app.state';
 import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
-import { Tag } from '../../../../../../cargo-domain/src/common/TagGenerator';
-import {
-    appendItem,
-    deleteItem,
-} from '../../../actions/item-actions';
 import { of } from 'rxjs/internal/observable/of';
-import { ItemExample } from '../../../../../models/item-example';
 import { Contract } from '../../../../../models/contract';
-
-// import { async } from 'rxjs/internal/scheduler/async';
+import { replaceContract } from '../../../actions/contract-actions';
 
 @Component({
     selector: 'demo-component-example',
@@ -33,8 +26,6 @@ export class ItemExtensionExampleComponent implements OnInit {
     itemConfigEmpty: ItemConfig;
 
     items$ = this.store.pipe(select(state => state.contracts));
-
-    // editItemTag$ = this.store.pipe(select('tag'));
 
     layout = {
         selected: {
@@ -75,25 +66,13 @@ export class ItemExtensionExampleComponent implements OnInit {
         };
     }
 
-    doAppendItem(item: Item) {
-        this.store.dispatch(appendItem({
-            item
-        }));
-    }
-
-    doDeleteItem(knTag: Tag) {
-        this.store.dispatch(deleteItem({
-            knTag
-        }));
-    }
-
     get label() {
         return ItemExtensionExampleComponent.label;
     }
 
-    onSelect(item: ItemExample) {
-        item.isSelected = !item.isSelected;
-        this.selected.emit(item);
+    onSelect(contract: Contract) {
+        this.store.dispatch(replaceContract({contract: {...contract, isSelected: !contract.isSelected}}));
+        this.selected.emit(contract);
     }
 }
 

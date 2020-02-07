@@ -25,6 +25,7 @@
   >
     {{ route.component['label'] || route.path }}
   </a>
+  <a routerLink="./demos" *ngIf="isLoggedIn$ | async">Material Design</a>
 </nav>
 
 <main>
