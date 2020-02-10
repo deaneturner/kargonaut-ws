@@ -38,20 +38,24 @@
         <mat-toolbar color="primary">
           {{ item.knLabel || '[knLabel]'}}
         </mat-toolbar>
-        <pre>
-          knTag?:Tag;                 {{ item.knTag }}
-          knLabel: string;            {{ item.knLabel }}
-          knDescription?: string;     {{ item.knDescription }}
-          isSelected?: boolean;       {{ item.isSelected }}
-          knIsContainedIn?: Package;  {{ item.knIsContainedIn }}
-          checkbox?: string;          {{ item.checkbox }}
-          symbol?: string;            {{ item.symbol }}
-          maxLikes?: string;          {{ item.maxLikes }}
-          weightCode?: string;        {{ item.weightCode }}
-          weightSymbol?: string;      {{ item.weightSymbol }}
-          weightAmount?: string;      {{ item.weightAmount }}
-        </pre>
+        <ng-container *ngTemplateOutlet="itemexample; context: { item: item }"></ng-container>
       </mat-card-content>
     </mat-card>
   </div>
 </div>
+<ng-template #itemexample let-item="item">
+  <pre>
+    knTag?:Tag;                 {{ item?.knTag }}
+    knLabel: string;            {{ item?.knLabel }}
+    knDescription?: string;     {{ item?.knDescription }}
+    isSelected?: boolean;       {{ item?.isSelected }}
+    knIsContainedIn?: Package;  {{ item?.knIsContainedIn }}
+    checkbox?: string;          {{ item?.checkbox }}
+    symbol?: string;            {{ item?.symbol }}
+    maxLikes?: string;          {{ item?.maxLikes }}
+    weightCode?: string;        {{ item?.weightCode }}
+    weightSymbol?: string;      {{ item?.weightSymbol }}
+    weightAmount?: string;      {{ item?.weightAmount }}
+        </pre>
+</ng-template>
+
