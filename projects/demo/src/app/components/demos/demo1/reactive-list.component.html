@@ -6,13 +6,6 @@
     <div>
       <mat-card>
         <mat-card-content>
-          <kn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
-            <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
-            <demo-reactive-list-item *knListItem="let item" [item]="item"></demo-reactive-list-item>
-            <div class="kn-select-max-no-collapse">Click to expand...</div>
-          </kn-package-component>
-        </mat-card-content>
-        <mat-card-content>
           <kn-package-component [config]="packageConfig2" [itemConfig]="itemConfig2">
             <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
             <demo-reactive-list-item2 *knListItem="let item" [item]="item" (selected)="onItemSelected(item)"
@@ -26,6 +19,13 @@
             <demo-reactive-list-item2 *knListItem="let contract" [item]="contract"
                                       (selected)="onContractSelected(contract)"
                                       (mouseover)="onMouseOver(contract)"></demo-reactive-list-item2>
+            <div class="kn-select-max-no-collapse">Click to expand...</div>
+          </kn-package-component>
+        </mat-card-content>
+        <mat-card-content>
+          <kn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
+            <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
+            <demo-reactive-list-item *knListItem="let item" [item]="item"></demo-reactive-list-item>
             <div class="kn-select-max-no-collapse">Click to expand...</div>
           </kn-package-component>
         </mat-card-content>
@@ -43,19 +43,29 @@
     </mat-card>
   </div>
 </div>
-<ng-template #itemexample let-item="item">
+<ng-template #itemexample let-itemexample="item">
   <pre>
-    knTag?:Tag;                 {{ item?.knTag }}
-    knLabel: string;            {{ item?.knLabel }}
-    knDescription?: string;     {{ item?.knDescription }}
-    isSelected?: boolean;       {{ item?.isSelected }}
-    knIsContainedIn?: Package;  {{ item?.knIsContainedIn }}
-    checkbox?: string;          {{ item?.checkbox }}
-    symbol?: string;            {{ item?.symbol }}
-    maxLikes?: string;          {{ item?.maxLikes }}
-    weightCode?: string;        {{ item?.weightCode }}
-    weightSymbol?: string;      {{ item?.weightSymbol }}
-    weightAmount?: string;      {{ item?.weightAmount }}
-        </pre>
+    knTag?:Tag;                 {{ itemexample?.knTag }}
+    knLabel: string;            {{ itemexample?.knLabel }}
+    knDescription?: string;     {{ itemexample?.knDescription }}
+    isSelected?: boolean;       {{ itemexample?.isSelected }}
+    knIsContainedIn?: Package;  {{ itemexample?.knIsContainedIn }}
+    checkbox?: string;          {{ itemexample?.checkbox }}
+    symbol?: string;            {{ itemexample?.symbol }}
+    maxLikes?: string;          {{ itemexample?.maxLikes }}
+    weightCode?: string;        {{ itemexample?.weightCode }}
+    weightSymbol?: string;      {{ itemexample?.weightSymbol }}
+    weightAmount?: string;      {{ itemexample?.weightAmount }}
+  </pre>
+</ng-template>
+<ng-template #contract let-contract="item">
+  <pre>
+    knTag?:Tag;                 {{ contract?.knTag }}
+    knLabel: string;            {{ contract?.knLabel }}
+    knDescription?: string;     {{ contract?.knDescription }}
+    isSelected?: boolean;       {{ contract?.isSelected }}
+    knIsContainedIn?: Package;  {{ contract?.knIsContainedIn }}
+    duration?: string;          {{ contract?.duration }}
+  </pre>
 </ng-template>
 
