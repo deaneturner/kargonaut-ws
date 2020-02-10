@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveListDemoComponent } from './demo1/reactive-list-demo.component';
+import { ReactiveListComponent } from './demo1/reactive-list.component';
 import { CargoModule } from '../../../../../cargo-domain/src/kn/cargo.module';
 import { ReactiveListHeaderComponent } from './demo1/reactive-list-header-example/reactive-list-header.component';
 import { ReactiveListItemComponent } from './demo1/reactive-list-item/reactive-list-item.component';
@@ -10,7 +10,7 @@ import { ReactiveListItem2Component } from './demo1/reactive-list-item2/reactive
 
 @NgModule({
     declarations: [
-        ReactiveListDemoComponent,
+        ReactiveListComponent,
         ReactiveListHeaderComponent,
         ReactiveListItemComponent,
         ReactiveListItem2Component,

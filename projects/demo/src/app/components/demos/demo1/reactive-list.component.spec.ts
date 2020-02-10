@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReactiveListDemoComponent } from './reactive-list-demo.component';
+import { ReactiveListComponent } from './reactive-list.component';
 import { NgGistModule } from 'ng-gist';
 import { of } from 'rxjs/internal/observable/of';
 import { PackageComponent } from '../../../../../../cargo-domain/src/kn/components/package/package.component';
@@ -8,13 +8,13 @@ import { items } from '../../../../assets/data/items';
 import { ReactiveListHeaderComponent } from './reactive-list-header-example/reactive-list-header.component';
 
 describe('ReactiveListDemoComponent', () => {
-  let component: ReactiveListDemoComponent;
-  let fixture: ComponentFixture<ReactiveListDemoComponent>;
+  let component: ReactiveListComponent;
+  let fixture: ComponentFixture<ReactiveListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-          ReactiveListDemoComponent,
+          ReactiveListComponent,
           PackageComponent,
           ReactiveListHeaderComponent,
           InlineGridDirective
@@ -27,7 +27,7 @@ describe('ReactiveListDemoComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ReactiveListDemoComponent);
+    fixture = TestBed.createComponent(ReactiveListComponent);
     component = fixture.componentInstance;
     component.items$ = of(items);
     fixture.detectChanges();

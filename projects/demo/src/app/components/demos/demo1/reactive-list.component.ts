@@ -13,7 +13,7 @@ import { replaceContract } from '../../../actions/contract-actions';
     templateUrl: './reactive-list.component.html',
     styleUrls: ['./reactive-list.component.scss']
 })
-export class ReactiveListDemoComponent implements OnInit {
+export class ReactiveListComponent implements OnInit {
 
     static label = 'Material Design';
 
@@ -70,7 +70,7 @@ export class ReactiveListDemoComponent implements OnInit {
     }
 
     get label() {
-        return ReactiveListDemoComponent.label;
+        return ReactiveListComponent.label;
     }
 
     onItemSelected(item: ItemExample) {
