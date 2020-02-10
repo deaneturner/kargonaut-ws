@@ -7,6 +7,9 @@ import { replaceItem } from '../../../actions/item-actions';
 import { AppState } from '../../../app.state';
 import { Contract } from '../../../../../models/contract';
 import { replaceContract } from '../../../actions/contract-actions';
+import { Subject } from 'rxjs';
+import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
+import { Result } from '../../../../../models/result';
 
 @Component({
     selector: 'demo-1-component-example',
@@ -27,6 +30,8 @@ export class ReactiveListComponent implements OnInit {
     items$ = this.store.pipe(select(state => state.items));
     results$ = this.store.pipe(select(state => state.results));
     contracts$ = this.store.pipe(select(state => state.contracts));
+
+    currentContext$ = new Subject<Item>();
 
     constructor(private store: Store<AppState>) {
     }
@@ -79,6 +84,15 @@ export class ReactiveListComponent implements OnInit {
 
     onContractSelected(contract: Contract) {
         this.store.dispatch(replaceContract({contract: {...contract, isSelected: !contract.isSelected}}));
+    }
+
+    onMouseOver(item: Item) {
+        console.log(JSON.stringify(item));
+        this.currentContext$.next(item);
+    }
+
+    getTypeOf(item: Item | Contract | Result) {
+        return 'TEMP';
     }
 }
 

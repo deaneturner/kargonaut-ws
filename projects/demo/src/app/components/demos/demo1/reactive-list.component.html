@@ -15,31 +15,42 @@
         <mat-card-content>
           <kn-package-component [config]="packageConfig2" [itemConfig]="itemConfig2">
             <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
-            <demo-reactive-list-item2 *knListItem="let item" [item]="item" (selected)="onItemSelected(item)"></demo-reactive-list-item2>
+            <demo-reactive-list-item2 *knListItem="let item" [item]="item" (selected)="onItemSelected(item)"
+                                      (mouseover)="onMouseOver(item)"></demo-reactive-list-item2>
             <div class="kn-select-max-no-collapse">Click to expand...</div>
           </kn-package-component>
         </mat-card-content>
         <mat-card-content>
           <kn-package-component [config]="packageConfig3" [itemConfig]="itemConfig3">
             <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
-            <demo-reactive-list-item2 *knListItem="let contract" [item]="contract" (selected)="onContractSelected(contract)"></demo-reactive-list-item2>
+            <demo-reactive-list-item2 *knListItem="let contract" [item]="contract"
+                                      (selected)="onContractSelected(contract)"
+                                      (mouseover)="onMouseOver(contract)"></demo-reactive-list-item2>
             <div class="kn-select-max-no-collapse">Click to expand...</div>
           </kn-package-component>
         </mat-card-content>
       </mat-card>
     </div>
   </div>
-  <div>
+  <div *ngIf="(currentContext$ | async) || {}; let item">
     <mat-card>
       <mat-card-content>
         <mat-toolbar color="primary">
-          Result Row Details
+          {{ item.knLabel}} {{ getTypeOf(item) }}
         </mat-toolbar>
-        <mat-list role="list">
-          <mat-list-item role="listitem">Item 1</mat-list-item>
-          <mat-list-item role="listitem">Item 2</mat-list-item>
-          <mat-list-item role="listitem">Item 3</mat-list-item>
-        </mat-list>
+        <pre>
+          knTag?:Tag;                 {{ item.knTag }}
+          knLabel: string;            {{ item.knLabel }}
+          knDescription?: string;     {{ item.knDescription }}
+          isSelected?: boolean;       {{ item.isSelected }}
+          knIsContainedIn?: Package;  {{ item.knIsContainedIn }}
+          checkbox?: string;          {{ item.checkbox }}
+          symbol?: string;            {{ item.symbol }}
+          maxLikes?: string;          {{ item.maxLikes }}
+          weightCode?: string;        {{ item.weightCode }}
+          weightSymbol?: string;      {{ item.weightSymbol }}
+          weightAmount?: string;      {{ item.weightAmount }}
+        </pre>
       </mat-card-content>
     </mat-card>
   </div>

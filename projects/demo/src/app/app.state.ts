@@ -1,10 +1,10 @@
-import { Item } from '../../../cargo-domain/src/kn/models/Item';
 import { Tag } from '../../../cargo-domain/src/common/TagGenerator';
 import { Contract } from '../../models/contract';
 import { Result } from '../../models/result';
+import { ItemExample } from '../../models/item-example';
 
 export interface AppState {
-    items: Item[];
+    items: ItemExample[];
     contracts: Contract[];
     results: Result[];
     tag: Tag;
