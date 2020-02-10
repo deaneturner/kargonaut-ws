@@ -9,7 +9,6 @@ import { Contract } from '../../../../../models/contract';
 import { replaceContract } from '../../../actions/contract-actions';
 import { Subject } from 'rxjs';
 import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
-import { Result } from '../../../../../models/result';
 
 @Component({
     selector: 'demo-1-component-example',
@@ -89,10 +88,6 @@ export class ReactiveListComponent implements OnInit {
     onMouseOver(item: Item) {
         console.log(JSON.stringify(item));
         this.currentContext$.next(item);
-    }
-
-    getTypeOf(item: Item | Contract | Result) {
-        return 'TEMP';
     }
 }
 

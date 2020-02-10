@@ -36,7 +36,7 @@
     <mat-card>
       <mat-card-content>
         <mat-toolbar color="primary">
-          {{ item.knLabel}} {{ getTypeOf(item) }}
+          {{ item.knLabel || '[knLabel]'}}
         </mat-toolbar>
         <pre>
           knTag?:Tag;                 {{ item.knTag }}
