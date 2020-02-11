@@ -26,7 +26,7 @@ interface ItemContext {
 })
 export class ReactiveListComponent implements OnInit {
 
-    static label = 'Material Design';
+    static label = 'Reactive Design';
 
     packageConfig: PackageConfig;
     packageConfig2: PackageConfig;
