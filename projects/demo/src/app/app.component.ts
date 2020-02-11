@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { examples } from './examples';
 import { AppConfigService } from './services/app-config-service.service';
-import { logout } from './auth/auth.actions';
+import { login, logout } from './auth/auth.actions';
 import { AuthState } from './auth/reducers';
 import { select, Store } from '@ngrx/store';
 import { isLoggedIn, isLoggedOut } from './auth/auth.selectors';
@@ -17,6 +17,8 @@ export class AppComponent implements OnInit {
     showNav: boolean;
     routes = examples;
 
+    // loading = true;
+
     isLoggedIn$: Observable<boolean>;
     isLoggedOut$: Observable<boolean>;
 
@@ -25,6 +27,32 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit() {
+
+        const userProfile = localStorage.getItem('user');
+
+        if (userProfile) {
+            this.store.dispatch(login({user: JSON.parse(userProfile)}));
+        }
+
+        // this.router.events.subscribe(event => {
+        //     switch (true) {
+        //         case event instanceof NavigationStart: {
+        //             this.loading = true;
+        //             break;
+        //         }
+        //
+        //         case event instanceof NavigationEnd:
+        //         case event instanceof NavigationCancel:
+        //         case event instanceof NavigationError: {
+        //             this.loading = false;
+        //             break;
+        //         }
+        //         default: {
+        //             break;
+        //         }
+        //     }
+        // });
+
         this.isLoggedIn$ = this.store
             .pipe(
                 select(isLoggedIn)

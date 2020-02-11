@@ -5,8 +5,7 @@ import { ItemConfig } from '../../../../../../cargo-domain/src/kn/models/Item.co
 import { AppState } from '../../../app.state';
 import { Subject } from 'rxjs';
 import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
-import * as ItemActions from '../../../actions';
-import { replaceContract, replaceItem, replaceResult } from '../../../actions';
+import * as ActionTypes from '../../../actions/action-types';
 
 enum ItemTypes {
     'ItemExample' = 'ItemExample',
@@ -113,7 +112,7 @@ export class ReactiveListComponent implements OnInit {
                 break;
             }
         }
-        this.store.dispatch(ItemActions[actionContext.action]({
+        this.store.dispatch(ActionTypes[actionContext.action]({
             [actionContext.key] : {...itemContext.item, isSelected: !itemContext.item.isSelected}
         }));
     }
