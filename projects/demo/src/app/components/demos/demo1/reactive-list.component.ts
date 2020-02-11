@@ -2,12 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { PackageConfig } from '../../../../../../cargo-domain/src/kn/models/Package.config';
 import { ItemConfig } from '../../../../../../cargo-domain/src/kn/models/Item.config';
-import { replaceItem } from '../../../actions/item-actions';
 import { AppState } from '../../../app.state';
-import { replaceContract } from '../../../actions/contract-actions';
 import { Subject } from 'rxjs';
 import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
-import { replaceResult } from '../../../actions/result-actions';
+import * as ItemActions from '../../../actions';
+import { replaceContract, replaceItem, replaceResult } from '../../../actions';
 
 enum ItemTypes {
     'ItemExample' = 'ItemExample',
@@ -90,20 +89,33 @@ export class ReactiveListComponent implements OnInit {
     }
 
     onSelected(itemContext: ItemContext) {
+        let actionContext;
         switch (itemContext.type) {
             case ItemTypes.ItemExample: {
-                this.store.dispatch(replaceItem({item: {...itemContext.item, isSelected: !itemContext.item.isSelected}}));
+                actionContext = {
+                    action: 'replaceItem',
+                    key: 'item'
+                };
                 break;
             }
             case ItemTypes.Contract: {
-                this.store.dispatch(replaceContract({contract: {...itemContext.item, isSelected: !itemContext.item.isSelected}}));
+                actionContext = {
+                    action: 'replaceContract',
+                    key: 'contract'
+                };
                 break;
             }
             case ItemTypes.Result: {
-                this.store.dispatch(replaceResult({result: {...itemContext.item, isSelected: !itemContext.item.isSelected}}));
+                actionContext = {
+                    action: 'replaceResult',
+                    key: 'result'
+                };
                 break;
             }
         }
+        this.store.dispatch(ItemActions[actionContext.action]({
+            [actionContext.key] : {...itemContext.item, isSelected: !itemContext.item.isSelected}
+        }));
     }
 
     onMouseOver(itemContext: ItemContext) {
