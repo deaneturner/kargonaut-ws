@@ -10,6 +10,17 @@ import { replaceContract } from '../../../actions/contract-actions';
 import { Subject } from 'rxjs';
 import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
 
+enum ItemTypes {
+    'ItemExample' = 'ItemExample',
+    'Contract' = 'Contact',
+    'Result' = 'Result',
+}
+
+interface ItemContext {
+    type: ItemTypes;
+    item?: Item;
+}
+
 @Component({
     selector: 'demo-1-component-example',
     templateUrl: './reactive-list.component.html',
@@ -26,11 +37,16 @@ export class ReactiveListComponent implements OnInit {
     itemConfig2: ItemConfig;
     itemConfig3: ItemConfig;
 
+    ItemTypes: typeof ItemTypes = ItemTypes;
+
     items$ = this.store.pipe(select(state => state.items));
     results$ = this.store.pipe(select(state => state.results));
     contracts$ = this.store.pipe(select(state => state.contracts));
 
-    currentContext$ = new Subject<Item>();
+    currentContext$ = new Subject<ItemContext>();
+    itemContext: ItemContext = {
+        type: ItemTypes.ItemExample
+    };
 
     constructor(private store: Store<AppState>) {
     }
@@ -85,9 +101,10 @@ export class ReactiveListComponent implements OnInit {
         this.store.dispatch(replaceContract({contract: {...contract, isSelected: !contract.isSelected}}));
     }
 
-    onMouseOver(item: Item) {
-        console.log(JSON.stringify(item));
-        this.currentContext$.next(item);
+    onMouseOver(itemContext: ItemContext) {
+        console.log(JSON.stringify(itemContext.item));
+        this.currentContext$.next({type: itemContext.type, item: itemContext.item});
+        this.itemContext = itemContext;
     }
 }
 
