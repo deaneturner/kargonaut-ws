@@ -5,10 +5,16 @@ import { ItemConfig } from '../../../../../../cargo-domain/src/kn/models/Item.co
 import { AppState } from '../../../app.state';
 import { Subject } from 'rxjs';
 import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
-import * as ActionTypes from '../../../actions/action-types';
+import * as ItemActions from '../../../actions/action-types';
+
+enum ItemTypes {
+    'ItemExample' = 'ItemExample',
+    'Contract' = 'Contract',
+    'Result' = 'Result',
+}
 
 interface ItemContext {
-    action: string;
+    type: ItemTypes;
     item?: Item;
 }
 
@@ -28,11 +34,12 @@ export class ReactiveListComponent implements OnInit {
     itemConfig2: ItemConfig;
     itemConfig3: ItemConfig;
 
+    ItemTypes: typeof ItemTypes = ItemTypes;
+
     items$ = this.store.pipe(select(state => state.items));
     results$ = this.store.pipe(select(state => state.results));
     contracts$ = this.store.pipe(select(state => state.contracts));
 
-    actionTypes = ActionTypes;
     currentContext$ = new Subject<ItemContext>();
 
     constructor(private store: Store<AppState>) {
@@ -81,35 +88,39 @@ export class ReactiveListComponent implements OnInit {
     }
 
     onSelected(itemContext: ItemContext) {
+        // TODO: optimize / simplify by piggybacking on action type
         let actionContext;
-        switch (itemContext.action) {
-            case ActionTypes.replaceItem.name: {
+        switch (itemContext.type) {
+            case ItemTypes.ItemExample: {
                 actionContext = {
+                    action: 'replaceItem',
                     key: 'item'
                 };
                 break;
             }
-            case ActionTypes.replaceContract.name: {
+            case ItemTypes.Contract: {
                 actionContext = {
+                    action: 'replaceContract',
                     key: 'contract'
                 };
                 break;
             }
-            case ActionTypes.replaceResult.name: {
+            case ItemTypes.Result: {
                 actionContext = {
+                    action: 'replaceResult',
                     key: 'result'
                 };
                 break;
             }
         }
-        this.store.dispatch(ActionTypes[itemContext.action]({
+        this.store.dispatch(ItemActions[actionContext.action]({
             [actionContext.key] : {...itemContext.item, isSelected: !itemContext.item.isSelected}
         }));
     }
 
     onMouseOver(itemContext: ItemContext) {
         console.log(JSON.stringify(itemContext.item));
-        this.currentContext$.next({action: itemContext.action, item: itemContext.item});
+        this.currentContext$.next({type: itemContext.type, item: itemContext.item});
     }
 }
 

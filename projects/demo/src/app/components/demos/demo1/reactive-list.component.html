@@ -9,8 +9,8 @@
           <kn-package-component [config]="packageConfig2" [itemConfig]="itemConfig2">
             <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
             <demo-reactive-list-item2 *knListItem="let item" [item]="item"
-                                      (selected)="onSelected({action: actionTypes.replaceItem.name, item: item})"
-                                      (mouseover)="onMouseOver({action: actionTypes.replaceItem.name, item: item})"></demo-reactive-list-item2>
+                                      (selected)="onSelected({type: ItemTypes.ItemExample, item: item})"
+                                      (mouseover)="onMouseOver({type: ItemTypes.ItemExample, item: item})"></demo-reactive-list-item2>
             <div class="kn-select-max-no-collapse">Click to expand...</div>
           </kn-package-component>
         </mat-card-content>
@@ -18,8 +18,8 @@
           <kn-package-component [config]="packageConfig3" [itemConfig]="itemConfig3">
             <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
             <demo-reactive-list-item2 *knListItem="let contract" [item]="contract"
-                                      (selected)="onSelected({action: actionTypes.replaceContract.name, item: contract})"
-                                      (mouseover)="onMouseOver({action: actionTypes.replaceContract.name, item: contract})"></demo-reactive-list-item2>
+                                      (selected)="onSelected({type: ItemTypes.Contract, item: contract})"
+                                      (mouseover)="onMouseOver({type: ItemTypes.Contract, item: contract})"></demo-reactive-list-item2>
             <div class="kn-select-max-no-collapse">Click to expand...</div>
           </kn-package-component>
         </mat-card-content>
@@ -27,8 +27,8 @@
           <kn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
             <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
             <demo-reactive-list-item *knListItem="let result" [item]="result"
-                                     (selected)="onSelected({action: actionTypes.replaceResult.name, item: result})"
-                                     (mouseover)="onMouseOver({action: actionTypes.replaceResult.name, item: result})"></demo-reactive-list-item>
+                                     (selected)="onSelected({type: ItemTypes.Result, item: result})"
+                                     (mouseover)="onMouseOver({type: ItemTypes.Result, item: result})"></demo-reactive-list-item>
             <div class="kn-select-max-no-collapse">Click to expand...</div>
           </kn-package-component>
         </mat-card-content>
@@ -41,16 +41,16 @@
         <mat-toolbar color="primary">
           {{ currentcontext.item?.knLabel || 'Select an Item'}}
         </mat-toolbar>
-        <ng-container [ngSwitch]="currentcontext.action">
-          <ng-container *ngSwitchCase="actionTypes.replaceItem.name"
+        <ng-container [ngSwitch]="currentcontext.type">
+          <ng-container *ngSwitchCase="'ItemExample'"
                         [ngTemplateOutlet]="ItemExample"
                         [ngTemplateOutletContext]="{ item: currentcontext.item }">
           </ng-container>
-          <ng-container *ngSwitchCase="actionTypes.replaceContract.name"
+          <ng-container *ngSwitchCase="'Contract'"
                         [ngTemplateOutlet]="Contract"
                         [ngTemplateOutletContext]="{ item: currentcontext.item }">
           </ng-container>
-          <ng-container *ngSwitchCase="actionTypes.replaceResult.name"
+          <ng-container *ngSwitchCase="'Result'"
                         [ngTemplateOutlet]="Result"
                         [ngTemplateOutletContext]="{ item: currentcontext.item }">
           </ng-container>
