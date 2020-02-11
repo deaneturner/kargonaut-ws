@@ -11,16 +11,16 @@ export function resultsReducer(state: Result[] | undefined, action: Action) {
     return createReducer<Result[]>(
         initialResults,
         on(appendResult, (s, a) => s.concat({
-            ...a.item,
+            ...a.result,
             knTag: TagGenerator.generateId(),
         })),
         on(replaceResult, (s, a) => {
             const newResults = s.concat();
-            newResults[newResults.findIndex(item => item.knTag === a.item.knTag)] = a.item;
+            newResults[newResults.findIndex(result => result.knTag === a.result.knTag)] = a.result;
             return newResults;
         }),
         on(deleteResult, (s, a) => s.filter(
-            item => item.knTag !== a.knTag)),
+            result => result.knTag !== a.knTag)),
     )(state, action);
 }
 
