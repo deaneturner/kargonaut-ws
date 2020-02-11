@@ -2,15 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { PackageConfig } from '../../../../../../cargo-domain/src/kn/models/Package.config';
 import { ItemConfig } from '../../../../../../cargo-domain/src/kn/models/Item.config';
-import { ItemExample } from '../../../../../models/item-example';
 import { replaceItem } from '../../../actions/item-actions';
 import { AppState } from '../../../app.state';
-import { Contract } from '../../../../../models/contract';
 import { replaceContract } from '../../../actions/contract-actions';
 import { Subject } from 'rxjs';
 import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
 import { replaceResult } from '../../../actions/result-actions';
-import { Result } from '../../../../../models/result';
 
 enum ItemTypes {
     'ItemExample' = 'ItemExample',
@@ -92,16 +89,21 @@ export class ReactiveListComponent implements OnInit {
         return ReactiveListComponent.label;
     }
 
-    onItemSelected(item: ItemExample) {
-        this.store.dispatch(replaceItem({item: {...item, isSelected: !item.isSelected}}));
-    }
-
-    onContractSelected(contract: Contract) {
-        this.store.dispatch(replaceContract({contract: {...contract, isSelected: !contract.isSelected}}));
-    }
-
-    onResultSelected(result: Result) {
-        this.store.dispatch(replaceResult({result: {...result, isSelected: !result.isSelected}}));
+    onSelected(itemContext: ItemContext) {
+        switch (itemContext.type) {
+            case ItemTypes.ItemExample: {
+                this.store.dispatch(replaceItem({item: {...itemContext.item, isSelected: !itemContext.item.isSelected}}));
+                break;
+            }
+            case ItemTypes.Contract: {
+                this.store.dispatch(replaceContract({contract: {...itemContext.item, isSelected: !itemContext.item.isSelected}}));
+                break;
+            }
+            case ItemTypes.Result: {
+                this.store.dispatch(replaceResult({result: {...itemContext.item, isSelected: !itemContext.item.isSelected}}));
+                break;
+            }
+        }
     }
 
     onMouseOver(itemContext: ItemContext) {
