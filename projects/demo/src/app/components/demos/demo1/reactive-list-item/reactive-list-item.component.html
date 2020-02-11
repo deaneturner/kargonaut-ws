@@ -1,4 +1,5 @@
-<div class="reactive-list-item">
+<div class="reactive-list-item" (mouseover)="hover=true" (mouseleave)="hover=false"
+     [ngStyle]="{backgroundColor: hover==true  ? 'lightgrey' : 'inherit'}">
     <div class="material-icons">grade</div>
     <div>
       <div class="label">{{item?.knLabel}}</div>

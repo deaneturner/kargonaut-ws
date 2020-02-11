@@ -9,6 +9,8 @@ import { ItemExample } from '../../../../../../models/item-example';
 })
 export class ReactiveListItem2Component implements OnInit {
 
+    hover: boolean;
+
     @Input()
     item: ItemExample;
 

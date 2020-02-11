@@ -8,7 +8,8 @@
         <mat-card-content>
           <kn-package-component [config]="packageConfig2" [itemConfig]="itemConfig2">
             <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
-            <demo-reactive-list-item2 *knListItem="let item" [item]="item" (selected)="onItemSelected(item)"
+            <demo-reactive-list-item2 *knListItem="let item" [item]="item"
+                                      (selected)="onItemSelected(item)"
                                       (mouseover)="onMouseOver({type: ItemTypes.ItemExample, item: item})"></demo-reactive-list-item2>
             <div class="kn-select-max-no-collapse">Click to expand...</div>
           </kn-package-component>
@@ -25,7 +26,9 @@
         <mat-card-content>
           <kn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
             <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
-            <demo-reactive-list-item *knListItem="let item" [item]="item"></demo-reactive-list-item>
+            <demo-reactive-list-item *knListItem="let result" [item]="result"
+                                     (selected)="onResultSelected(result)"
+                                     (mouseover)="onMouseOver({type: ItemTypes.Result, item: result})"></demo-reactive-list-item>
             <div class="kn-select-max-no-collapse">Click to expand...</div>
           </kn-package-component>
         </mat-card-content>
@@ -38,7 +41,20 @@
         <mat-toolbar color="primary">
           {{ currentcontext.item?.knLabel || '[knLabel]'}}
         </mat-toolbar>
-        <ng-container *ngTemplateOutlet="ItemExample; context: { item: currentcontext.item }"></ng-container>
+        <ng-container [ngSwitch]="currentcontext.type">
+          <ng-container *ngSwitchCase="'ItemExample'"
+                        [ngTemplateOutlet]="ItemExample"
+                        [ngTemplateOutletContext]="{ item: currentcontext.item }">
+          </ng-container>
+          <ng-container *ngSwitchCase="'Contract'"
+                        [ngTemplateOutlet]="Contract"
+                        [ngTemplateOutletContext]="{ item: currentcontext.item }">
+          </ng-container>
+          <ng-container *ngSwitchCase="'Result'"
+                        [ngTemplateOutlet]="Result"
+                        [ngTemplateOutletContext]="{ item: currentcontext.item }">
+          </ng-container>
+        </ng-container>
       </mat-card-content>
     </mat-card>
   </div>
@@ -66,6 +82,15 @@
     isSelected?: boolean;       {{ contract?.isSelected }}
     knIsContainedIn?: Package;  {{ contract?.knIsContainedIn }}
     duration?: string;          {{ contract?.duration }}
+  </pre>
+</ng-template>
+<ng-template #Result let-result="item">
+  <pre>
+    knTag?:Tag;                 {{ result?.knTag }}
+    knLabel: string;            {{ result?.knLabel }}
+    knDescription?: string;     {{ result?.knDescription }}
+    isSelected?: boolean;       {{ result?.isSelected }}
+    knIsContainedIn?: Package;  {{ result?.knIsContainedIn }}
   </pre>
 </ng-template>
 
