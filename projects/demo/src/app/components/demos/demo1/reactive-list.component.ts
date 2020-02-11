@@ -7,14 +7,8 @@ import { Subject } from 'rxjs';
 import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
 import * as ActionTypes from '../../../actions/action-types';
 
-enum ItemTypes {
-    'ItemExample' = 'ItemExample',
-    'Contract' = 'Contract',
-    'Result' = 'Result',
-}
-
 interface ItemContext {
-    type: ItemTypes;
+    action: string;
     item?: Item;
 }
 
@@ -34,12 +28,11 @@ export class ReactiveListComponent implements OnInit {
     itemConfig2: ItemConfig;
     itemConfig3: ItemConfig;
 
-    ItemTypes: typeof ItemTypes = ItemTypes;
-
     items$ = this.store.pipe(select(state => state.items));
     results$ = this.store.pipe(select(state => state.results));
     contracts$ = this.store.pipe(select(state => state.contracts));
 
+    actionTypes = ActionTypes;
     currentContext$ = new Subject<ItemContext>();
 
     constructor(private store: Store<AppState>) {
@@ -89,37 +82,34 @@ export class ReactiveListComponent implements OnInit {
 
     onSelected(itemContext: ItemContext) {
         let actionContext;
-        switch (itemContext.type) {
-            case ItemTypes.ItemExample: {
+        switch (itemContext.action) {
+            case ActionTypes.replaceItem.name: {
                 actionContext = {
-                    action: 'replaceItem',
                     key: 'item'
                 };
                 break;
             }
-            case ItemTypes.Contract: {
+            case ActionTypes.replaceContract.name: {
                 actionContext = {
-                    action: 'replaceContract',
                     key: 'contract'
                 };
                 break;
             }
-            case ItemTypes.Result: {
+            case ActionTypes.replaceResult.name: {
                 actionContext = {
-                    action: 'replaceResult',
                     key: 'result'
                 };
                 break;
             }
         }
-        this.store.dispatch(ActionTypes[actionContext.action]({
+        this.store.dispatch(ActionTypes[itemContext.action]({
             [actionContext.key] : {...itemContext.item, isSelected: !itemContext.item.isSelected}
         }));
     }
 
     onMouseOver(itemContext: ItemContext) {
         console.log(JSON.stringify(itemContext.item));
-        this.currentContext$.next({type: itemContext.type, item: itemContext.item});
+        this.currentContext$.next({action: itemContext.action, item: itemContext.item});
     }
 }
 
