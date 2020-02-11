@@ -39,7 +39,7 @@
     <mat-card>
       <mat-card-content>
         <mat-toolbar color="primary">
-          {{ currentcontext.item?.knLabel || '[knLabel]'}}
+          {{ currentcontext.item?.knLabel || 'Select an Item'}}
         </mat-toolbar>
         <ng-container [ngSwitch]="currentcontext.type">
           <ng-container *ngSwitchCase="'ItemExample'"
