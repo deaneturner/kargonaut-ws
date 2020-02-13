@@ -1,6 +1,6 @@
 import { results } from '../../assets/data/results';
 import { Tag, TagGenerator } from '../../../../cargo-domain/src/common/TagGenerator';
-import { appendResult, cancelResult, deleteResult, editResult, replaceResult } from '../actions/result-actions';
+import { appendResult, cancelResult, deleteResult, editResult, replaceResult } from '../actions/result.actions';
 import { Action, createReducer } from '@ngrx/store';
 import { on } from '@ngrx/store';
 import { Result } from '../../../models/result';

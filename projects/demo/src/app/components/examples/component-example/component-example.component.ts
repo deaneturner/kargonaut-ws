@@ -4,7 +4,7 @@ import { ItemConfig } from '../../../../../../cargo-domain/src/kn/models/Item.co
 import { Store, select } from '@ngrx/store';
 import { AppState } from '../../../app.state';
 import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
-import { replaceItem } from '../../../actions/item-actions';
+import { replaceItem } from '../../../actions/item.actions';
 import { of } from 'rxjs/internal/observable/of';
 import { ItemExample } from '../../../../../models/item-example';
 

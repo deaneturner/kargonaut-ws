@@ -1,7 +1,7 @@
 import { Item } from '../../../../cargo-domain/src/kn/models/Item';
 import { items } from '../../assets/data/items';
 import { TagGenerator } from '../../../../cargo-domain/src/common/TagGenerator';
-import { appendItem, deleteItem, replaceItem } from '../actions/item-actions';
+import { appendItem, deleteItem, replaceItem } from '../actions/item.actions';
 import { createReducer } from '@ngrx/store';
 import { on } from '@ngrx/store';
 import { ItemExample } from '../../../models/item-example';

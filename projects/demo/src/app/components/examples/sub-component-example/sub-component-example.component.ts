@@ -5,7 +5,7 @@ import { ItemConfig } from '../../../../../../cargo-domain/src/kn/models/Item.co
 import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
 import { Tag } from '../../../../../../cargo-domain/src/common/TagGenerator';
 import { AppState } from '../../../app.state';
-import { appendItem, deleteItem } from '../../../actions/item-actions';
+import { appendItem, deleteItem } from '../../../actions/item.actions';
 
 @Component({
     selector: 'demo-component-example',

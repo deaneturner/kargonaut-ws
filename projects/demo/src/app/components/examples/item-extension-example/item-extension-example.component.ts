@@ -6,7 +6,7 @@ import { AppState } from '../../../app.state';
 import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
 import { of } from 'rxjs/internal/observable/of';
 import { Contract } from '../../../../../models/contract';
-import { replaceContract } from '../../../actions/contract-actions';
+import { replaceContract } from '../../../actions/action-types';
 
 @Component({
     selector: 'demo-component-example',
