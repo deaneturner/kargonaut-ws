@@ -19,6 +19,9 @@ import { EffectsModule } from '@ngrx/effects';
 import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { itemsReducer } from './reducers/item.reducers';
+import { ItemsHttpService } from './services/items-http.service';
+import { ItemsResolver } from './services/items.resolver';
+import { ItemsEffects } from './effects/items.effects';
 
 @NgModule({
     declarations: [
@@ -35,6 +38,9 @@ import { itemsReducer } from './reducers/item.reducers';
         AuthModule.forRoot(),
         ExamplesModule,
         DemosModule,
+        EffectsModule.forRoot([
+            ItemsEffects
+        ]),
         // TODO: meta-reducers and reducers/index.ts?
         StoreModule.forRoot({
             items: itemsReducer,
@@ -50,7 +56,6 @@ import { itemsReducer } from './reducers/item.reducers';
                 strictStateSerializability: true
             }
         }),
-        EffectsModule.forRoot([]),
         StoreRouterConnectingModule.forRoot({
             stateKey: 'router',
             routerState: RouterState.Minimal
@@ -65,7 +70,9 @@ import { itemsReducer } from './reducers/item.reducers';
             useFactory: initializeApp,
             deps: [AppConfigService],
             multi: true
-        }
+        },
+        ItemsHttpService,
+        ItemsResolver
     ],
     bootstrap: [AppComponent]
 })

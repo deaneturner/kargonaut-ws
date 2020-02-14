@@ -5,12 +5,19 @@ import { appendItem, deleteItem, replaceItem } from '../actions/item.actions';
 import { createReducer } from '@ngrx/store';
 import { on } from '@ngrx/store';
 import { ItemExample } from '../../../models/item-example';
+import * as ItemActions from '../actions/item.actions';
 
 const initialItems: Item[] = items;
 
 export function itemsReducer(state: any | undefined, action: any) {
     return createReducer<ItemExample[]>(
         initialItems,
+        // on(ItemActions.allItemsLoaded,
+        //     (s, a) => adapter.addAll(
+        //         a.items,
+        //         {...s,
+        //             allItemsLoaded: true
+        //         })),
         on(appendItem, (s, a) => s.concat({
             ...a.item,
             knTag: TagGenerator.generateId(),

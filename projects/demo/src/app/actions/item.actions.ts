@@ -9,5 +9,5 @@ export const deleteItem = createAction('[Item] Delete Item', props<{ knTag: Tag 
 export const cancelItem = createAction('[Item] Cancel Item');
 
 
-export const loadAllitems = createAction('[Item Resolver] Load All Items');
-export const allItemsloaded = createAction('[Load Items Effect] All Items Loaded', props<{ items: Item[] }>());
+export const loadAllItems = createAction('[Item Resolver] Load All Items');
+export const allItemsLoaded = createAction('[Load Items Effect] All Items Loaded', props<{ items: Item[] }>());
