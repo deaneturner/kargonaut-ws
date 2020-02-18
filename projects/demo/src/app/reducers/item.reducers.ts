@@ -43,3 +43,4 @@ export function itemsReducer(state: any | undefined, action: any) {
     )(state, action);
 }
 
+export const { selectAll } = adapter.getSelectors();

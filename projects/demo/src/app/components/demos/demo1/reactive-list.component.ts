@@ -6,6 +6,7 @@ import { AppState } from '../../../app.state';
 import { Subject } from 'rxjs';
 import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
 import * as ItemActions from '../../../actions/action-types';
+import { selectAllItems } from '../../../selectors/item.selectors';
 
 enum ItemTypes {
     'ItemExample' = 'ItemExample',
@@ -36,7 +37,7 @@ export class ReactiveListComponent implements OnInit {
 
     ItemTypes: typeof ItemTypes = ItemTypes;
 
-    items$ = this.store.pipe(select(state => state.items));
+    items$ = this.store.pipe(select(selectAllItems));
     results$ = this.store.pipe(select(state => state.results));
     contracts$ = this.store.pipe(select(state => state.contracts));
 
