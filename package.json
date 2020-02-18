@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
+    "start": "compodoc-start",
     "start-dev": "ng serve --proxy-config proxy.json",
     "serve-dev": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
     "build-dev": "yarn build-lib && ng build demo",
