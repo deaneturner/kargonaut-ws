@@ -10,8 +10,9 @@
     "component-selector": [
       true,
       "element",
-      "demo",
-      "kebab-case"
-    ]
+      "demo"
+    ],
+    "no-empty-interface": false,
+    "no-string-literal": false
   }
 }

@@ -1,0 +1,97 @@
+<div class="package-component-example">
+  <div></div>
+  <div>
+    <div>
+      <h2>{{ label }}</h2>
+    </div>
+    <h3>Package Component</h3>
+    <!-- package template-->
+    <ng-template #packageTpl let-label="knLabel" let-layout="knLayout" let-data="knData">
+      <div class="example-header" knGrid [columns]="layout.knColumns">
+        <div class="material-icons">all_out</div>
+        <div class="kn-label">{{ label }}</div>
+        <div class="kn-count">xP</div>
+      </div>
+    </ng-template>
+    <!--  item template-->
+    <ng-template #itemTpl let-item="item">
+      <div class="kn-item" knGrid [columns]="itemConfig.knLayout.knColumns">
+        <div (click)="onSelect(item)" class="kn-checkbox material-icons">{{layout.selected[item.isSelected]}}</div>
+        <div class="kn-symbol material-icons">{{item?.symbol}}</div>
+        <div class="kn-label">{{item?.knLabel}}</div>
+        <div class="kn-max-likes"></div>
+        <div class="kn-symbol kn-weight-code material-icons">{{item?.weightCode}}</div>
+        <div class="kn-symbol kn-weight-symbol material-icons">{{item?.weightSymbol}}</div>
+        <div class="kn-weight-amount">{{item?.duration}}</div>
+      </div>
+    </ng-template>
+    <!-- component - w/ items list -->
+    <p class="kn-surface">
+      <kn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
+        <!-- package - markup rendered by config -->
+        <!--items -->
+        <ng-container *knListItem="let item">
+          <ng-container *ngTemplateOutlet="itemTpl; context:{item: item}"></ng-container>
+        </ng-container>
+        <div class="kn-select-max-no-collapse">expand</div>
+      </kn-package-component>
+    </p>
+  </div>
+  <div class="source">
+    <h3>Source</h3>
+    <div class="sample">
+      <div>
+        <h4>Package Component is expecting an Items Array (e.g. items: Item[];).</h4>
+        <h4>But, it is receiving contract data via a Contract Interface, which extends the Item Interface.</h4>
+        <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/cargo-domain/src/kn/components/package/package.component.ts"
+           target="source">package.component.ts</a>
+      </div>
+      <div>
+        <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/demo/src/app/components/item-extension-example/item-extension-example.component.ts"
+           target="source">item-extension-example.component.ts</a>
+      </div>
+      <div>
+        <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/demo/src/app/components/item-extension-example/item-extension-example.component.html"
+           target="source">item-extension-example.component.html</a>
+      </div>
+      <br>
+      <ng-gist userName="deaneturner" gistId="eb87e34da77921c3c2e186d9c886f414"></ng-gist>
+    </div>
+    <div class="sample">
+      <h5>Abstract Class: Cargo</h5>
+      <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/cargo-domain/src/models/Cargo.ts"
+         target="source">Cargo.ts</a>
+      <ng-gist userName="deaneturner" gistId="255534f8ca4cac0a87d2ac5a0d5f488c"></ng-gist>
+    </div>
+    <div class="sample">
+      <h5>Interface: Item</h5>
+      <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/cargo-domain/src/models/Item.ts"
+         target="source">Item.ts</a>
+      <ng-gist userName="deaneturner" gistId="f49fc3db60210ce01852d9a4e2706ffd"></ng-gist>
+    </div>
+    <div class="sample">
+      <h5>Interface: ItemExample</h5>
+      <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/demo/models/item-example.ts"
+         target="source">item-example.ts</a>
+      <ng-gist userName="deaneturner" gistId="800e44607cd28c0d97f423cb47773bab"></ng-gist>
+    </div>
+    <div class="sample">
+      <h5>Interface: Contract</h5>
+      <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/demo/models/contract.ts"
+         target="source">contract.ts</a>
+      <ng-gist userName="deaneturner" gistId="0b6ab9fd278a5ca1eac775c50a7d89d4"></ng-gist>
+    </div>
+    <div class="sample">
+      <h5>Data: Contracts</h5>
+      <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/demo/src/assets/data/contracts.ts"
+         target="source">contracts.ts</a>
+      <ng-gist userName="deaneturner" gistId="08af064711aa1defd2427b81cf076088"></ng-gist>
+    </div>
+    <div class="sample">
+      <h5>Data: Items</h5>
+      <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/demo/src/assets/data/items.ts"
+         target="source">items.ts</a>
+      <ng-gist userName="deaneturner" gistId="183623408c4f0b9803a56deef7c29533"></ng-gist>
+    </div>
+  </div>
+</div>

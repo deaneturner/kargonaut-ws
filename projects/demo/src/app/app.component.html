@@ -15,14 +15,17 @@
 <nav
     (click)="showNav = false"
     [class.showNav]="showNav"
-    [class.hideNav]="showNav === false"
->
-  <a *ngFor="let example of examples"
+    [class.hideNav]="showNav === false">
+  <a routerLink="./about">About</a>
+  <a routerLink="./login" *ngIf="isLoggedOut$ | async">Login</a>
+  <a (click)="logout()" *ngIf="isLoggedIn$ | async">Logout</a>
+  <a *ngFor="let route of routes"
      routerLinkActive="currentSelection"
-     [routerLink]="example.path"
+     [routerLink]="'/examples/' + route.path"
   >
-    {{ example.component.label || example.path }}
+    {{ route.component['label'] || route.path }}
   </a>
+  <a routerLink="./demos" *ngIf="isLoggedIn$ | async">Reactive Design</a>
 </nav>
 
 <main>
@@ -31,7 +34,7 @@
 
 <footer>
 
-  <a target="_blank" href="https://github.com/deaneturner/kargonaut">
+  <a target="_blank" href="https://github.com/deaneturner/kargonaut-ws">
     GitHub
   </a>
 

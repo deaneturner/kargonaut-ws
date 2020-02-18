@@ -1,0 +1,32 @@
+@import '~@angular/material/theming';
+
+@mixin _reactive-list-header-color($palette) {
+  background: mat-color($palette);
+  color: mat-color($palette, default-contrast);
+}
+
+@mixin reactive-list-header-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .reactive-list-header {
+    background: mat-color($background, appBar);
+    color: mat-color($foreground, text);
+
+    &.mat-primary {
+      @include _reactive-list-header-color($primary);
+    }
+
+    &.mat-accent {
+      @include _reactive-list-header-color($accent);
+    }
+
+    &.mat-warn {
+      @include _reactive-list-header-color($warn);
+    }
+  }
+}
+

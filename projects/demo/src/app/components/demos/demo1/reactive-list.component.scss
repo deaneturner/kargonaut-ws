@@ -1,0 +1,10 @@
+.reactive-list-demo {
+  display: grid;
+  grid-template-columns: 400px auto;
+  padding: 0 40px 0 40px;
+}
+
+::ng-deep .reactive-list-header {
+  padding: 5px;
+  margin-bottom: 10px;
+}

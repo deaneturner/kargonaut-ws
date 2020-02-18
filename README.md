@@ -1,8 +1,8 @@
-# CargonautWs
+# Kargonaut
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
-## Demo
+## Reactive - CSS-Grid List - Demo
 
 https://kargonaut.herokuapp.com/
 

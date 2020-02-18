@@ -1,0 +1,91 @@
+<div class="package-component-example">
+  <div></div>
+  <div>
+    <div>
+      <h2>{{ label }}</h2>
+    </div>
+    <h3>Package Component</h3>
+    <!-- package template-->
+    <ng-template #packageTpl let-label="knLabel" let-layout="knLayout" let-data="knData">
+      <div class="example-header" knGrid [columns]="layout.knColumns">
+        <div class="material-icons">all_out</div>
+        <div class="kn-label">{{ label }}</div>
+        <div class="kn-count">xP</div>
+      </div>
+    </ng-template>
+    <!--  item template-->
+    <ng-template #itemTpl let-item="item">
+      <div class="kn-item" knGrid [columns]="itemConfig.knLayout.knColumns">
+        <div (click)="onSelect(item)" class="kn-checkbox material-icons">{{layout.selected[item.isSelected]}}</div>
+        <div class="kn-symbol material-icons">{{item?.symbol}}</div>
+        <div class="kn-label">{{item?.knLabel}}</div>
+        <div class="kn-max-likes"></div>
+        <div class="kn-symbol kn-weight-code material-icons">{{item?.weightCode}}</div>
+        <div class="kn-symbol kn-weight-symbol material-icons">{{item?.weightSymbol}}</div>
+        <div class="kn-weight-amount">{{item?.weightAmount}}</div>
+      </div>
+    </ng-template>
+    <!-- component - empty -->
+    <p class="kn-surface">
+      <kn-package-component [config]="packageConfig" [itemConfig]="itemConfigEmpty">
+        <!-- package - markup rendered by config -->
+        <!--items -->
+      </kn-package-component>
+    </p>
+    <!-- component - w/ items list -->
+    <p class="kn-surface">
+      <kn-package-component [config]="packageConfig" [itemConfig]="itemConfig">
+        <!-- package - markup rendered by config -->
+        <!--items -->
+        <ng-container *knListItem="let item">
+          <ng-container *ngTemplateOutlet="itemTpl; context:{item: item}"></ng-container>
+        </ng-container>
+        <div class="kn-select-max-no-collapse">expand</div>
+      </kn-package-component>
+    </p>
+    <!-- component - list collapsed -->
+    <p class="kn-surface">
+      <kn-package-component [config]="packageConfigCollapsed" [itemConfig]="itemConfig">
+        <!-- package - markup rendered by config -->
+        <!--items -->
+        <ng-container *knListItem="let item">
+          <ng-container *ngTemplateOutlet="itemTpl; context:{item: item}"></ng-container>
+        </ng-container>
+        <div class="kn-select-max-no-collapse">x{{(itemConfig.knData | async).length}} (collapsed items)</div>
+      </kn-package-component>
+    </p>
+  </div>
+  <div class="source">
+    <h3>Source</h3>
+    <div class="sample">
+      <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/cargo-domain/src/kn/components/package/package.component.component.ts"
+         target="source">package.component.ts</a>
+      <ng-gist userName="deaneturner" gistId="4a1d8ccd92f17452ed0bccd0ff7b02ab"></ng-gist>
+    </div>
+    <div class="sample">
+      <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/cargo-domain/src/kn/components/package/package.component.html"
+         target="source">package.component.html</a>
+      <ng-gist userName="deaneturner" gistId="4d9e926bebd1c2ca8c241ec43ebf3d76"></ng-gist>
+    </div>
+    <div class="sample">
+      <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/cargo-domain/src/kn/components/package/package.component.scss"
+         target="source">package.component.scss</a>
+      <ng-gist userName="deaneturner" gistId="b88b593deecd90ef912a101d237f2ed6"></ng-gist>
+    </div>
+    <div class="sample">
+      <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/demo/src/app/components/component-example/component-example.component.ts"
+         target="source">component-example.component.ts</a>
+      <ng-gist userName="deaneturner" gistId="6d26dedb2ccbebc4c517c00531cb7abc"></ng-gist>
+    </div>
+    <div class="sample">
+      <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/demo/src/app/components/component-example/component-example.component.html"
+         target="source">component-example.component.html</a>
+      <ng-gist userName="deaneturner" gistId="91cb3a173c763325c7b8845e8bca7abd"></ng-gist>
+    </div>
+    <div class="sample">
+      <a href="https://github.com/deaneturner/kargonaut-ws/blob/master/projects/demo/src/app/components/component-example/component-example.component.scss"
+         target="source">component-example.component.scss</a>
+      <ng-gist userName="deaneturner" gistId="dfc45c58f08dc512be42a2dd3fabfe75"></ng-gist>
+    </div>
+  </div>
+</div>

@@ -42,7 +42,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "less"
+          "style": "sass"
         }
       },
       "root": "projects/demo",
@@ -63,7 +63,7 @@
               "projects/demo/src/assets"
             ],
             "styles": [
-              "projects/demo/src/styles.less"
+              "projects/demo/src/styles.scss"
             ],
             "scripts": []
           },
@@ -128,7 +128,7 @@
               "projects/demo/src/assets"
             ],
             "styles": [
-              "projects/demo/src/styles.less"
+              "projects/demo/src/styles.scss"
             ],
             "scripts": []
           }

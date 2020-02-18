@@ -1,0 +1,13 @@
+.reactive-list-header .rowTop {
+  display: grid;
+  grid-template-columns: auto  100px 40px;
+}
+
+.reactive-list-header .rowTop .last{
+  text-align: right;
+  padding-right: 5px;
+}
+
+.label {
+  padding-top: .1em;
+}

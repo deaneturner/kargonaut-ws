@@ -5,16 +5,17 @@ import {
     OnInit,
     TemplateRef
 } from '@angular/core';
-import { PackageConfig } from '../../../models/Package.config';
-import { ItemConfig } from '../../../models/Item.config';
+import { PackageConfig } from '../../models/Package.config';
+import { ItemConfig } from '../../models/Item.config';
 import { ListItemDirective } from '../../directives/list-item/list-item.directive';
-import { Item } from '../../../models/Item';
+import { Item } from '../../models/Item';
 import { Subscription } from 'rxjs';
+import { PackageHeaderDirective } from '../../directives/package-header/package-header.directive';
 
 @Component({
     selector: 'kn-package-component',
     templateUrl: './package.component.html',
-    styleUrls: ['./package.component.less']
+    styleUrls: ['./package.component.scss']
 })
 export class PackageComponent implements OnInit, OnDestroy {
 
@@ -30,6 +31,9 @@ export class PackageComponent implements OnInit, OnDestroy {
     @Input()
     itemConfig: ItemConfig | any;
 
+    @ContentChild(PackageHeaderDirective, {static: false, read: TemplateRef})
+    packageHeader;
+
     @ContentChild(ListItemDirective, {static: false, read: TemplateRef})
     listItemTemplate;
 
@@ -39,6 +43,8 @@ export class PackageComponent implements OnInit, OnDestroy {
 
     constructor() {
     }
+
+    // TODO: pipe instead of subscribe
 
     ngOnInit() {
         this.subscription = this.itemConfig && this.itemConfig.knData.subscribe((data) => {

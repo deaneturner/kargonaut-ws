@@ -6,7 +6,6 @@ export const contracts: Contract[] = [
         knLabel: 'Contract A',
         knDescription: '',
         isSelected: false,
-        checkbox: 'check_box_outline_blank',
         duration: '1 day',
     },
     {
@@ -14,7 +13,6 @@ export const contracts: Contract[] = [
         knLabel: 'Contract D',
         knDescription: '',
         isSelected: false,
-        checkbox: 'check_box_outline_blank',
         duration: '7 days',
     },
     {
@@ -22,7 +20,6 @@ export const contracts: Contract[] = [
         knLabel: 'Contract B',
         knDescription: '',
         isSelected: false,
-        checkbox: 'check_box_outline_blank',
         duration: '1 week',
     },
     {
@@ -30,7 +27,6 @@ export const contracts: Contract[] = [
         knLabel: 'Contract C',
         knDescription: '',
         isSelected: false,
-        checkbox: 'check_box_outline_blank',
         duration: '1 year',
     }
 ];

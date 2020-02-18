@@ -1,0 +1,10 @@
+<div class="kn-item" knGrid [columns]="parentComponent.itemConfig.knLayout.knColumns">
+  <div (click)="onSelect(item)" class="kn-checkbox material-icons">{{layout.selected[item?.isSelected]}}</div>
+  <div></div>
+  <div class="kn-label">{{item?.knLabel}}</div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div class="kn-weight-amount">{{item?.duration}}</div>
+</div>
+

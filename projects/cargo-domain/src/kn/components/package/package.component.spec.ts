@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PackageComponent } from './package.component';
 import { InlineGridDirective } from '../../directives/inline-grid/inline-grid.directive';
-import { PackageConfig } from '../../../models/Package.config';
-import { ItemConfig } from '../../../models/Item.config';
+import { PackageConfig } from '../../models/Package.config';
+import { ItemConfig } from '../../models/Item.config';
 import { of } from 'rxjs';
-import { Item } from '../../../models/Item';
+import { Item } from '../../models/Item';
 
 describe('PackageComponent', () => {
     let component: PackageComponent;

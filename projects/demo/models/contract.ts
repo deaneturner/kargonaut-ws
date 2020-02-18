@@ -1,7 +1,5 @@
-import { Item } from '../../cargo-domain/src/models/Item';
+import { Item } from '../../cargo-domain/src/kn/models/Item';
 
 export interface Contract extends Item {
-    isSelected?: boolean;
-    checkbox?: string;
     duration?: string;
 }

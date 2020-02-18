@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CargoFactory, Type } from '../../common/CargoFactory';
-import { Cargo } from '../../models/Cargo';
-import { Package } from '../../models/Package';
+import { Cargo } from '../models/Cargo';
+import { Package } from '../models/Package';
 
 @Injectable({
     providedIn: 'root'
