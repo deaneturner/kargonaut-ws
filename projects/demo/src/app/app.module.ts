@@ -9,19 +9,14 @@ import { initializeApp } from './app.initializer';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CommonModule } from '@angular/common';
-import { contractsReducer } from './reducers/contract.reducers';
 import { ExamplesModule } from './components/examples/examples.module';
 import { DemosModule } from './components/demos/demos.module';
-import { resultsReducer } from './reducers/results.reducers';
 import { AuthModule } from './auth/auth.module';
 import { metaReducers, reducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { itemsReducer } from './reducers/item.reducers';
-import { ItemsHttpService } from './services/items-http.service';
-import { ItemsResolver } from './services/items.resolver';
-import { ItemsEffects } from './effects/items.effects';
+import { environment } from '../environments/environment';
 
 @NgModule({
     declarations: [
@@ -38,16 +33,7 @@ import { ItemsEffects } from './effects/items.effects';
         AuthModule.forRoot(),
         ExamplesModule,
         DemosModule,
-        EffectsModule.forRoot([
-            ItemsEffects
-        ]),
-        // TODO: meta-reducers and reducers/index.ts?
-        StoreModule.forRoot({
-            items: itemsReducer,
-            contracts: contractsReducer,
-            results: resultsReducer,
-            ...reducers
-        }, {
+        StoreModule.forRoot(reducers, {
             metaReducers,
             runtimeChecks : {
                 strictStateImmutability: true,
@@ -56,12 +42,12 @@ import { ItemsEffects } from './effects/items.effects';
                 strictStateSerializability: true
             }
         }),
+        StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
+        EffectsModule.forRoot([]),
         StoreRouterConnectingModule.forRoot({
             stateKey: 'router',
             routerState: RouterState.Minimal
-        }),
-        // TODO: add log only during production, and max age
-        StoreDevtoolsModule.instrument(),
+        })
     ],
     providers: [
         AppConfigService,
@@ -70,9 +56,7 @@ import { ItemsEffects } from './effects/items.effects';
             useFactory: initializeApp,
             deps: [AppConfigService],
             multi: true
-        },
-        ItemsHttpService,
-        ItemsResolver
+        }
     ],
     bootstrap: [AppComponent]
 })

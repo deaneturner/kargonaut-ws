@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { examples } from './examples';
-import { ReactiveListComponent } from './components/demos/demo1/reactive-list.component';
-import { ItemsResolver } from './services/items.resolver';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-  { path: 'demos',
-    component: ReactiveListComponent,
-    pathMatch: 'full',
-    resolve: {
-      items: ItemsResolver
-    }},
+  {
+    path: 'demos',
+    loadChildren: () => import('./components/demos/demos.module').then(m => m.DemosModule),
+    canActivate: [AuthGuard]
+  },
   ...examples,
-  { path: '**', redirectTo: '/' },
+  {
+    path: '**',
+    redirectTo: '/'
+  },
 ];
 
 @NgModule({
