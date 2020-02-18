@@ -12,9 +12,9 @@ import { CargoModule } from '../../../../../cargo-domain/src/kn/cargo.module';
 import { NgGistModule } from 'ng-gist';
 import { PackageHeaderExampleComponent } from './sub-component-example/package-header-example/package-header-example.component';
 import { StoreModule } from '@ngrx/store';
-import { itemsReducer } from '../demos/reducers/item.reducers';
-import { contractsReducer } from '../demos/reducers/contract.reducers';
-import { resultsReducer } from '../demos/reducers/results.reducers';
+import { itemsReducer } from './reducers/item.reducers';
+import { contractsReducer } from './reducers/contract.reducers';
+import { resultsReducer } from './reducers/results.reducers';
 import { RouterModule, Routes } from '@angular/router';
 
 export const examplesRoutes: Routes = [
@@ -44,9 +44,9 @@ export const examplesRoutes: Routes = [
         CargoModule,
         NgGistModule,
         RouterModule.forChild(examplesRoutes),
-        StoreModule.forFeature('items', itemsReducer),
-        StoreModule.forFeature('contracts', contractsReducer),
-        StoreModule.forFeature('results', resultsReducer)
+        StoreModule.forFeature('example_items', itemsReducer),
+        StoreModule.forFeature('example_contracts', contractsReducer),
+        StoreModule.forFeature('example_results', resultsReducer)
     ]
 })
 export class ExamplesModule {

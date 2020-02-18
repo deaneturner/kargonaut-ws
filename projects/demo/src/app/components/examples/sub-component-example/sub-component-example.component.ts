@@ -20,7 +20,7 @@ export class SubComponentExampleComponent implements OnInit {
     packageConfigCollapsed: PackageConfig;
     itemConfig: ItemConfig;
 
-    items$ = this.store.pipe(select(state => state.contracts));
+    items$ = this.store.pipe(select(state => state.example_contracts));
 
     // editItemTag$ = this.store.pipe(select('tag'));
 

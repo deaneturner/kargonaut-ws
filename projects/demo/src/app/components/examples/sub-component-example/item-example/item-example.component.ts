@@ -2,6 +2,9 @@ import { Component, EventEmitter, Injector, Input, OnInit, Output } from '@angul
 import { ItemConfig } from '../../../../../../../cargo-domain/src/kn/models/Item.config';
 import { Contract } from '../../../../../../models/contract';
 import { PackageComponent } from '../../../../../../../cargo-domain/src/kn/components/package/package.component';
+import { replaceContract } from '../../../demos/actions/contract.actions';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../../../app.state';
 
 @Component({
   selector: 'demo-item-example',
@@ -28,15 +31,15 @@ export class ItemExampleComponent implements OnInit {
 
   parentComponent: PackageComponent;
 
-  constructor(private injector: Injector) {
+  constructor(private injector: Injector, private store: Store<AppState>) {
     this.parentComponent = this.injector.get(PackageComponent);
   }
 
   ngOnInit() {
   }
 
-  onSelect() {
-    this.item.isSelected = !this.item.isSelected;
+  onSelect(contract: Contract) {
+    this.store.dispatch(replaceContract({contract: {...contract, isSelected: !contract.isSelected}}));
     this.selected.emit(this.item);
   }
 }

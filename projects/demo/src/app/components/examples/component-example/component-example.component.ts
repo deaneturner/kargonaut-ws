@@ -25,7 +25,7 @@ export class ComponentExampleComponent implements OnInit {
     itemConfig: ItemConfig;
     itemConfigEmpty: ItemConfig;
 
-    items$ = this.store.pipe(select(state => state.items));
+    items$ = this.store.pipe(select(state => state.example_items));
 
     layout = {
         selected: {

@@ -24,7 +24,7 @@ export class TemplateExampleComponent implements OnInit {
   packageConfigSingle: PackageConfig;
   itemConfig: ItemConfig;
 
-  items$: Observable<Item[]> = this.store.pipe(select(state => state.items));
+  items$: Observable<Item[]> = this.store.pipe(select(state => state.example_items));
 
   layout = {
     selected: {
