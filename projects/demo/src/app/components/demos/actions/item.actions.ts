@@ -1,7 +1,7 @@
-import { Item } from '../../../../cargo-domain/src/kn/models/Item';
-import { Tag } from '../../../../cargo-domain/src/common/TagGenerator';
+import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
+import { Tag } from '../../../../../../cargo-domain/src/common/TagGenerator';
 import { createAction, props } from '@ngrx/store';
-import { ItemExample } from '../../../models/item-example';
+import { ItemExample } from '../../../../../models/item-example';
 import { Update } from '@ngrx/entity';
 
 export const appendItem = createAction('[Item] Append Item', props<{ item: Item }>());

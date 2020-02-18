@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { AppState } from '../app.state';
 import { Store } from '@ngrx/store';
 import { tap } from 'rxjs/internal/operators/tap';
-import { loadAllItems } from '../actions/item.actions';
+import { loadAllItems } from '../components/demos/actions/item.actions';
 import { first } from 'rxjs/internal/operators/first';
 import { finalize } from 'rxjs/operators';
 

@@ -1,6 +1,6 @@
-import { Tag } from '../../../../cargo-domain/src/common/TagGenerator';
+import { Tag } from '../../../../../../cargo-domain/src/common/TagGenerator';
 import { createAction, props } from '@ngrx/store';
-import { Contract } from '../../../models/contract';
+import { Contract } from '../../../../../models/contract';
 
 export const appendContract = createAction('[Contract] Append Contract', props<{ contract: Contract }>());
 export const replaceContract = createAction('[Contract] Replace Contract', props<{ contract: Contract }>());

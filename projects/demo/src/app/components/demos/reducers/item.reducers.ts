@@ -1,10 +1,10 @@
-import { Item } from '../../../../cargo-domain/src/kn/models/Item';
+import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
 import { createReducer } from '@ngrx/store';
 import { on } from '@ngrx/store';
 import * as ItemActions from '../actions/item.actions';
-import * as Cargo from '../../../../cargo-domain/src/kn/models/Cargo';
+import * as Cargo from '../../../../../../cargo-domain/src/kn/models/Cargo';
 import { createEntityAdapter, EntityState } from '@ngrx/entity';
-import { selectCargoId } from '../../../../cargo-domain/src/kn/models/Cargo';
+import { selectCargoId } from '../../../../../../cargo-domain/src/kn/models/Cargo';
 
 export interface ItemsState extends EntityState<Item> {
     allItemsLoaded: boolean;

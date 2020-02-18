@@ -5,8 +5,8 @@ import { ItemConfig } from '../../../../../../cargo-domain/src/kn/models/Item.co
 import { AppState } from '../../../app.state';
 import { Subject } from 'rxjs';
 import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
-import * as ItemActions from '../../../actions/action-types';
-import { selectAllItems } from '../../../selectors/item.selectors';
+import * as ItemActions from '../actions/action-types';
+import { selectAllItems } from '../selectors/item.selectors';
 import { ItemExample } from '../../../../../models/item-example';
 
 enum ItemTypes {

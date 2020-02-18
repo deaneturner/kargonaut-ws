@@ -6,15 +6,15 @@ import { ReactiveListHeaderComponent } from './demo1/reactive-list-header-exampl
 import { ReactiveListItemComponent } from './demo1/reactive-list-item/reactive-list-item.component';
 import { MatCardModule, MatListModule, MatSliderModule, MatToolbarModule } from '@angular/material';
 import { ReactiveListItem2Component } from './demo1/reactive-list-item2/reactive-list-item2.component';
-import { itemsReducer } from '../../reducers/item.reducers';
+import { itemsReducer } from './reducers/item.reducers';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { RouterModule, Routes } from '@angular/router';
-import { ItemsEffects } from '../../effects/items.effects';
+import { ItemsEffects } from './effects/items.effects';
 import { ItemsHttpService } from '../../services/items-http.service';
 import { ItemsResolver } from '../../services/items.resolver';
-import { contractsReducer } from '../../reducers/contract.reducers';
-import { resultsReducer } from '../../reducers/results.reducers';
+import { contractsReducer } from './reducers/contract.reducers';
+import { resultsReducer } from './reducers/results.reducers';
 
 export const demosRoutes: Routes = [
     {
