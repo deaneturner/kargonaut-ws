@@ -4,12 +4,14 @@ import { on } from '@ngrx/store';
 import * as ItemActions from '../actions/item.actions';
 import * as Cargo from '../../../../cargo-domain/src/kn/models/Cargo';
 import { createEntityAdapter, EntityState } from '@ngrx/entity';
+import { selectCargoId } from '../../../../cargo-domain/src/kn/models/Cargo';
 
 export interface ItemsState extends EntityState<Item> {
     allItemsLoaded: boolean;
 }
 
 export const adapter = createEntityAdapter<Item>({
+    selectId: selectCargoId,
     sortComparer: Cargo.compareCargoLabel
 });
 

@@ -15,3 +15,7 @@ export function compareCargoLabel(c1: Cargo, c2: Cargo) {
         return -1;
     } else { return 0; }
 }
+
+export function selectCargoId(a: Cargo): string {
+    return a.knTag;
+}
