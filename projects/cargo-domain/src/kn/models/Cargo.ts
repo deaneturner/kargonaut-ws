@@ -7,7 +7,7 @@ export abstract class Cargo {
 }
 
 export function compareCargoLabel(c1: Cargo, c2: Cargo) {
-    const compare = c1.knLabel.localeCompare(c2.knLabel);
+    const compare = c1.knTag.localeCompare(c2.knTag);
 
     if (compare > 0) {
         return 1;

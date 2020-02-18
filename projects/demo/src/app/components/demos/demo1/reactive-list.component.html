@@ -9,7 +9,7 @@
           <kn-package-component [config]="packageConfig2" [itemConfig]="itemConfig2">
             <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
             <demo-reactive-list-item2 *knListItem="let item" [item]="item"
-                                      (selected)="onSelected({type: ItemTypes.ItemExample, item: item})"
+                                      (selected)="onSelectedItemExample(item)"
                                       (mouseover)="onMouseOver({type: ItemTypes.ItemExample, item: item})"></demo-reactive-list-item2>
             <div class="kn-select-max-no-collapse">Click to expand...</div>
           </kn-package-component>

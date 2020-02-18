@@ -19,7 +19,7 @@ export const initialItemsState = adapter.getInitialState({
     allCoursesLoaded: false
 });
 
-export function itemsReducer(state: any | undefined, action: any) {
+export function itemsReducer(state, action) {
     return createReducer(
         initialItemsState,
         on(ItemActions.allItemsLoaded,
@@ -28,17 +28,8 @@ export function itemsReducer(state: any | undefined, action: any) {
                 {...s,
                     allItemsLoaded: true
                 })),
-        // on(appendItem, (s, a) => s.concat({
-        //     ...a.item,
-        //     knTag: TagGenerator.generateId(),
-        // })),
-        // on(replaceItem, (s, a) => {
-        //     const newItems = s.items.concat();
-        //     newItems[newItems.findIndex(item => item.knTag === a.item.knTag)] = a.item;
-        //     return newItems;
-        // }),
-        // on(deleteItem, (s, a) => s.filter(
-        //     item => item.knTag !== a.knTag)),
+        on(ItemActions.itemUpdated, (s, a) =>
+            adapter.updateOne(a.update, s) )
     )(state, action);
 }
 

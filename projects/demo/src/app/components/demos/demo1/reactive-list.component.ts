@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 import { Item } from '../../../../../../cargo-domain/src/kn/models/Item';
 import * as ItemActions from '../../../actions/action-types';
 import { selectAllItems } from '../../../selectors/item.selectors';
+import { ItemExample } from '../../../../../models/item-example';
 
 enum ItemTypes {
     'ItemExample' = 'ItemExample',
@@ -88,17 +89,23 @@ export class ReactiveListComponent implements OnInit {
         return ReactiveListComponent.label;
     }
 
+    // ENTITY
+    onSelectedItemExample(item: ItemExample) {
+        this.store.dispatch(ItemActions.itemUpdated({
+            update: {
+                id: item.knTag,
+                changes: {
+                    isSelected: !item.isSelected
+                }
+            }
+        }));
+    }
+
+    // NATIVE STORE
     onSelected(itemContext: ItemContext) {
         // TODO: optimize / simplify by piggybacking on action type
         let actionContext;
         switch (itemContext.type) {
-            case ItemTypes.ItemExample: {
-                actionContext = {
-                    action: 'replaceItem',
-                    key: 'item'
-                };
-                break;
-            }
             case ItemTypes.Contract: {
                 actionContext = {
                     action: 'replaceContract',
