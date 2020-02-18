@@ -11,23 +11,43 @@ import { ItemExampleComponent } from './sub-component-example/item-example/item-
 import { CargoModule } from '../../../../../cargo-domain/src/kn/cargo.module';
 import { NgGistModule } from 'ng-gist';
 import { PackageHeaderExampleComponent } from './sub-component-example/package-header-example/package-header-example.component';
+import { StoreModule } from '@ngrx/store';
+import { itemsReducer } from '../demos/reducers/item.reducers';
+import { contractsReducer } from '../demos/reducers/contract.reducers';
+import { resultsReducer } from '../demos/reducers/results.reducers';
+import { RouterModule, Routes } from '@angular/router';
+
+export const examplesRoutes: Routes = [
+    { path: 'markup-example', component: SimpleMarkupExampleComponent },
+    { path: 'basic-styling-example', component: BasicStylingExampleComponent },
+    { path: 'directives-example', component: DirectivesExampleComponent },
+    { path: 'template-example', component: TemplateExampleComponent },
+    { path: 'component-example', component: ComponentExampleComponent },
+    { path: 'item-extension-component-example', component: ItemExtensionExampleComponent },
+    { path: 'sub-component-example', component: SubComponentExampleComponent },
+];
 
 @NgModule({
-  declarations: [
-      SimpleMarkupExampleComponent,
-      BasicStylingExampleComponent,
-      TemplateExampleComponent,
-      DirectivesExampleComponent,
-      ComponentExampleComponent,
-      SubComponentExampleComponent,
-      ItemExtensionExampleComponent,
-      ItemExampleComponent,
-      PackageHeaderExampleComponent,
-  ],
-  imports: [
-    CommonModule,
-    CargoModule,
-    NgGistModule,
-  ]
+    declarations: [
+        SimpleMarkupExampleComponent,
+        BasicStylingExampleComponent,
+        TemplateExampleComponent,
+        DirectivesExampleComponent,
+        ComponentExampleComponent,
+        SubComponentExampleComponent,
+        ItemExtensionExampleComponent,
+        ItemExampleComponent,
+        PackageHeaderExampleComponent,
+    ],
+    imports: [
+        CommonModule,
+        CargoModule,
+        NgGistModule,
+        RouterModule.forChild(examplesRoutes),
+        StoreModule.forFeature('items', itemsReducer),
+        StoreModule.forFeature('contracts', contractsReducer),
+        StoreModule.forFeature('results', resultsReducer)
+    ]
 })
-export class ExamplesModule { }
+export class ExamplesModule {
+}

@@ -21,7 +21,7 @@
   <a (click)="logout()" *ngIf="isLoggedIn$ | async">Logout</a>
   <a *ngFor="let route of routes"
      routerLinkActive="currentSelection"
-     [routerLink]="route.path"
+     [routerLink]="'/examples/' + route.path"
   >
     {{ route.component['label'] || route.path }}
   </a>

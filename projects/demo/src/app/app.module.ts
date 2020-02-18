@@ -20,7 +20,6 @@ import { environment } from '../environments/environment';
 
 @NgModule({
     declarations: [
-        // TODO: Lazy load my module vs eager load
         AboutComponent,
         AppComponent,
     ],

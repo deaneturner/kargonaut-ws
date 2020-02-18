@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { examples } from './examples';
 import { AppConfigService } from './services/app-config-service.service';
 import { login, logout } from './auth/auth.actions';
 import { AuthState } from './auth/reducers';
 import { select, Store } from '@ngrx/store';
 import { isLoggedIn, isLoggedOut } from './auth/auth.selectors';
 import { Observable } from 'rxjs';
+import { examplesRoutes } from './components/examples/examples.module';
 
 @Component({
     selector: 'demo-root',
@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
 export class AppComponent implements OnInit {
     title: string;
     showNav: boolean;
-    routes = examples;
+    routes = examplesRoutes;
 
     // loading = true;
 
