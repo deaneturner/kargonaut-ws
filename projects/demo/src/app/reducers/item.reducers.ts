@@ -16,8 +16,7 @@ export const adapter = createEntityAdapter<Item>({
 });
 
 export const initialItemsState = adapter.getInitialState({
-    allCoursesLoaded: false,
-    items: []
+    allCoursesLoaded: false
 });
 
 export function itemsReducer(state: any | undefined, action: any) {
