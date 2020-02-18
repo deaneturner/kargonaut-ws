@@ -8,10 +8,10 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class ItemsEffects {
 
-    loadCourses$ = createEffect (
+    loadItems$ = createEffect (
         () => this.actions$
         .pipe(
-            ofType(ItemActions.allItemsLoaded),
+            ofType(ItemActions.loadAllItems),
             concatMap(() => this.itemsHttpService.findAllItems()),
             map(items => ItemActions.allItemsLoaded({items}))
         )
