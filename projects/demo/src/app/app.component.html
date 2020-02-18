@@ -15,8 +15,8 @@
 <nav
     (click)="showNav = false"
     [class.showNav]="showNav"
-    [class.hideNav]="showNav === false"
->
+    [class.hideNav]="showNav === false">
+  <a routerLink="./about">About</a>
   <a routerLink="./login" *ngIf="isLoggedOut$ | async">Login</a>
   <a (click)="logout()" *ngIf="isLoggedIn$ | async">Logout</a>
   <a *ngFor="let route of routes"
