@@ -8,6 +8,11 @@
         <mat-card-content>
           <kn-package-component [config]="packageConfig2" [itemConfig]="itemConfig2">
             <demo-reactive-list-header *knPackageHeader></demo-reactive-list-header>
+            <mat-progress-spinner
+                style="margin:0 auto;"
+                mode="indeterminate"
+                *ngIf="!(itemConfig2.knData | async).length">
+            </mat-progress-spinner>
             <demo-reactive-list-item2 *knListItem="let item" [item]="item"
                                       (selected)="onSelectedItemExample(item)"
                                       (mouseover)="onMouseOver({type: ItemTypes.ItemExample, item: item})"></demo-reactive-list-item2>
