@@ -17,6 +17,18 @@ export class ItemsEffects {
         )
     );
 
+    saveItem$ = createEffect(
+        () => this.actions$
+            .pipe(
+                ofType(ItemActions.itemUpdated),
+                concatMap(action => this.itemsHttpService.saveItem(
+                    action.update.id,
+                    action.update.changes
+                ))
+            ),
+        {dispatch: false}
+    );
+
 constructor(private actions$: Actions,
             private itemsHttpService: ItemsHttpService) {}
 

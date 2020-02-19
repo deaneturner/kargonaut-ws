@@ -1,5 +1,6 @@
 import {loginUser} from './auth.route';
-import { getAllItems } from './get-items';
+import { getAllItems } from './get-items.route';
+import { saveItem } from './save-item.route';
 
 const express = require('express');
 const path = require('path');
@@ -12,7 +13,8 @@ app.use(bodyParser.json());
 app.use(express.static(process.cwd() + '/dist/demo'));
 
 app.route('/api/login').post(loginUser);
-app.route('/api/items').get(getAllItems);
+app.route('/api/item').get(getAllItems);
+app.route('/api/item/:id').put(saveItem);
 
 app.get('/*', (req, res) => {
 

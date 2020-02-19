@@ -11,9 +11,13 @@ export class ItemsHttpService {
     }
 
     findAllItems(): Observable<Item[]> {
-        return this.http.get('/api/items')
+        return this.http.get('/api/item')
             .pipe(
                 map(res => res['payload'])
             );
+    }
+
+    saveItem(itemId: string | number, changes: Partial<Item>) {
+        return this.http.put('/api/item/' + itemId, changes);
     }
 }
