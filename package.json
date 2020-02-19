@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "yarn compodoc-start",
+    "start": "node server/server-docs.js",
     "start-dev": "ng serve --proxy-config proxy.json",
     "serve-dev": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
     "build-dev": "yarn build-lib && ng build demo",
@@ -18,7 +18,7 @@
     "verify-dep": "yarn cache clean -y && yarn && yarn verify",
     "compodoc-generate": "npx compodoc -p projects/cargo-domain/tsconfig.lib.json",
     "compodoc-start": "compodoc -p projects/cargo-domain/tsconfig.lib.json -s",
-    "heroku-postbuild": "yarn compodoc-generate && yarn compodoc-start"
+    "heroku-postbuild": "yarn compodoc-generate"
   },
   "private": true,
   "dependencies": {
