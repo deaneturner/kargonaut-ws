@@ -7,11 +7,14 @@ import { tap } from 'rxjs/internal/operators/tap';
 import { loadAllItems } from '../components/demos/actions/item.actions';
 import { first } from 'rxjs/internal/operators/first';
 import { finalize } from 'rxjs/operators';
+import { areItemsLoaded } from '../components/demos/selectors/item.selectors';
+import { select } from '@ngrx/store';
+import { filter } from 'rxjs/internal/operators/filter';
 
 @Injectable()
 export class ItemsResolver implements Resolve<any> {
 
-    loading = false;
+    loading = false; // required due to multiple router-store events i.e. request and navigation
 
     constructor(private store: Store<AppState>) {
     }
@@ -20,13 +23,15 @@ export class ItemsResolver implements Resolve<any> {
             state: RouterStateSnapshot): Observable<any> {
         return this.store
             .pipe(
-                tap(() => {
-                    if (!this.loading) { // required due to multiple router-store events i.e. request and navigation
+                select(areItemsLoaded), // have items been initially loaded - avoid repeat on route to and from resolver
+                tap((itemsLoaded) => {
+                    if (!this.loading && !itemsLoaded) {
                         this.loading = true;
                         this.store.dispatch(loadAllItems());
                     }
                 }),
-                first(),
+                filter(itemsLoaded => itemsLoaded),
+                first(), // must complete in order to route
                 finalize(() => this.loading = false)
             );
     }

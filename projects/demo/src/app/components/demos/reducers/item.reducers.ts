@@ -25,12 +25,15 @@ export function itemsReducer(state, action) {
         on(ItemActions.allItemsLoaded,
             (s, a) => adapter.addAll(
                 a.items,
-                {...s,
-                    allItemsLoaded: true
+                {
+                    ...s,
+                    allItemsLoaded: true // manage condition: items initially loaded - avoid repeat on route to and from resolver
                 })),
         on(ItemActions.itemUpdated, (s, a) =>
-            adapter.updateOne(a.update, s) )
+            adapter.updateOne(a.update, s)),
+        on(ItemActions.itemSelected, (s, a) =>
+            adapter.updateOne(a.update, s))
     )(state, action);
 }
 
-export const { selectAll } = adapter.getSelectors();
+export const {selectAll} = adapter.getSelectors();

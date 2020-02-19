@@ -91,7 +91,7 @@ export class ReactiveListComponent implements OnInit {
 
     // ENTITY
     onSelectedItemExample(item: ItemExample) {
-        this.store.dispatch(ItemActions.itemUpdated({
+        this.store.dispatch(ItemActions.itemSelected({
             update: {
                 id: item.knTag,
                 changes: {

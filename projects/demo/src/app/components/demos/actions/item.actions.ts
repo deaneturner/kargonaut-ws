@@ -17,3 +17,9 @@ export const itemUpdated = createAction(
     '[Edit ItemExample] ItemExample Updated',
     props<{update: Update<Item>}>()
 );
+
+export const itemSelected = createAction(
+    '[Select ItemExample] ItemExample Selected',
+    props<{update: Update<Item>}>()
+);
+
