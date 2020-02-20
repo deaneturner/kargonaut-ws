@@ -4,7 +4,7 @@ import { ReactiveListComponent } from './demo1/reactive-list.component';
 import { CargoModule } from '../../../../../cargo-domain/src/kn/cargo.module';
 import { ReactiveListHeaderComponent } from './demo1/reactive-list-header-example/reactive-list-header.component';
 import { ReactiveListItemComponent } from './demo1/reactive-list-item/reactive-list-item.component';
-import { MatCardModule, MatListModule, MatProgressSpinnerModule, MatSliderModule, MatToolbarModule } from '@angular/material';
+import { MatCardModule, MatListModule, MatSliderModule, MatToolbarModule } from '@angular/material';
 import { ReactiveListItem2Component } from './demo1/reactive-list-item2/reactive-list-item2.component';
 import { itemsReducer } from './reducers/item.reducers';
 import { StoreModule } from '@ngrx/store';
@@ -39,7 +39,6 @@ export const demosRoutes: Routes = [
         MatListModule,
         MatCardModule,
         MatToolbarModule,
-        MatProgressSpinnerModule,
         RouterModule.forChild(demosRoutes),
         EffectsModule.forFeature([ItemsEffects]),
         StoreModule.forFeature('items', itemsReducer),

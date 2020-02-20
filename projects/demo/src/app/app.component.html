@@ -29,6 +29,11 @@
 </nav>
 
 <main>
+  <mat-progress-spinner
+      class="spinner-container"
+      mode="indeterminate"
+      *ngIf="loading">
+  </mat-progress-spinner>
   <router-outlet></router-outlet>
 </main>
 

@@ -17,6 +17,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
+import { MatProgressSpinnerModule } from '@angular/material';
 
 @NgModule({
     declarations: [
@@ -30,6 +31,7 @@ import { environment } from '../environments/environment';
         AppRoutingModule,
         HttpClientModule,
         AuthModule.forRoot(),
+        MatProgressSpinnerModule,
         ExamplesModule,
         DemosModule,
         StoreModule.forRoot(reducers, {
